@@ -27,7 +27,7 @@ class PostsController extends Controller
      */
     public function index(Category $category,Post $post)
     {
-        $my_posts = Post::paginate(2);
+        $my_posts = Post::where('user_id',Auth::id())->paginate(2);
         $categories = $category->get();
         return view('post',['categories'=>$categories, 'my_posts'=>$my_posts]);
     }
