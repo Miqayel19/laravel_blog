@@ -10,8 +10,6 @@ let mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
- mix.setPublicPath('./');
- mix.js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css');
-mix.react('react_blog/src/index.js', 'react_blog/public/current.js')
+mix.setPublicPath('./');
+mix.react('react_blog/blog/index.js', 'react_blog/public/current.js')
    //.sass('resources/assets/sass/app.scss', 'public/css');
