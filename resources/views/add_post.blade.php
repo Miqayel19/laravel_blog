@@ -21,8 +21,6 @@
     <div class="form-group" style='margin-left:10px'>
  		<input type="file" class="filestyle" data-icon="false" name='image'>
  	</div>
-    	
-	 
 	<button type="submit" class="btn btn-danger" style='margin-left:10px'>Add</button>
 </form>	
 @endsection

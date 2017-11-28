@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Link} from "react-router-dom";
-import Home from './Home'
-import Login from './Login'
-import Register from './Register'
-class App extends Component {
-  render() {
-    return ( 
-    	<div>
-    		<Home />
-    		
-    		
-        </div>
-    	);
-  	}
+import Categories from './Categories';
+import Menu1 from './Menu1';
+import Menu2 from './Menu2';
+class App extends Component { 
+ render() {
+    if(sessionStorage.getItem('user_id')){
+            return (
+                <div>
+                  <Menu2 name = {sessionStorage.getItem('name')} />
+                  <Categories />
+                </div>  
+              );
+        } else{
+            return (
+              <div>
+                <Menu1 />
+              </div>
+                  );
+              }
+  	 }
 }	
 
 export default App;

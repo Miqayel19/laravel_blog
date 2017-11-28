@@ -14,10 +14,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mblog.css') }}" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script src="{{asset('js/category.js')}}"></script>
-  <script src="{{asset('js/post.js')}}"></script>
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="{{asset('js/category.js')}}"></script>
+    <script src="{{asset('js/post.js')}}"></script>
 </head>
 <body>
     <div id="app">
@@ -38,7 +38,6 @@
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
-
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
@@ -79,12 +78,10 @@
                 </div>
             </div>
         </nav>
-
         @yield('content')
     </div>
 
     <!-- Scripts -->
-    
     
     <script src="{{ asset('js/app.js') }}"></script>
 

@@ -45,7 +45,7 @@
 	        		<button type="submit" class="btn btn-secondary" id='yes' style='margin-right:50px'>Yes</button>
 	        	</form>	
 								          
-	           	<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+	           	<button type="button" class="btn btn-default no" data-dismiss="modal">No</button>
 								        	
 	        </div>
 	    </div>

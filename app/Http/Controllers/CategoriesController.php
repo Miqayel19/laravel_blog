@@ -24,44 +24,34 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Category $category)
+    public function index()
     {      
-        $my_categories = $category->where('user_id',Auth::id())->get();
-        $categories = $category->get();
-        return view('category',['categories'=>$categories, 'my_categories'=>$my_categories,]);   
+        return view('category');   
     }
-    
     public function create()
     {
         return view('add_category');
     }
-    public function store(Request $request,Category $category)
+    public function store(Request $request)
     {
-        $category->create(['title' => $request->input('title'),'user_id'=>Auth::id()]);
-        $categories = $category->get();
-        $my_categories = $category->where('user_id',Auth::id())->get();
+        Category::create(['title' => $request->input('title'),'user_id'=>Auth::id()]);
+        $categories = Category::where('user_id',Auth::id())->get();
         return redirect('/categories');
     }
-
-
-    public function destroy($id, Category $category)
+    public function destroy($id)
     {   
-        $category->where('id', $id)->delete();
+        $categories = Category::where('id', $id)->delete();
         return redirect('/categories');
     }
-    public function edit($id, Category $category)
+    public function edit($id)
     {
-        $categories=$category->where('id',$id)->first();
+        $categories=Category::where('id',$id)->first();
         return view('edit_category',['categories'=>$categories]);
     }
-
-    public function update($id, Request $request, Category $category)
+    public function update($id, Request $request)
     {
-        $category
-            ->where('id', $id)
-            ->update(['title' => $request->input('title')]);
-        $my_categories =$category->where('user_id',Auth::id())->get();
-        $categories = $category->get();
-        return view('category',['categories'=>$categories,'my_categories'=>$my_categories]);
+        Category::where('id', $id)->update(['title' => $request->input('title')]);
+        $categories =Category::where('user_id',Auth::id())->get();
+        return view('category',['categories'=>$categories]);
     }
 }

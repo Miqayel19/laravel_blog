@@ -72,14 +72,12 @@
 	color:darkblue;
 	text-decoration:none;
 }
-
-h5{
+.modal-header h5{
 	text-align: center;
 }
 #yes{
 	background-color: aqua;
 }
-
 #fileselector {
     margin: 10px; 
 }
@@ -89,8 +87,33 @@ h5{
 .margin-correction {
     margin-right: 10px;   
 }
-
 .custom{
-
 	padding:5px;
+}
+.add_cat{
+	width:150px;
+	margin-left:10px;
+	display: inline-block;
+}
+.add_but{
+	display: inline-block;
+}
+.update_post{
+	display:inline-block;
+	margin-left:10px;
+}
+.cat_sel{
+	 width:150px;
+	 margin-left: 10px;
+}
+#post_title{
+	width:200px;
+	margin-left:10px;
+}
+#post_text{
+	width:200px;
+	margin-left:10px;
+}
+.no{
+	margin-top:-60px;
 }
