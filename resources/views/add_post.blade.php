@@ -18,9 +18,9 @@
     		<option value={{$my_category->id}}>{{$my_category->title}}</option>
     	@endforeach
     </select>
-    <div class="form-group" style='margin-left:10px'>
+    <div class="form-group post_form">
  		<input type="file" class="filestyle" data-icon="false" name='image'>
  	</div>
-	<button type="submit" class="btn btn-danger" style='margin-left:10px'>Add</button>
+	<button type="submit" class="btn btn-danger post_but">Add</button>
 </form>	
 @endsection

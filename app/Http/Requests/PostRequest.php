@@ -51,7 +51,6 @@ class PostRequest extends FormRequest
         }
             $inputs['user_id'] = Auth::id();
             return $inputs;
-            return $inputs;
     }
     public function post_store(){
             $inputs = $this->all();
@@ -66,6 +65,5 @@ class PostRequest extends FormRequest
         }
             $inputs['user_id'] = Auth::id();
             return $inputs;
-    
     }
 }

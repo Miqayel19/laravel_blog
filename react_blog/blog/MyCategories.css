@@ -5,20 +5,16 @@
 	background-color: pink;	
 }
 #list_cat{
-
 	width:250px;
 }
 .row_second_part ul {
 	display:inline-block;
 }
-
 .ul_cat{
-
 	list-style:none;
 	padding-left:5px;
 }
 .ul_cat li {
-
 	display:inline-block;
 }
 #add_input{
@@ -30,11 +26,12 @@
 	background-color:pink;
 	display: inline-block;
 }
-
 #yes{
-
 	background-color:pink;
 }
 .modal-header h5{
 	text-align: center;
+}
+.cat_h1{
+	margin-left:10px;
 }

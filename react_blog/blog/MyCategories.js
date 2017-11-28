@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import {Redirect} from "react-router";
 import axios from 'axios';
 import {Link} from "react-router-dom"; 
-import Modal from './Modal';
 import './MyCategories.css';
 import Menu2 from './Menu2';
-import EditCategory from './EditCategory';
 class MyCategories extends Component {
  	 constructor(props){
  	 	super(props);
@@ -18,7 +16,6 @@ class MyCategories extends Component {
      this.deleteCat = this.deleteCat.bind(this);
      this.getInfo = this.getInfo.bind(this);
     }		
-
     getInfo(value){
       this.setState({deleted: value})
     }
@@ -42,7 +39,7 @@ class MyCategories extends Component {
           <div className="container">
             <div className="row">
               <div className='row_second'>
-                <h1>My Categories</h1>
+                <h1 class = 'cat_h1'>My Categories</h1>
                 <button className="btn" id='add_cat'><Link to ={'/my-categories/add'}>Add Category</Link></button>        
                 <div className='row_second_part'>
                       {this.state.mycategories.map((value, index) => {

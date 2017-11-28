@@ -3994,7 +3994,7 @@ var Menu1 = function (_Component) {
 									null,
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 										__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
-										{ to: { pathname: '/', component: { Menu1: Menu1 } } },
+										{ to: "/", component: Menu1 },
 										" React"
 									)
 								)
@@ -4434,94 +4434,7 @@ var Register = function (_Component) {
 /* harmony default export */ __webpack_exports__["a"] = (Register);
 
 /***/ }),
-/* 52 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(4);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-var Modal = function (_Component) {
-	_inherits(Modal, _Component);
-
-	function Modal() {
-		_classCallCheck(this, Modal);
-
-		return _possibleConstructorReturn(this, (Modal.__proto__ || Object.getPrototypeOf(Modal)).apply(this, arguments));
-	}
-
-	_createClass(Modal, [{
-		key: "render",
-		value: function render() {
-			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				"div",
-				{ className: "modal fade", id: "exampleModal", tabIndex: "-1", role: "dialog", "aria-labelledby": "exampleModalLabel", "aria-hidden": "true" },
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"div",
-					{ className: "modal-dialog", role: "document" },
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						"div",
-						{ className: "modal-content" },
-						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-							"div",
-							{ className: "modal-header" },
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"h5",
-								{ className: "modal-title", id: "exampleModalLabel", style: { textAlign: 'center' } },
-								"Are you sure you want to delete the category"
-							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"button",
-								{ type: "button", className: "close", "data-dismiss": "modal", "aria-label": "Close" },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									"span",
-									{ "aria-hidden": "true" },
-									"\xD7"
-								)
-							)
-						),
-						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-							"div",
-							{ className: "modal-footer" },
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "_method", value: "DELETE" }),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"button",
-								{ type: "submit", className: "btn btn-secondary", id: "yes" },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-									{ to: '/my-categories', onClick: this.deleteCat },
-									"Yes"
-								)
-							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"button",
-								{ type: "button", className: "btn btn-default", "data-dismiss": "modal" },
-								"No"
-							)
-						)
-					)
-				)
-			);
-		}
-	}]);
-
-	return Modal;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
-
-/* unused harmony default export */ var _unused_webpack_default_export = (Modal);
-
-/***/ }),
+/* 52 */,
 /* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -26399,11 +26312,9 @@ exports.push([module.i, ".row_cat{\n\tdisplay:inline-block;\n}\n.row_post{\n\tdi
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Modal__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__MyCategories_css__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__MyCategories_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__MyCategories_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Menu2__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__EditCategory__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MyCategories_css__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MyCategories_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__MyCategories_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Menu2__ = __webpack_require__(8);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26411,8 +26322,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
 
 
 
@@ -26471,7 +26380,7 @@ var MyCategories = function (_Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Menu2__["a" /* default */], { name: sessionStorage.getItem('name') }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Menu2__["a" /* default */], { name: sessionStorage.getItem('name') }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'container' },
@@ -26483,7 +26392,7 @@ var MyCategories = function (_Component) {
               { className: 'row_second' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h1',
-                null,
+                { 'class': 'cat_h1' },
                 'My Categories'
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -26600,7 +26509,7 @@ exports = module.exports = __webpack_require__(10)(undefined);
 
 
 // module
-exports.push([module.i, "#add_cat{\n\tposition:absolute;\n\tleft:325px;\n\ttop:15%;\n\tbackground-color: pink;\t\n}\n#list_cat{\n\n\twidth:250px;\n}\n.row_second_part ul {\n\tdisplay:inline-block;\n}\n\n.ul_cat{\n\n\tlist-style:none;\n\tpadding-left:5px;\n}\n.ul_cat li {\n\n\tdisplay:inline-block;\n}\n#add_input{\n\twidth:150px;\n\tdisplay: inline-block;\n\tmargin-left:10px;\n}\n#add_button {\n\tbackground-color:pink;\n\tdisplay: inline-block;\n}\n\n#yes{\n\n\tbackground-color:pink;\n}\n.modal-header h5{\n\ttext-align: center;\n}", ""]);
+exports.push([module.i, "#add_cat{\n\tposition:absolute;\n\tleft:325px;\n\ttop:15%;\n\tbackground-color: pink;\t\n}\n#list_cat{\n\twidth:250px;\n}\n.row_second_part ul {\n\tdisplay:inline-block;\n}\n.ul_cat{\n\tlist-style:none;\n\tpadding-left:5px;\n}\n.ul_cat li {\n\tdisplay:inline-block;\n}\n#add_input{\n\twidth:150px;\n\tdisplay: inline-block;\n\tmargin-left:10px;\n}\n#add_button {\n\tbackground-color:pink;\n\tdisplay: inline-block;\n}\n#yes{\n\tbackground-color:pink;\n}\n.modal-header h5{\n\ttext-align: center;\n}\n.cat_h1{\n\tmargin-left:10px;\n}", ""]);
 
 // exports
 
@@ -26700,7 +26609,7 @@ var MyPosts = function (_Component) {
               { className: 'row_second' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h1',
-                null,
+                { 'class': 'post_h1' },
                 'My Posts'
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -26833,7 +26742,7 @@ exports = module.exports = __webpack_require__(10)(undefined);
 
 
 // module
-exports.push([module.i, "#add_post{\n\tposition:absolute;\n\tleft:265px;\n\ttop:15%;\n\tbackground-color: pink;\t\n}\n#list_cat{\n\n\twidth:250px;\n}\n.row_second_part ul {\n\n\tdisplay:inline-block;\n}\n.row_second h1{\n\tmargin-left:45px;\n}\n.ul_cat{\n\n\tlist-style:none;\n\tpadding-left:5px;\n}\n.ul_cat li {\n\n\tdisplay:inline-block;\n}\n#add_input{\n\twidth:150px;\n\tdisplay: inline-block;\n\tmargin-left:10px;\n}\n#add_button {\n\tbackground-color:pink;\n\tdisplay: inline-block;\n\tmargin-left:10px;\n}\n\n#yes{\n\n\tbackground-color:pink;\n}\n#cat_id{\n\twidth:150px;\n\tmargin-left:10px;\n\n}\n#image_div {\n\n\tmargin-left:10px;\n}\n#add_post_text{\t\n\tmargin-left:10px;\n\twidth:150px;\n}\n.del_post{\n\tdisplay:inline-block;\n}\n.post_edit{\n\n\tdisplay: inline-block;\n}\n.post_title{\n\twidth:250px;\n}\n.post_text{\n\twidth:250px;\n}\n.post_cat{\n\twidth:250px;\t\n}\n.post_li {\n\n\tlist-style: none;\n}\n.post_li img{\n\twidth:250px;\n\theight:200px;\n}\n#add_post_title{\t\n\tmargin-left:10px;\n\twidth:150px;\n}\n.update_post{\n\tmargin-left:10px;\n\tcolor:yellow;\n}", ""]);
+exports.push([module.i, "#add_post{\n\tposition:absolute;\n\tleft:265px;\n\ttop:15%;\n\tbackground-color: pink;\t\n}\n#list_cat{\n\twidth:250px;\n}\n.row_second_part ul {\n\tdisplay:inline-block;\n}\n.post_h1{\n\tmargin-left:45px;\n}\n.ul_cat{\n\tlist-style:none;\n\tpadding-left:5px;\n}\n.ul_cat li {\n\tdisplay:inline-block;\n}\n#add_input{\n\twidth:150px;\n\tdisplay: inline-block;\n\tmargin-left:10px;\n}\n#add_button {\n\tbackground-color:pink;\n\tdisplay: inline-block;\n\tmargin-left:10px;\n}\n\n#yes{\n\n\tbackground-color:pink;\n}\n#cat_id{\n\twidth:150px;\n\tmargin-left:10px;\n\n}\n#image_div {\n\n\tmargin-left:10px;\n}\n#add_post_text{\t\n\tmargin-left:10px;\n\twidth:150px;\n}\n.del_post{\n\tdisplay:inline-block;\n}\n.post_edit{\n\n\tdisplay: inline-block;\n}\n.post_title{\n\twidth:250px;\n}\n.post_text{\n\twidth:250px;\n}\n.post_cat{\n\twidth:250px;\t\n}\n.post_li {\n\n\tlist-style: none;\n}\n.post_li img{\n\twidth:250px;\n\theight:200px;\n}\n#add_post_title{\t\n\tmargin-left:10px;\n\twidth:150px;\n}\n.update_post{\n\tmargin-left:10px;\n\tcolor:yellow;\n}", ""]);
 
 // exports
 

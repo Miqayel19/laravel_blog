@@ -43,7 +43,7 @@ class MyPosts extends Component {
           <div className="container">
             <div className="row">
               <div className='row_second'>
-                <h1>My Posts</h1>
+                <h1 class= 'post_h1'>My Posts</h1>
                 <button className="btn" id='add_post'><Link to ={'/my-posts/add'}>Add Post</Link></button>        
                 <div className='row_second_part'>
                       {this.state.myposts.map((value, index) => {

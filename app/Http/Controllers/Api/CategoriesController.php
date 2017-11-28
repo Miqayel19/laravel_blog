@@ -27,9 +27,9 @@ class CategoriesController extends Controller
     {
         $this->middleware('auth');
     }    
-     public function index(Category $category)
+     public function index()
     {      
-        $categories = $category->get();
+        $categories = Category::get();
         return response()->json(['categories' => $categories], 200);  
     }
      public function mycategories()
