@@ -28,15 +28,15 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
    
-    public function index(Category $category,Post $post)
+    public function index()
     { 
-        $posts = $post->get();
+        $posts = Post::get();
         return response()->json(['posts' => $posts], 200);
     }
-    public function myposts(Post $post)
+    public function myposts()
     {      
-        $my_posts = $post->where('user_id',Auth::id())->with('category')->get();
-        return response()->json(['myposts' => $my_posts], 200);  
+        $posts = Post::where('user_id',Auth::id())->with('category')->get();
+        return response()->json(['myposts' => $posts], 200);  
     }
     public function add(PostRequest $request)
     { 
@@ -57,8 +57,8 @@ class PostsController extends Controller
     }
     public function edit($id)
     {    
-        $my_posts=Post::where('id',$id)->first();
-        return response()->json(['myposts' => $my_posts], 200);
+        $posts=Post::where('id',$id)->first();
+        return response()->json(['myposts' => $posts], 200);
     }
     
     public function update($id,Request $request)
@@ -85,7 +85,7 @@ class PostsController extends Controller
     public function destroy($id)
     {   
         Post::where('id', $id)->delete();
-        $my_posts = Post::where('user_id',Auth::id())->get();
-        return response()->json(['myposts' => $my_posts], 200);
+        $result = Post::where('user_id',Auth::id())->get();
+        return response()->json(['myposts' => $result], 200);
     }
 }    

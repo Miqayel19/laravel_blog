@@ -24,15 +24,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Category $category, Post $post)
+    public function index()
     {
-        $categories = $category->get();
-        $posts = $post->get();
-        return view('home',['categories'=>$categories,'posts'=>$posts]);
-        
+        $categories = Category::get();
+        $posts =Post::get();
+        return view('home',['categories'=>$categories,'posts'=>$posts]);        
     }
-    
-    
-
-
 }

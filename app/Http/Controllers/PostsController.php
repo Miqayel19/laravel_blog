@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;
 use App\Category;
 use App\Post;
 use Auth;
@@ -25,70 +25,41 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Category $category,Post $post)
+    public function index()
     {
-        $my_posts = Post::where('user_id',Auth::id())->paginate(2);
-        $categories = $category->get();
-        return view('post',['categories'=>$categories, 'my_posts'=>$my_posts]);
+        $posts = Post::where('user_id',Auth::id())->paginate(2);
+        $categories = Category::get();
+        return view('post',['categories'=>$categories, 'my_posts'=>$posts]);
     }
-    
-    public function create(Category $category)
+    public function create()
     {
-        $my_categories = $category->where('user_id',Auth::id())->get();
-        return view('add_post',['my_categories'=>$my_categories]);
+        $categories = Category::where('user_id',Auth::id())->get();
+        return view('add_post',['my_categories'=>$categories]);
     }
-    public function store(PostRequest $request ,Post $post, Category $category)
+    public function store(PostRequest $request)
     {
-        $inputs = $request->all();
-        unset($inputs['_token']);
-        if($request->hasFile('image')) {    
-            $image = $request->file('image');
-            $inputs['image'] = time().'.'.$image->getClientOriginalName();
-            $image->move(public_path('/image'), $inputs['image']);
-        } 
-        else {    
-            $inputs['image']='no-image.png';
-        }
-        $inputs['user_id'] = Auth::id();
-        $post->create($inputs);
+        Post::create( $request->post_store());
         return redirect('/posts');
-       
     }
-
-    public function destroy($id, Post $post)
+    public function destroy($id)
     {   
-        $post->where('id', $id)->delete();
+        Post::where('id', $id)->delete();
         return redirect('/posts');
-
     }
-    public function edit($id, Post $post,Category $category)
+    public function edit($id)
     {
-        
-        $my_categories = $category->where('user_id',Auth::id())->get();
-        $posts=$post->where('id',$id)->first();
-        return view('edit_post',['posts'=>$posts,'my_categories'=>$my_categories]);
+        $categories = Category::where('user_id',Auth::id())->get();
+        $posts=Post::where('id',$id)->first();
+        return view('edit_post',['posts'=>$posts,'my_categories'=>$categories]);
     }
-
-    public function update($id, Post $post, Category $category, PostRequest $request)
+    public function update($id, Post $post,PostRequest $request)
     {
-        $post = $post->where('id', $id)->first();
+        $post = Post::where('id', $id)->first();
         $old_image = $post->image;
-        $inputs=$request->all();
-        unset($inputs['_token']);
-        unset($inputs['_method']);
-        if($request->hasFile('image')) {    
-             $image = $request->file('image');
-             $inputs['image'] = time().'.'.$image->getClientOriginalName();
-             $image->move(public_path('/image'), $inputs['image']);
-             
-        } 
-        else {    
-            $inputs['image']='no-image.png';
-        }
+        $request->post_update();
         $post->update($inputs);
         if($inputs['image'] != 'no-image.png'){
             unlink(public_path('/image/').$old_image);
-            $categories = $category->get();
             return redirect('/posts');
         }
     }

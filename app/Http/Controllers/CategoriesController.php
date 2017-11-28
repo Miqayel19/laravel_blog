@@ -35,18 +35,19 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         Category::create(['title' => $request->input('title'),'user_id'=>Auth::id()]);
-        $categories = Category::where('user_id',Auth::id())->get();
         return redirect('/categories');
     }
     public function destroy($id)
     {   
-        $categories = Category::where('id', $id)->delete();
-        return redirect('/categories');
+        if(Category::where('id', $id)->delete());
+        {
+            return redirect('/categories');
+        }
     }
     public function edit($id)
     {
-        $categories=Category::where('id',$id)->first();
-        return view('edit_category',['categories'=>$categories]);
+        $result=Category::where('id',$id)->first();
+        return view('edit_category',['categories'=>$result]);
     }
     public function update($id, Request $request)
     {

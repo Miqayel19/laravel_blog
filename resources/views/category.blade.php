@@ -10,10 +10,9 @@
 	        	<ul class='ul_cat'>
 	        		<li class="list-group-item" id='list_cat'>{{$category->title}}</li>
 	        		<li>
-	        			  <button data-id="{{$category->id}}" type="button" class="btn btn-primary delete_mod" data-toggle="modal" data-target="#exampleModal">
-  							     Delete
-							    </button>
-							
+	        			<button data-id="{{$category->id}}" type="button" class="btn btn-primary delete_mod" data-toggle="modal" data-target="#exampleModal">
+  							Delete
+						</button>							
 	        		</li>
 	       			<li class="btn  btn-info"><a href='{{url("categories/".$category->id."/edit")}}' id='ed'>Edit</a></li>
 	        	</ul>
@@ -28,14 +27,14 @@
       		<div class="modal-header">
         		<h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete the category</h5>
         		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          		<span aria-hidden="true">&times;</span>
+          		    <span aria-hidden="true">&times;</span>
         		</button>
       		</div>
         	<div class="modal-footer">
       			<form method='POST' action='' id='category_form'>
-	  				<input type='hidden' name='_method' value='DELETE'>
+	  			    <input type='hidden' name='_method' value='DELETE'>
 					{{csrf_field()}}
-        			<button type="submit" class="btn btn-secondary" id='yes'>Yes</button>
+        			<button type="submit" class="btn btn-secondary"  id='yes'>Yes</button>
         		</form>	
                	<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
             </div>

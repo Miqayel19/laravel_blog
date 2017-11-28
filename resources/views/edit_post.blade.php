@@ -15,10 +15,10 @@
 	<input type="text" class="form-control" id='post_title' name='title' value = {{$posts->title}}>
 	<input type="text" class="form-control" id='post_text' name='text' value = {{$posts->text}}>
 	<select name='cat_id' class='form-control cat_sel'>
-    		@foreach($my_categories as $my_category)
+    	@foreach($my_categories as $my_category)
     		<option value={{$my_category->id}} @if($posts->cat_id == $my_category->id) selected @endif>
     		{{$my_category->title}}</option>
-    		@endforeach
+    	@endforeach
     </select>
  			<input type="file" class="filestyle" data-icon="false" name='image' style='margin-left:10px'> 	
 	<button type="submit" class="btn btn-primary update_post">Update</button>

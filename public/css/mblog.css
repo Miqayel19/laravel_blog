@@ -117,3 +117,23 @@
 .no{
 	margin-top:-60px;
 }
+.edit_cat{
+	width:200px;
+	margin-left:10px;
+	display:inline-block;
+}
+.update_cat{
+	display: inline-block;
+}
+.post_cat_id{
+	width:150px;
+	margin-left:10px;
+}
+.post_title{
+	width:150px;
+	margin-left:10px;
+}
+.post_text{
+	width:150px;
+	margin-left:10px;
+}

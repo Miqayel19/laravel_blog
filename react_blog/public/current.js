@@ -733,7 +733,7 @@ var Menu2 = function (_Component) {
 									null,
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 										__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-										{ to: '/' },
+										{ to: { pathname: '/', component: { Menu2: Menu2 } } },
 										'React'
 									)
 								)
@@ -3994,7 +3994,7 @@ var Menu1 = function (_Component) {
 									null,
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 										__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
-										{ to: "/", component: Menu1 },
+										{ to: { pathname: '/', component: { Menu1: Menu1 } } },
 										" React"
 									)
 								)

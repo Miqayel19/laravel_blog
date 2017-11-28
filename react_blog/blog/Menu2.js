@@ -26,11 +26,11 @@ class Menu2 extends Component{
 		                </div>
 		                <div className="collapse navbar-collapse" id="app-navbar-collapse">
 		                    <ul className="nav navbar-nav navbar-left">
-		                        <li><Link to = '/' >React</Link></li>
+		                        <li><Link to ={{ pathname: '/', component: { Menu2 } }}>React</Link></li>
 		                    </ul>
 		                    <ul className="nav navbar-nav navbar-right">
 		                        <li className="dropdown">
-		                                <Link to="" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		                                <Link to = '' className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 		                                    {this.props.name} <span className="caret"></span>
 		                                </Link>
 		                                <ul className="dropdown-menu" role="menu" id='drop_home'>

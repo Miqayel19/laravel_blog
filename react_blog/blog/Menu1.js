@@ -18,7 +18,7 @@ class Menu1 extends Component{
 		                </div>
 		                <div className="collapse navbar-collapse" id="app-navbar-collapse">
 		                    <ul className="nav navbar-nav navbar-left">
-		                        <li><Link to = '/' component = {Menu1}> React</Link></li>
+		                        <li><Link to = {{ pathname:'/', component:{ Menu1 } }}> React</Link></li>
 		                    </ul>
 		                    <ul className="nav navbar-nav navbar-right">
 		                        <li><Link to = '/login' component = {Login}>Login</Link></li>

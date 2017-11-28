@@ -26,8 +26,7 @@ class CategoriesController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-    }
-    
+    }    
      public function index(Category $category)
     {      
         $categories = $category->get();
@@ -41,28 +40,27 @@ class CategoriesController extends Controller
     public function add(Request $request)
     {    
         $info = $request->all();
-        Category::create(['title' => $info['title'],'user_id'=>Auth::id()]);
+        $result = Category::create(['title' => $info['title'],'user_id'=>Auth::id()]);
         $categories = Category::where('user_id',Auth::id())->get();
         return response()->json(['mycategories' => $categories], 200);
     }
     public function edit($id)
     {    
-        $categories=Category::where('id',$id)->first();
+        $categories = Category::where('id',$id)->first();
         return response()->json(['mycategories' => $categories], 200);
     }
     public function update($id,Request $request)
     {   
         $info = $request->all();
-        $n=Category::where('id', $id)->update(['title' => $info['name']]); 
-        $categories =Category::where('user_id',Auth::id())->get();
+        $result = Category::where('id', $id)->update(['title' => $info['name']]); 
+        $categories = Category::where('user_id',Auth::id())->get();
         return response()->json(['mycategories' => $categories], 200);
     }
     public function destroy($id)
     {   
-        $n=Category::where('id', $id)->delete();
-        $categories =Category::where('user_id',Auth::id())->get();
+        $result = Category::where('id', $id)->delete();
+        $categories = Category::where('user_id',Auth::id())->get();
         return response()->json(['mycategories' => $categories], 200);
     }
-   
     
 }    
