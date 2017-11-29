@@ -4,7 +4,7 @@
 	top:15%;
 	background-color: pink;	
 }
-#list_cat{
+.list_cat{
 	width:250px;
 }
 .row_second_part ul {
@@ -17,12 +17,12 @@
 .ul_cat li {
 	display:inline-block;
 }
-#add_input{
-	width:150px;
-	display: inline-block;
+.add_input{
+	width:250px !important;
+	display: inline-block !important;
 	margin-left:10px;
 }
-#add_button {
+.add_button {
 	background-color:pink;
 	display: inline-block;
 }
@@ -34,4 +34,9 @@
 }
 .cat_h1{
 	margin-left:10px;
+}
+.upd{
+	display:inline-block;
+	background-color: pink !important;
+	border-color: pink !important;
 }

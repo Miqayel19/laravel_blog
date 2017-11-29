@@ -26,7 +26,7 @@ class Menu2 extends Component{
 		                </div>
 		                <div className="collapse navbar-collapse" id="app-navbar-collapse">
 		                    <ul className="nav navbar-nav navbar-left">
-		                        <li><Link to ={{ pathname: '/', component: { Menu2 } }}>React</Link></li>
+		                        <li><Link to ='/'>React</Link></li>
 		                    </ul>
 		                    <ul className="nav navbar-nav navbar-right">
 		                        <li className="dropdown">
@@ -34,8 +34,8 @@ class Menu2 extends Component{
 		                                    {this.props.name} <span className="caret"></span>
 		                                </Link>
 		                                <ul className="dropdown-menu" role="menu" id='drop_home'>
-		                                    <li style={{textAlign:'center'}}><Link to='/my-categories'>My Categories</Link></li>
-		                                    <li style={{textAlign:'center'}}><Link to = '/my-posts'>My Posts</Link></li>
+		                                    <li style={{textAlign:'center'}}><Link to='/me/categories'>My Categories</Link></li>
+		                                    <li style={{textAlign:'center'}}><Link to = '/me/posts'>My Posts</Link></li>
 		                                    <li style={{textAlign:'center'}}><Link to="/logout" onClick={this.Logout}>Logout</Link></li>                              
 		                                </ul>
 		                        </li>

@@ -20,31 +20,32 @@
 .ul_cat li {
 	display:inline-block;
 }
-#add_input{
-	width:150px;
+.add_in{
+	width:150px !important;
 	display: inline-block;
 	margin-left:10px;
 }
-#add_button {
+.post_t{
+	width:150px !important;
+	display: inline-block;
+	margin-left:10px;
+}
+.add_button {
 	background-color:pink;
 	display: inline-block;
-	margin-left:10px;
+	margin-left:10px !important;
 }
-
 #yes{
-
 	background-color:pink;
 }
-#cat_id{
-	width:150px;
-	margin-left:10px;
-
-}
-#image_div {
-
+.cat_id{
+	width:150px !important;
 	margin-left:10px;
 }
-#add_post_text{	
+.image_div {
+	margin-left:10px !important;
+}
+#post{	
 	margin-left:10px;
 	width:150px;
 }
@@ -52,7 +53,6 @@
 	display:inline-block;
 }
 .post_edit{
-
 	display: inline-block;
 }
 .post_title{
@@ -65,18 +65,24 @@
 	width:250px;	
 }
 .post_li {
-
 	list-style: none;
 }
 .post_li img{
 	width:250px;
 	height:200px;
 }
-#add_post_title{	
+.add_post_title{	
 	margin-left:10px;
-	width:150px;
+	width:150px !important;
+}
+.add_post_text{	
+	margin-left:10px ;
+	width:150px !important;
 }
 .update_post{
 	margin-left:10px;
 	color:yellow;
+}
+.modal_header h5{
+	text-align: center;
 }

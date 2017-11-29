@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-use App\User;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\User;
 use Auth;
 class RegisterController extends Controller
 {
@@ -16,7 +17,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-         $this->middleware('guest');
+        $this->middleware('guest');
     }
 
     /**
@@ -30,23 +31,20 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-        ]);
-    }
-    
+            ]);
+    }    
     public function register(Request $request,User $user)
     {
-         $info = $request->all();
-         if($info['password'] === $info['confirm_password']){
+        $info = $request->all();
+        if($info['password'] === $info['conf_pass']){
             User::create([
-            'name' => $info['name'],
-            'email' => $info['email'],
-            'password' => bcrypt($info['password']),
-        ]);
+                'name' => $info['name'],
+                'email' => $info['email'],
+                'password' => bcrypt($info['password']),
+            ]);
             $user = User::where('email',$request->get('email'))->first();
             Auth::login($user);
             return response()->json(['user' => Auth::user()], 200);
-         }
-            
-          
+        }               
     }    
 }

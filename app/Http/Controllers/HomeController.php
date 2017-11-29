@@ -1,11 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
+use Auth;
 
 class HomeController extends Controller
 {

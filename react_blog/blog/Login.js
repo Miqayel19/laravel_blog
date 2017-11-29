@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './index.css';
 import {Redirect} from 'react-router';
 import {Link} from "react-router-dom";
 class Login extends Component {
@@ -34,7 +35,6 @@ class Login extends Component {
 			sessionStorage.setItem('name',response.data.user.name);
 			sessionStorage.setItem('user_id',response.data.user.id);
 			this.setState({id:response.data.user.id, error:""});
-			//console.log(this.state.id);
 		}).catch((error) => {
 			this.setState({error:"Incorrect login or password"});
 		});
@@ -52,61 +52,64 @@ class Login extends Component {
 	}
   render() {
    let back_to_home;
-        if(this.state.id){
-            back_to_home = <Redirect to='/' />;
-        }	
-    	return ( 
-	    		<div className="container">
-	    			<div className="row">
-	        			<div className="col-md-8 col-md-offset-2">
-	            			<div className="panel panel-default">
-	                			
-	                			<div className="panel-body">
-	                        		<div className="form-group">
-	                            		<label htmlFor="email" className="col-md-4 control-label">E-Mail Address</label>
-	                            		<div className="col-md-6">
-	                                		<input  type="email" className="form-control" name="email" value = {this.state.email} onChange = {this.getEmail} required autoFocus/>
-	                             		</div>
-	                             	<div>	
-	                        		<div className="form-group">
-	                            		<label htmlFor="password" className="col-md-4 control-label">Password</label>
-	                            		<div className="col-md-6">
-	                                		<input id="password" type="password" className="form-control" name="password" value = {this.state.password} onChange = {this.getPass} required/>
-	                           	 		</div>
-	                        		</div>
-			                        <div className="form-group">
-			                            <div className="col-md-6 col-md-offset-4">
-			                                <div className="checkbox">
-			                                    <label>
-			                                        <input type="checkbox" name="remember"/> Remember Me
-			                                    </label>
-			                                    <Link to ="" className="btn btn-link">Forgot Your Password?</Link>
-			                                </div>
-			                            </div>
-			                        </div>
-			                        <div className="form-group">
-			                            <div className="col-md-8 col-md-offset-4">
-			                                <button type="submit" className="btn btn-primary" onClick = {this.isLogged}>
-			                                    Login
-			                                    {back_to_home}
-			                                </button>
-			                                <Link to ="" className="btn btn-foursquare btn-social btn-facebook" href='/login/facebook' style={{backgroundColor:'blue',color:'white'}}>
-			                                    <span className="fa fa-facebook"></span> Sign in with Facebook
-			                                </Link>
-			                                <Link to ="" className="btn btn-foursquare btn-social btn-google" href='/login/google' style={{backgroundColor:'aqua',color:'blue'}}>
-			                                    <span className="fa fa-facebook"></span> Sign in with Google
-			                                </Link>
-						                </div>
-						            </div>
-						        </div>
-						    </div>
-				        </div>
-				    </div>
-				</div>		
-    		</div>
-    	</div>	
-
-    		)
+    if(this.state.id){
+      	back_to_home = <Redirect to='/' />;
+    }	
+   return ( 
+    	<div className="container">
+    		<div className="row">
+        		<div className="col-md-8 col-md-offset-2">
+            		<div className="panel panel-default">
+                		<div className="panel-body">
+                        	<div className="form-group">
+                            	<label htmlFor="email" className="col-md-4 control-label">E-Mail Address</label>
+                            	<div className="col-md-6">
+                                	<input  type="email" className="form-control" name="email" value = {this.state.email} onChange = {this.getEmail} required autoFocus/>
+                             	</div>
+                            <div>	
+                        	<div className="form-group">
+                            	<label htmlFor="password" className="col-md-4 control-label">Password</label>
+                            	<div className="col-md-6">
+                                	<input 	id="password" 
+                                		   	type="password" 
+                                			className="form-control" 
+                                			name="password" 
+                                			value = {this.state.password} 
+                                			onChange = {this.getPass} required/>
+                           	 	</div>
+                        	</div>
+		                    <div className="form-group">
+		                        <div className="col-md-6 col-md-offset-4">
+		                            <div className="checkbox">
+		                                <label>
+		                                    <input type="checkbox" name="remember"/> Remember Me
+		                                </label>
+		                                <Link to ="" className="btn btn-link">Forgot Your Password?</Link>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div className="form-group">
+		                        <div className="col-md-8 col-md-offset-4">
+		                            <button type="submit" className="btn btn-primary" onClick = {this.isLogged}>
+		                                Login
+		                                {back_to_home}
+		                            </button>
+		                            <Link to ="" className="btn btn-foursquare btn-social btn-facebook log" href='/login/facebook'>
+		                                <span className="fa fa-facebook"></span> Sign in with Facebook
+		                            </Link>
+		                            <Link to ="" className="btn btn-foursquare btn-social btn-google reg" href='/login/google'>
+		                                <span className="fa fa-facebook"></span> Sign in with Google
+		                            </Link>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+			    </div>
+			</div>
+		</div>		
+    </div>
+</div>	
+    	);
   	}
 }
 

@@ -18,11 +18,11 @@ class Menu1 extends Component{
 		                </div>
 		                <div className="collapse navbar-collapse" id="app-navbar-collapse">
 		                    <ul className="nav navbar-nav navbar-left">
-		                        <li><Link to = '/' component = {Menu1}> React</Link></li>
+		                        <li><Link to = '/'> React</Link></li>
 		                    </ul>
 		                    <ul className="nav navbar-nav navbar-right">
-		                        <li><Link to = '/login' component = {Login}>Login</Link></li>
-		                        <li><Link to = '/register' component = {Register}>Register</Link></li>
+		                        <li><Link to = '/login'>Login</Link></li>
+		                        <li><Link to = '/register'>Register</Link></li>
 		                    </ul>
 		                </div>
 		            </div>

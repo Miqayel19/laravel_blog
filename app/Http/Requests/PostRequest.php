@@ -24,9 +24,9 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:posts|max:255',
+            'title' => 'required|max:255',
             'text' => 'required',
-            'image'=>'image|mimes:jpg,png|required',
+            'image'=>'required',
         ];
     }
     public function messages()
@@ -37,7 +37,7 @@ class PostRequest extends FormRequest
             'image.required'=>'An image is Required',
         ];
     }
-    public function post_update(){
+    public function postUpdate(){
             $inputs = $this->all();
             $inputs = $this->except(['_token']);
             $inputs = $this->except(['_method']);
@@ -52,7 +52,7 @@ class PostRequest extends FormRequest
             $inputs['user_id'] = Auth::id();
             return $inputs;
     }
-    public function post_store(){
+    public function postStore(){
             $inputs = $this->all();
             $inputs = $this->except(['_token']);
             if($this->hasFile('image')) {    

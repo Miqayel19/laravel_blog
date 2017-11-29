@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Category;
 use Auth;
@@ -26,33 +25,38 @@ class CategoriesController extends Controller
      */
     public function index()
     {      
-        return view('category');   
+        return view('categories.index');   
     }
     public function create()
     {
-        return view('add_category');
+        return view('categories.add');
     }
     public function store(Request $request)
     {
-        Category::create(['title' => $request->input('title'),'user_id'=>Auth::id()]);
-        return redirect('/categories');
+        if(Category::create(['title' => $request->input('title'),'user_id'=>Auth::id()]))
+        {
+            return redirect('/categories');
+        } else return redirect()->back()->with('msg','Category not added,try again');
     }
     public function destroy($id)
     {   
-        if(Category::where('id', $id)->delete());
+        if(Category::where('id', $id)->delete())
         {
             return redirect('/categories');
         }
+        else return redirect()->back()->with('message','Something is wrong');
     }
     public function edit($id)
     {
-        $result=Category::where('id',$id)->first();
-        return view('edit_category',['categories'=>$result]);
+        $result = Category::where('id',$id)->first();
+        return view('categories.edit',['categories'=>$result]);
     }
     public function update($id, Request $request)
     {
-        Category::where('id', $id)->update(['title' => $request->input('title')]);
-        $categories =Category::where('user_id',Auth::id())->get();
-        return view('category',['categories'=>$categories]);
-    }
+        if(Category::where('id', $id)->update(['title' => $request->input('title')]))
+        {
+            $categories = Category::where('user_id',Auth::id())->get();
+            return view('categories.index',['categories'=>$categories]);
+        } else return redirect()->back()->with('msg','Category not updated,try again');
+    }    
 }

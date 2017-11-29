@@ -8,7 +8,7 @@ class Register extends Component {
 			name:"",
 			email:"",
 			password:"",
-			confirm_password:"",
+			conf_pass:"",
 			reg_user:null
 		}
 		this.isRegistered = this.isRegistered.bind(this);
@@ -22,7 +22,7 @@ class Register extends Component {
 			name: this.state.name,
 			email: this.state.email, 
 			password: this.state.password, 
-			confirm_password:this.state.confirm_password
+			conf_pass:this.state.conf_pass
 		}
 		axios.post('/api/register',info)
 		.then((response) => {
@@ -50,55 +50,53 @@ class Register extends Component {
 		})
 	}
 	getConfPass(e){
-
 		this.setState({
-			confirm_password:e.target.value
+			conf_pass:e.target.value
 		})
 	}
-  render() {
-  		 let redirect_to_home;
-         if(this.state.reg_user){
-             redirect_to_home = <Redirect to='/' />;
-         }
+render() {
+	let redirect_to_home;
+    if(this.state.reg_user){
+        redirect_to_home = <Redirect to='/' />;
+    }
     return ( 
     	<div className="container">
 		    <div className="row">
 		        <div className="col-md-8 col-md-offset-2">
 		            <div className="panel panel-default">
 		                <div className="panel-body">
-		                       <div className="form-group">
-		                            <label htmlFor="name" className="col-md-4 control-label">Name</label>
-		                            <div className="col-md-6">
-		                                <input id="name" type="text" className="form-control" name="name"  value = {this.state.name} onChange={this.getName} required autoFocus/>
-		                            </div>
-		                        </div>
-		                        <div className="form-group">
-		                            <label htmlFor="email" className="col-md-4 control-label">E-Mail Address</label>
-		                            <div className="col-md-6">
-		                                <input id="email" type="email" className="form-control" name="email"  value = {this.state.email} onChange={this.getEmail} required/>
-		                             </div>
-		                        </div>
-		                        <div className="form-group">
-		                            <label htmlFor="password" className="col-md-4 control-label">Password</label>
-		                            <div className="col-md-6">
-		                                <input id="password" type="password" className="form-control" name="password" value = {this.state.password} onChange={this.getPassword} required/>
-		                            </div>
-		                        </div>
-
-		                        <div className="form-group">
-		                            <label htmlFor="password-confirm" className="col-md-4 control-label" >Confirm Password</label>
-		                            <div className="col-md-6">
-		                                <input id="password-confirm" type="password" className="form-control" name="confirm_password" value = {this.state.confirm_password} onChange={this.getConfPass} required/>
-		                            </div>
-		                        </div>
-		                        <div className="form-group">
-		                            <div className="col-md-6 col-md-offset-4">
-		                                <button type="submit" className="btn btn-primary" onClick = {this.isRegistered}>
-		                                    Register
-		                                    {redirect_to_home}
-		                                </button>
-		                            </div>
-		                        </div>
+	                        <div className="form-group">
+	                            <label htmlFor="name" className="col-md-4 control-label">Name</label>
+	                            <div className="col-md-6">
+	                                <input id="name" type="text" className="form-control" name="name"  value = {this.state.name} onChange={this.getName} required autoFocus/>
+	                            </div>
+	                        </div>
+	                        <div className="form-group">
+	                            <label htmlFor="email" className="col-md-4 control-label">E-Mail Address</label>
+	                            <div className="col-md-6">
+	                                <input id="email" type="email" className="form-control" name="email"  value = {this.state.email} onChange={this.getEmail} required/>
+	                            </div>
+	                        </div>
+	                        <div className="form-group">
+	                            <label htmlFor="password" className="col-md-4 control-label">Password</label>
+	                            <div className="col-md-6">
+	                                <input id="password" type="password" className="form-control" name="password" value = {this.state.password} onChange={this.getPassword} required/>
+	                            </div>
+	                        </div>
+	                        <div className="form-group">
+	                            <label htmlFor="password-confirm" className="col-md-4 control-label" >Confirm Password</label>
+	                            <div className="col-md-6">
+	                                <input id="password-confirm" type="password" className="form-control" name="conf_pass" value = {this.state.confirm_password} onChange={this.getConfPass} required/>
+	                            </div>
+	                        </div>
+	                        <div className="form-group">
+	                            <div className="col-md-6 col-md-offset-4">
+	                                <button type="submit" className="btn btn-primary" onClick = {this.isRegistered}>
+	                                    Register
+	                                    {redirect_to_home}
+	                                </button>
+	                            </div>
+	                        </div>
 		                </div>
 		            </div>
 		        </div>
