@@ -36,7 +36,8 @@ class CategoriesController extends Controller
         if(Category::create(['title' => $request->input('title'),'user_id'=>Auth::id()]))
         {
             return redirect('/categories');
-        } else return redirect()->back()->with('msg','Category not added,try again');
+        } 
+        return redirect()->back()->with('msg','Category not added,try again');
     }
     public function destroy($id)
     {   
@@ -44,7 +45,7 @@ class CategoriesController extends Controller
         {
             return redirect('/categories');
         }
-        else return redirect()->back()->with('message','Something is wrong');
+        return redirect()->back()->with('message','Something is wrong');
     }
     public function edit($id)
     {
@@ -57,6 +58,7 @@ class CategoriesController extends Controller
         {
             $result = Category::where('user_id',Auth::id())->get();
             return view('categories.index',['categories' => $result]);
-        } else return redirect()->back()->with('msg','Category not updated,try again');
+        }
+        return redirect()->back()->with('msg','Category not updated,try again');
     }    
 }

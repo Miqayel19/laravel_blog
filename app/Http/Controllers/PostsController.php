@@ -56,13 +56,14 @@ class PostsController extends Controller
             unlink(public_path('/image/').$old_image);
             return redirect('/posts');
         }
-        else return redirect()->back()->with('error', 'Error');
+        return redirect()->back()->with('error', 'Error');
     }
     public function destroy($id)
     {   
         if(Post::where('id', $id)->delete())
         {
             return redirect('/posts');
-        } else return redirect()->back()->with('msg','Something is wrong');
+        }
+        return redirect()->back()->with('msg','Something is wrong');
     }
 }        
