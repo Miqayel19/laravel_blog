@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Auth;
 use App\Category;
-class PostRequest extends FormRequest
+class PostReactRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -38,36 +38,8 @@ class PostRequest extends FormRequest
             'image.required'=>'An image is Required',
         ];
     }
+   
     public function postUpdate()
-    {
-        $inputs = $this->all();
-        $inputs = $this->except(['_token']);
-        $inputs = $this->except(['_method']);
-        if($this->hasFile('image')) {    
-            $image = $this->file('image');
-            $inputs['image'] = time().'.'.$image->getClientOriginalName();
-            $image->move(public_path('/image'), $inputs['image']);
-        } else {    
-            $inputs['image']='no-image.png';
-        }
-        $inputs['user_id'] = Auth::id();
-        return $inputs;
-    }
-    public function postStore()
-    {
-        $inputs = $this->all();
-        $inputs = $this->except(['_token']);
-        if($this->hasFile('image')) {    
-            $image = $this->file('image');
-            $inputs['image'] = time().'.'.$image->getClientOriginalName();
-            $image->move(public_path('/image'), $inputs['image']);
-        } else {    
-            $inputs['image']='no-image.png';
-        }
-        $inputs['user_id'] = Auth::id();
-        return $inputs;
-    }
-    public function postReactUpdate()
     {
         $info = $this->all();
         $info = $this->except(['_token']);
@@ -82,7 +54,7 @@ class PostRequest extends FormRequest
         $info['user_id'] = Auth::id();
         return $info;
     }
-    public function postReactStore()
+    public function postStore()
     {
         $info = $this->all();
         $info = $this->except(['_token']);
@@ -97,4 +69,3 @@ class PostRequest extends FormRequest
         return $info;
     }
 
-}

@@ -40,19 +40,19 @@ class MyCategories extends Component {
                 <LoggedMenu name = {sessionStorage.getItem('name')}/>
                 <div className="container">
                     <div className="row">
-                        <div className='row_second'>
-                            <h1 className = 'cat_h1'>My Categories</h1>
-                            <button className="btn" id='add_cat'><Link to ={'/me/categories/add'}>Add Category</Link></button>        
-                            <div className='row_second_part'>
+                        <div className='row-second'>
+                            <h1 className = 'cat-h1'>My Categories</h1>
+                            <button className="btn" id='add-cat'><Link to ={'/me/categories/add'}>Add Category</Link></button>        
+                            <div className='row-second-part'>
                                 {this.state.mycategories.map((value, index) => {
                                     return <div key = {index} >
-                                                <ul className = 'ul_cat'>
-                                                    <li className="list-group-item list_cat">{value.title}</li>
+                                                <ul className = 'ul-cat'>
+                                                    <li className="list-group-item list-cat">{value.title}</li>
                                                     <li>
                                                     <button 
                                                         data-id={value.id} 
                                                         type="button"  
-                                                        className="btn btn-primary delete_mod" 
+                                                        className="btn btn-primary" 
                                                         data-toggle="modal" 
                                                         data-target="#exampleModal" 
                                                         onClick = {() => {this.getId(value.id)}}>
@@ -60,7 +60,7 @@ class MyCategories extends Component {
                                                     </button> 
                                                     </li>
                                                     <li 
-                                                        className="btn  btn-info delete_category" 
+                                                        className="btn  btn-info" 
                                                         data-id = {value.id}>
                                                         <Link to ={'/me/categories/'+value.id+'/edit'} >
                                                             Edit

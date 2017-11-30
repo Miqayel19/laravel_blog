@@ -36,11 +36,18 @@ class EditCategory extends Component {
             <div> 
                 <LoggedMenu name = {sessionStorage.getItem('name')}/>
                 <input  type="text"
-                        className="form-control add_input" 
+                        className="form-control add-input" 
                         name='name' 
                         value = {this.state.name}
                         onChange={this.getName}/>
-                <button type="submit" className="btn btn-danger upd" onClick = {this.updateCat}><Link to = '/me/categories'> Update</Link></button>
+                <button 
+                    type="submit" 
+                    className="btn btn-danger upd" 
+                    onClick = {this.updateCat}>
+                    <Link to = '/me/categories'>
+                        Update
+                    </Link>
+                </button>
             </div>    
         ); 
     }	

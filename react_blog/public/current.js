@@ -21850,12 +21850,12 @@ var Categories = function (_Component) {
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/categories').then(function (response) {
                 _this2.setState({ categories: response.data.categories });
             }).catch(function (err) {
-                console.log(error);
+                console.log(err);
             });
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/posts').then(function (response) {
                 _this2.setState({ posts: response.data.posts });
             }).catch(function (err) {
-                console.log(error);
+                console.log(err);
             });
         }
     }, {
@@ -21887,7 +21887,7 @@ var Categories = function (_Component) {
                             this.state.categories.map(function (value, index) {
                                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'li',
-                                    { className: 'list-group-item li_cat', key: value.id },
+                                    { className: 'list-group-item li-cat', key: value.id },
                                     value.title
                                 );
                             })
@@ -21909,7 +21909,7 @@ var Categories = function (_Component) {
                             this.state.posts.map(function (value, index) {
                                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'li',
-                                    { className: 'list-group-item li_post', key: value.id },
+                                    { className: 'list-group-item li-post', key: value.id },
                                     value.title
                                 );
                             })
@@ -26031,7 +26031,7 @@ exports = module.exports = __webpack_require__(10)(undefined);
 
 
 // module
-exports.push([module.i, ".row_cat{\n\tdisplay:inline-block;\n}\n.row_post{\n\tdisplay: inline-block;\n    position: absolute;\n    top: 72px;\n}\n.row_cat h1{\n\tmargin-left:50px;\n}\n.row_cat p{\n\tmargin-left:50px\n}\n.row_post h1{\n\tmargin-left:50px;\n}\n.row_post p{\n\tmargin-left:50px\n}\n.li_post{\n\twidth:200px;\n\tmargin-left:50px; \n}\n.li_cat{\n\twidth:200px;\n\tmargin-left:50px; \n}", ""]);
+exports.push([module.i, ".row_cat{\n\tdisplay:inline-block;\n}\n.row_post{\n\tdisplay: inline-block;\n    position: absolute;\n    top: 72px;\n}\n.row_cat h1{\n\tmargin-left:50px;\n}\n.row_cat p{\n\tmargin-left:50px\n}\n.row_post h1{\n\tmargin-left:50px;\n}\n.row_post p{\n\tmargin-left:50px\n}\n.li-post{\n\twidth:200px;\n\tmargin-left:50px; \n}\n.li-cat{\n\twidth:200px;\n\tmargin-left:50px; \n}", ""]);
 
 // exports
 
@@ -26135,15 +26135,15 @@ var MyCategories = function (_Component) {
                         { className: 'row' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'row_second' },
+                            { className: 'row-second' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'h1',
-                                { className: 'cat_h1' },
+                                { className: 'cat-h1' },
                                 'My Categories'
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'button',
-                                { className: 'btn', id: 'add_cat' },
+                                { className: 'btn', id: 'add-cat' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
                                     { to: '/me/categories/add' },
@@ -26152,17 +26152,17 @@ var MyCategories = function (_Component) {
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
-                                { className: 'row_second_part' },
+                                { className: 'row-second-part' },
                                 this.state.mycategories.map(function (value, index) {
                                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'div',
                                         { key: index },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             'ul',
-                                            { className: 'ul_cat' },
+                                            { className: 'ul-cat' },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 'li',
-                                                { className: 'list-group-item list_cat' },
+                                                { className: 'list-group-item list-cat' },
                                                 value.title
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -26173,7 +26173,7 @@ var MyCategories = function (_Component) {
                                                     {
                                                         'data-id': value.id,
                                                         type: 'button',
-                                                        className: 'btn btn-primary delete_mod',
+                                                        className: 'btn btn-primary',
                                                         'data-toggle': 'modal',
                                                         'data-target': '#exampleModal',
                                                         onClick: function onClick() {
@@ -26185,7 +26185,7 @@ var MyCategories = function (_Component) {
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 'li',
                                                 {
-                                                    className: 'btn  btn-info delete_category',
+                                                    className: 'btn  btn-info',
                                                     'data-id': value.id },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
@@ -26270,7 +26270,7 @@ exports = module.exports = __webpack_require__(10)(undefined);
 
 
 // module
-exports.push([module.i, "#add_cat{\n\tposition:absolute;\n\tleft:325px;\n\ttop:15%;\n\tbackground-color: pink;\t\n}\n.list_cat{\n\twidth:250px;\n}\n.row_second_part ul {\n\tdisplay:inline-block;\n}\n.ul_cat{\n\tlist-style:none;\n\tpadding-left:5px;\n}\n.ul_cat li {\n\tdisplay:inline-block;\n}\n.add_input{\n\twidth:250px !important;\n\tdisplay: inline-block !important;\n\tmargin-left:10px;\n}\n.add_button {\n\tbackground-color:pink;\n\tdisplay: inline-block;\n}\n#yes{\n\tbackground-color:pink;\n}\n.modal-header h5{\n\ttext-align: center;\n}\n.cat_h1{\n\tmargin-left:10px;\n}\n.upd{\n\tdisplay:inline-block;\n\tbackground-color: pink !important;\n\tborder-color: pink !important;\n}", ""]);
+exports.push([module.i, "#add-cat{\n\tposition:absolute;\n\tleft:325px;\n\ttop:15%;\n\tbackground-color: pink;\t\n}\n.list-cat{\n\twidth:250px;\n}\n.row-second-part ul {\n\tdisplay:inline-block;\n}\n.ul-cat{\n\tlist-style:none;\n\tpadding-left:5px;\n}\n.ul-cat li {\n\tdisplay:inline-block;\n}\n.add-input{\n\twidth:250px !important;\n\tdisplay: inline-block !important;\n\tmargin-left:10px;\n}\n.add-button {\n\tbackground-color:pink;\n\tdisplay: inline-block;\n}\n#yes{\n\tbackground-color:pink;\n}\n.modal-header h5{\n\ttext-align: center;\n}\n.cat-h1{\n\tmargin-left:10px;\n}\n.upd{\n\tdisplay:inline-block;\n\tbackground-color: pink !important;\n\tborder-color: pink !important;\n}", ""]);
 
 // exports
 
@@ -26347,7 +26347,7 @@ var MyPosts = function (_Component) {
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/me/posts').then(function (response) {
                 _this3.setState({ myposts: response.data.myposts });
             }).catch(function (err) {
-                console.log(error);
+                console.log(err);
             });
         }
     }, {
@@ -26374,15 +26374,15 @@ var MyPosts = function (_Component) {
                         { className: 'row' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'row_second' },
+                            { className: 'row-second' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'h1',
-                                { className: 'post_h1' },
+                                { className: 'post-h1' },
                                 'My Posts'
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'button',
-                                { className: 'btn', id: 'add_post' },
+                                { className: 'btn add-post' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
                                     { to: '/me/posts/add' },
@@ -26391,27 +26391,27 @@ var MyPosts = function (_Component) {
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
-                                { className: 'row_second_part' },
+                                { className: 'row-second-part' },
                                 this.state.myposts.map(function (value, index) {
                                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'div',
                                         { key: index },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             'ul',
-                                            { className: 'post_li' },
+                                            { className: 'post-li' },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 'li',
-                                                { className: 'list-group-item post_title' },
+                                                { className: 'list-group-item post-title' },
                                                 value.category.title
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 'li',
-                                                { className: 'list-group-item post_title' },
+                                                { className: 'list-group-item post-title' },
                                                 value.title
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 'li',
-                                                { className: 'list-group-item post_text' },
+                                                { className: 'list-group-item post-text' },
                                                 value.text
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -26421,7 +26421,7 @@ var MyPosts = function (_Component) {
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 'li',
-                                                { className: 'del_post' },
+                                                { className: 'del-post' },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     'button',
                                                     {
@@ -26430,7 +26430,7 @@ var MyPosts = function (_Component) {
                                                         onClick: function onClick() {
                                                             _this4.getId(value.id);
                                                         },
-                                                        className: 'btn btn-primary post_mod',
+                                                        className: 'btn btn-primary',
                                                         'data-toggle': 'modal',
                                                         'data-target': '#exampleModal' },
                                                     'Delete'
@@ -26438,7 +26438,8 @@ var MyPosts = function (_Component) {
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 'li',
-                                                { className: 'btn  btn-info post_edit' },
+                                                {
+                                                    className: 'btn  btn-info post-edit' },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
                                                     { to: '/me/posts/' + value.id + '/edit' },
@@ -26523,7 +26524,7 @@ exports = module.exports = __webpack_require__(10)(undefined);
 
 
 // module
-exports.push([module.i, "#add_post{\n\tposition:absolute;\n\tleft:265px;\n\ttop:15%;\n\tbackground-color: pink;\t\n}\n#list_cat{\n\twidth:250px;\n}\n.row_second_part ul {\n\tdisplay:inline-block;\n}\n.post_h1{\n\tmargin-left:45px;\n}\n.ul_cat{\n\tlist-style:none;\n\tpadding-left:5px;\n}\n.ul_cat li {\n\tdisplay:inline-block;\n}\n.add_in{\n\twidth:150px !important;\n\tdisplay: inline-block;\n\tmargin-left:10px;\n}\n.post_t{\n\twidth:150px !important;\n\tdisplay: inline-block;\n\tmargin-left:10px;\n}\n.add_button {\n\tbackground-color:pink;\n\tdisplay: inline-block;\n\tmargin-left:10px !important;\n}\n#yes{\n\tbackground-color:pink;\n}\n.cat_id{\n\twidth:150px !important;\n\tmargin-left:10px;\n}\n.image_div {\n\tmargin-left:10px !important;\n}\n#post{\t\n\tmargin-left:10px;\n\twidth:150px;\n}\n.del_post{\n\tdisplay:inline-block;\n}\n.post_edit{\n\tdisplay: inline-block;\n}\n.post_title{\n\twidth:250px;\n}\n.post_text{\n\twidth:250px;\n}\n.post_cat{\n\twidth:250px;\t\n}\n.post_li {\n\tlist-style: none;\n}\n.post_li img{\n\twidth:250px;\n\theight:200px;\n}\n.add_post_title{\t\n\tmargin-left:10px;\n\twidth:150px !important;\n}\n.add_post_text{\t\n\tmargin-left:10px ;\n\twidth:150px !important;\n}\n.update_post{\n\tmargin-left:10px;\n\tcolor:yellow;\n}\n.modal_header h5{\n\ttext-align: center;\n}", ""]);
+exports.push([module.i, ".add-post{\n\tposition:absolute;\n\tleft:265px;\n\ttop:15%;\n\tbackground-color: pink;\t\n}\n.row-second-part ul {\n\tdisplay:inline-block;\n}\n.post-h1{\n\tmargin-left:45px;\n}\n.ul-cat{\n\tlist-style:none;\n\tpadding-left:5px;\n}\n.ul-cat li {\n\tdisplay:inline-block;\n}\n.add-in{\n\twidth:150px !important;\n\tdisplay: inline-block;\n\tmargin-left:10px;\n}\n.post-t{\n\twidth:150px !important;\n\tdisplay: inline-block;\n\tmargin-left:10px;\n}\n.add-button {\n\tbackground-color:pink;\n\tdisplay: inline-block;\n\tmargin-left:10px !important;\n}\n#yes{\n\tbackground-color:pink;\n}\n.cat-id{\n\twidth:150px !important;\n\tmargin-left:10px;\n}\n.image-div {\n\tmargin-left:10px !important;\n}\n.del-post{\n\tdisplay:inline-block;\n}\n.post-edit{\n\tdisplay: inline-block;\n}\n.post-title{\n\twidth:250px;\n}\n.post-text{\n\twidth:250px;\n}\n.post_cat{\n\twidth:250px;\t\n}\n.post-li {\n\tlist-style: none;\n}\n.post-li img{\n\twidth:250px;\n\theight:200px;\n}\n.add-post-title{\t\n\tmargin-left:10px;\n\twidth:150px !important;\n}\n.add-post-text{\t\n\tmargin-left:10px ;\n\twidth:150px !important;\n}\n.update-post{\n\tmargin-left:10px;\n\tcolor:yellow;\n}\n.modal-header h5{\n\ttext-align: center;\n}", ""]);
 
 // exports
 
@@ -26609,17 +26610,20 @@ var EditCategory = function (_Component) {
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text',
-                    className: 'form-control add_input',
+                    className: 'form-control add-input',
                     name: 'name',
                     value: this.state.name,
                     onChange: this.getName }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'button',
-                    { type: 'submit', className: 'btn btn-danger upd', onClick: this.updateCat },
+                    {
+                        type: 'submit',
+                        className: 'btn btn-danger upd',
+                        onClick: this.updateCat },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
                         { to: '/me/categories' },
-                        ' Update'
+                        'Update'
                     )
                 )
             );
@@ -26709,7 +26713,7 @@ var EditPost = function (_Component) {
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/me/posts/' + this.props.match.params.id, info).then(function (response) {
                 _this3.setState({ myposts: response.data.myposts });
             }).catch(function (err) {
-                console.log(error);
+                console.log(err);
             });
         }
     }, {
@@ -26736,19 +26740,19 @@ var EditPost = function (_Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                     type: 'text',
-                    className: 'form-control add_post_title',
+                    className: 'form-control add-post-title',
                     name: 'text',
                     value: this.state.text,
                     onChange: this.getText }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                     type: 'text',
-                    className: 'form-control add_post_text',
+                    className: 'form-control add-post-text',
                     name: 'title',
                     value: this.state.title,
                     onChange: this.getTitle }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'form-group image_div' },
+                    { className: 'form-group image-div' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                         type: 'file',
                         className: 'filestyle',
@@ -26760,7 +26764,7 @@ var EditPost = function (_Component) {
                     'button',
                     {
                         type: 'submit',
-                        className: 'btn btn-danger update_post',
+                        className: 'btn btn-danger update-post',
                         onClick: this.updatePost },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
@@ -26847,15 +26851,19 @@ var AddCategory = function (_Component) {
                 'div',
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text',
-                    className: 'form-control add_input',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                    type: 'text',
+                    className: 'form-control add-input',
                     placeholder: 'Add Category',
                     name: 'name',
                     value: this.state.name,
                     onChange: this.getName }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'button',
-                    { type: 'submit', onClick: this.addCategory, className: 'btn add_button' },
+                    {
+                        type: 'submit',
+                        onClick: this.addCategory,
+                        className: 'btn add-button' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
                         { to: '/me/categories' },
@@ -26980,21 +26988,21 @@ var AddPost = function (_Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                     type: 'text',
-                    className: 'form-control add_in',
+                    className: 'form-control add-in',
                     placeholder: 'Add Title',
                     name: 'name',
                     value: this.state.name,
                     onChange: this.getName }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                     type: 'text',
-                    className: 'form-control post_t',
+                    className: 'form-control post-t',
                     placeholder: 'Add Text',
                     name: 'title',
                     value: this.state.title,
                     onChange: this.getTitle }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'select',
-                    { name: 'cat_id', className: 'form-control cat_id', onChange: this.onChangeSelect },
+                    { name: 'cat_id', className: 'form-control cat-id', onChange: this.onChangeSelect },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('option', null),
                     this.state.mycategories.map(function (value, index) {
                         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -27006,7 +27014,7 @@ var AddPost = function (_Component) {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'form-group image_div' },
+                    { className: 'form-group image-div' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                         type: 'file',
                         className: 'filestyle',
@@ -27018,7 +27026,7 @@ var AddPost = function (_Component) {
                     'button',
                     {
                         type: 'submit',
-                        className: 'btn add_button',
+                        className: 'btn add-button',
                         onClick: this.addPost },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],

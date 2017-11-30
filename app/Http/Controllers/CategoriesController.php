@@ -33,20 +33,23 @@ class CategoriesController extends Controller
     }
     public function store(Request $request)
     {
-        if(Category::create(['title' => $request->input('title'),'user_id'=>Auth::id()]))
+        $result = Category::create(['title' => $request->input('title'),'user_id' => Auth::id()]); 
+        if($result)
         {
-            return redirect('/categories');
+            return redirect('/categories')->with('msg','Category added successfully');
         } 
         return redirect()->back()->with('msg','Category not added,try again');
-    }
+    }  
     public function destroy($id)
     {   
-        if(Category::where('id', $id)->delete())
+        $result = Category::where('id', $id)->delete();
+        if($result)
         {
-            return redirect('/categories');
-        }
-        return redirect()->back()->with('message','Something is wrong');
-    }
+            return redirect('/categories')->with('msg','Category deleted successfully');
+        }  
+        return redirect()->back()->with('msg','Category not deleted,try again');
+        
+    }    
     public function edit($id)
     {
         $result = Category::where('id',$id)->first();
@@ -54,11 +57,12 @@ class CategoriesController extends Controller
     }
     public function update($id, Request $request)
     {
-        if(Category::where('id', $id)->update(['title' => $request->input('title')]))
-        {
-            $result = Category::where('user_id',Auth::id())->get();
-            return view('categories.index',['categories' => $result]);
-        }
+        $result = Category::where('id', $id)->update(['title' => $request->input('title')]);
+        if($result)
+        {   
+            return redirect('/categories')->with('msg','Category updated successfully');
+        } 
         return redirect()->back()->with('msg','Category not updated,try again');
-    }    
-}
+           
+    }
+}    

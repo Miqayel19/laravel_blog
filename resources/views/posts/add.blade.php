@@ -9,7 +9,7 @@
         </ul>
     </div>
 @endif
-<form  method="POST" action='/posts/store' enctype="multipart/form-data">
+<form  method="POST" action='/posts' enctype="multipart/form-data">
 	{{ csrf_field() }}
 	<input type="text" class="form-control post_title" placeholder="Add Title"  name='title'>
 	<input type="text" class="form-control post_text" placeholder="Add Text"  name='text'>

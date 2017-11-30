@@ -36,7 +36,7 @@ updatePost(){
     info.append('_method', 'PUT');
     axios.post('/api/me/posts/'+this.props.match.params.id,info).then((response) => {
         this.setState({ myposts: response.data.myposts});
-        }).catch((err)=>{ console.log(error) }) 
+        }).catch((err)=>{ console.log(err) }) 
     }
     getText(e) {
         this.setState({text:e.target.value})
@@ -53,17 +53,17 @@ updatePost(){
                 <LoggedMenu name = {sessionStorage.getItem('name')}/>
                 <input 
                     type="text" 
-                    className="form-control add_post_title" 
+                    className="form-control add-post-title" 
                     name='text' 
                     value = {this.state.text} 
                     onChange={this.getText}/>
                 <input 
                     type="text" 
-                    className="form-control add_post_text" 
+                    className="form-control add-post-text" 
                     name='title' 
                     value = {this.state.title} 
                     onChange = {this.getTitle}/>
-                <div className="form-group image_div">
+                <div className="form-group image-div">
                     <input 
                         type="file" 
                         className="filestyle" 
@@ -73,7 +73,7 @@ updatePost(){
                 </div>
                 <button 
                     type="submit" 
-                    className="btn btn-danger update_post" 
+                    className="btn btn-danger update-post" 
                     onClick = {this.updatePost}>
                     <Link to = '/me/posts'>
                         Update

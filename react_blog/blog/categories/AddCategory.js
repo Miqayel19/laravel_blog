@@ -27,13 +27,21 @@ class AddCategory extends Component {
         return ( 
             <div> 
                 <LoggedMenu name = {sessionStorage.getItem('name')}/>
-                <input  type="text" 
-                        className="form-control add_input" 
-                        placeholder="Add Category"  
-                        name='name' 
-                        value={this.state.name} 
-                        onChange={this.getName}/>
-                <button type="submit" onClick = {this.addCategory} className="btn add_button"><Link to = '/me/categories'>Add</Link></button>
+                <input  
+                    type="text" 
+                    className="form-control add-input" 
+                    placeholder="Add Category"  
+                    name='name' 
+                    value={this.state.name} 
+                    onChange={this.getName}/>
+                <button 
+                    type="submit" 
+                    onClick = {this.addCategory} 
+                    className="btn add-button">
+                    <Link to = '/me/categories'>
+                        Add
+                    </Link>
+                </button>
             </div>    
         );
     }	

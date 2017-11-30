@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Api\Requests\CategoryRequest;
 use App\Category;
 use App\User; 
 use Auth;
@@ -35,24 +36,20 @@ class CategoriesController extends Controller
         $categories = Category::where('user_id',Auth::id())->get();
         return response()->json(['mycategories' => $categories], 200);  
     }
-    public function add(Request $request)
+    public function add(CategoryRequest $request)
     {    
-        $info = $request->all();
-        $result = Category::create(['title' => $info['title'],'user_id'=>Auth::id()]);
-        $result = Category::where('user_id',Auth::id())->get();
-        return response()->json(['mycategories' => $result], 200);
+        $added_category = $request->categoryStore();
+        return response()->json(['mycategories' => $added_category], 200);
     }
     public function edit($id)
     {    
         $categories = Category::where('id',$id)->first();
         return response()->json(['mycategories' => $categories], 200);
     }
-    public function update($id,Request $request)
+    public function update($id,CategoryRequest $request)
     {   
-        $info = $request->all();
-        $result = Category::where('id', $id)->update(['title' => $info['name']]); 
-        $categories = Category::where('user_id',Auth::id())->get();
-        return response()->json(['mycategories' => $categories], 200);
+        $updated_category = $request->categoryUpdate($id);
+        return response()->json(['mycategories' => $updated_category], 200);
     }
     public function destroy($id)
     {   

@@ -37,33 +37,39 @@ class PostsController extends Controller
     }
     public function store(PostRequest $request)
     {
-        Post::create($request->postStore());
-        return redirect('/posts');
-    }
+        $result = $request->postStore(); 
+        $added_posts = Post::create($result);
+        if($added_posts)
+        {
+            return redirect('/posts')->with('message','Post added successfully');
+        } 
+        return redirect()->back()->with('msg','Post is not added,try again');
+    }    
     public function edit($id)
     {
         $categories = Category::where('user_id',Auth::id())->get();
         $posts = Post::where('id',$id)->first();
         return view('posts.edit',['posts' => $posts,'my_categories' => $categories]);
     }
-    public function update($id, Post $post,PostRequest $request)
+    public function update($id,PostRequest $request)
     {
         $post = Post::where('id', $id)->first();
         $old_image = $post->image;
-        $request->postUpdate();
+        $inputs = $request->postUpdate();
         $post->update($inputs);
         if($inputs['image'] != 'no-image.png'){
             unlink(public_path('/image/').$old_image);
-            return redirect('/posts');
-        }
-        return redirect()->back()->with('error', 'Error');
-    }
+            return redirect('/posts')->with('msg','Post updated successfully');
+        } 
+        return redirect()->back()->with('error', 'Post is not updated,something is wrong');
+    }    
     public function destroy($id)
     {   
-        if(Post::where('id', $id)->delete())
+        $deleted_posts = Post::where('id', $id)->delete();         
+        if($deleted_posts)
         {
-            return redirect('/posts');
-        }
-        return redirect()->back()->with('msg','Something is wrong');
-    }
+            return redirect('/posts')->with('msg','Post deleted successfully');
+        } 
+        return redirect()->back()->with('msg','Something is wrong,post is not deleted');
+    }    
 }        

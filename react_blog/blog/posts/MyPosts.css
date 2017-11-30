@@ -1,36 +1,33 @@
-#add_post{
+.add-post{
 	position:absolute;
 	left:265px;
 	top:15%;
 	background-color: pink;	
 }
-#list_cat{
-	width:250px;
-}
-.row_second_part ul {
+.row-second-part ul {
 	display:inline-block;
 }
-.post_h1{
+.post-h1{
 	margin-left:45px;
 }
-.ul_cat{
+.ul-cat{
 	list-style:none;
 	padding-left:5px;
 }
-.ul_cat li {
+.ul-cat li {
 	display:inline-block;
 }
-.add_in{
+.add-in{
 	width:150px !important;
 	display: inline-block;
 	margin-left:10px;
 }
-.post_t{
+.post-t{
 	width:150px !important;
 	display: inline-block;
 	margin-left:10px;
 }
-.add_button {
+.add-button {
 	background-color:pink;
 	display: inline-block;
 	margin-left:10px !important;
@@ -38,51 +35,47 @@
 #yes{
 	background-color:pink;
 }
-.cat_id{
+.cat-id{
 	width:150px !important;
 	margin-left:10px;
 }
-.image_div {
+.image-div {
 	margin-left:10px !important;
 }
-#post{	
-	margin-left:10px;
-	width:150px;
-}
-.del_post{
+.del-post{
 	display:inline-block;
 }
-.post_edit{
+.post-edit{
 	display: inline-block;
 }
-.post_title{
+.post-title{
 	width:250px;
 }
-.post_text{
+.post-text{
 	width:250px;
 }
 .post_cat{
 	width:250px;	
 }
-.post_li {
+.post-li {
 	list-style: none;
 }
-.post_li img{
+.post-li img{
 	width:250px;
 	height:200px;
 }
-.add_post_title{	
+.add-post-title{	
 	margin-left:10px;
 	width:150px !important;
 }
-.add_post_text{	
+.add-post-text{	
 	margin-left:10px ;
 	width:150px !important;
 }
-.update_post{
+.update-post{
 	margin-left:10px;
 	color:yellow;
 }
-.modal_header h5{
+.modal-header h5{
 	text-align: center;
 }

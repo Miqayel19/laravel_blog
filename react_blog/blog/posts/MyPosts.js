@@ -27,12 +27,12 @@ class MyPosts extends Component {
     componentDidMount(){
         axios.get('/api/me/posts').then((response) => {
             this.setState({ myposts: response.data.myposts});
-        }).catch((err)=>{ console.log(error)})
+        }).catch((err)=>{ console.log(err)})
     }
     componentWillReceiveProps(nextProps){            
-         if(nextProps.posts !== this.props.posts){
+        if(nextProps.posts !== this.props.posts){
             this.setState({ myposts : nextProps.posts});
-         }
+        }
     }            
     render() {  
         return (
@@ -40,29 +40,34 @@ class MyPosts extends Component {
                 <LoggedMenu name = {sessionStorage.getItem('name')}/>
                 <div className="container">
                     <div className="row">
-                        <div className='row_second'>
-                            <h1 className= 'post_h1'>My Posts</h1>
-                            <button className="btn" id='add_post'><Link to ={'/me/posts/add'}>Add Post</Link></button>        
-                            <div className='row_second_part'>
+                        <div className='row-second'>
+                            <h1 className= 'post-h1'>My Posts</h1>
+                            <button className="btn add-post" ><Link to ={'/me/posts/add'}>Add Post</Link></button>        
+                            <div className='row-second-part'>
                                 {this.state.myposts.map((value, index) => {
                                     return <div key = {index}>
-                                            <ul className='post_li'>
-                                                <li className="list-group-item post_title">{value.category.title}</li>
-                                                <li className="list-group-item post_title">{value.title}</li>
-                                                <li className="list-group-item post_text">{value.text}</li>
+                                            <ul className='post-li'>
+                                                <li className="list-group-item post-title">{value.category.title}</li>
+                                                <li className="list-group-item post-title">{value.title}</li>
+                                                <li className="list-group-item post-text">{value.text}</li>
                                                 <li><img src={'/image/' + value.image}/></li>
-                                                <li className='del_post'>
+                                                <li className='del-post'>
                                                 <button 
                                                     data-id={value.id} 
                                                     type="button" 
                                                     onClick = {() => {this.getId(value.id)}} 
-                                                    className="btn btn-primary post_mod" 
+                                                    className="btn btn-primary" 
                                                     data-toggle="modal" 
                                                     data-target="#exampleModal">
                                                     Delete
                                                 </button>
                                                 </li>
-                                                <li className="btn  btn-info post_edit" ><Link to ={'/me/posts/'+value.id+'/edit'}>Edit</Link></li>
+                                                <li 
+                                                    className="btn  btn-info post-edit">
+                                                    <Link to ={'/me/posts/'+value.id+'/edit'}>
+                                                        Edit
+                                                    </Link>
+                                                </li>
                                             </ul>
                                        </div>           
                                 })}

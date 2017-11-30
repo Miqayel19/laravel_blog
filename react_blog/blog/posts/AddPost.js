@@ -54,25 +54,25 @@ class AddPost extends Component {
                 <LoggedMenu name={sessionStorage.getItem('name')}/>
                 <input 
                     type="text" 
-                    className="form-control add_in" 
+                    className="form-control add-in" 
                     placeholder="Add Title" 
                     name='name' 
                     value = {this.state.name} 
                     onChange={this.getName}/>
                 <input 
                     type="text" 
-                    className="form-control post_t" 
+                    className="form-control post-t" 
                     placeholder="Add Text" 
                     name='title' 
                     value = {this.state.title} 
                     onChange = {this.getTitle}/>
-                <select name='cat_id' className='form-control cat_id' onChange={this.onChangeSelect}>
+                <select name='cat_id' className='form-control cat-id' onChange={this.onChangeSelect}>
                     <option></option>
                     {this.state.mycategories.map((value, index)=>{
                         return  <option  value = {value.id} key = {index}>{value.title}</option>
                     })}
                 </select>
-                <div className="form-group image_div">
+                <div className="form-group image-div">
                     <input 
                         type="file" 
                         className="filestyle" 
@@ -82,7 +82,7 @@ class AddPost extends Component {
                 </div>
                 <button 
                     type="submit" 
-                    className="btn add_button" 
+                    className="btn add-button" 
                     onClick = {this.addPost}>
                     <Link to = '/me/posts'>
                         Add
