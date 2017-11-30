@@ -3,7 +3,7 @@ import {Redirect} from "react-router";
 import axios from 'axios';
 import {Link} from "react-router-dom"; 
 import './MyPosts.css';
-import Menu2 from '../Menu2';
+import LoggedMenu from '../LoggedMenu';
 class EditPost extends Component {
  	constructor(props){
  	super(props);
@@ -25,7 +25,7 @@ componentDidMount(){
        this.setState({text:response.data.myposts.text});
        this.setState({title:response.data.myposts.title});
        this.setState({image:response.data.myposts.image}); 
-   })
+   }).catch((err)=>{console.log(err);})
 }
 updatePost(){
     let info = new FormData()
@@ -47,18 +47,39 @@ updatePost(){
     onChangeFile(event) {
         this.setState({image:event.target.files[0]})
     }   
-render() 
-    {  
-    return (
-        <div> 
-            <Menu2 name = {sessionStorage.getItem('name')}/>
-            <input type="text" className="form-control add_post_title" name='text' value = {this.state.text} onChange={this.getText}/>
-            <input type="text" className="form-control add_post_text" name='title' value = {this.state.title} onChange = {this.getTitle}/>
-            <div className="form-group image_div">
-                <input type="file" className="filestyle" data-icon="false" name='image' onChange={this.onChangeFile} />
-            </div>
-            <button type="submit" className="btn btn-danger update_post" onClick = {this.updatePost}><Link to = '/me/posts'>Update</Link></button>
-        </div>    
+    render() {  
+        return (
+            <div> 
+                <LoggedMenu name = {sessionStorage.getItem('name')}/>
+                <input 
+                    type="text" 
+                    className="form-control add_post_title" 
+                    name='text' 
+                    value = {this.state.text} 
+                    onChange={this.getText}/>
+                <input 
+                    type="text" 
+                    className="form-control add_post_text" 
+                    name='title' 
+                    value = {this.state.title} 
+                    onChange = {this.getTitle}/>
+                <div className="form-group image_div">
+                    <input 
+                        type="file" 
+                        className="filestyle" 
+                        data-icon="false" 
+                        name='image' 
+                        onChange={this.onChangeFile} />
+                </div>
+                <button 
+                    type="submit" 
+                    className="btn btn-danger update_post" 
+                    onClick = {this.updatePost}>
+                    <Link to = '/me/posts'>
+                        Update
+                    </Link>
+                </button>
+            </div>    
         ); 
     }	
 }

@@ -39,8 +39,8 @@ class CategoriesController extends Controller
     {    
         $info = $request->all();
         $result = Category::create(['title' => $info['title'],'user_id'=>Auth::id()]);
-        $categories = Category::where('user_id',Auth::id())->get();
-        return response()->json(['mycategories' => $categories], 200);
+        $result = Category::where('user_id',Auth::id())->get();
+        return response()->json(['mycategories' => $result], 200);
     }
     public function edit($id)
     {    

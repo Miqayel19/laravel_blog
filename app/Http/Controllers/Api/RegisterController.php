@@ -41,10 +41,11 @@ class RegisterController extends Controller
                 'name' => $info['name'],
                 'email' => $info['email'],
                 'password' => bcrypt($info['password']),
-            ]);
+            ]); 
             $user = User::where('email',$request->get('email'))->first();
             Auth::login($user);
             return response()->json(['user' => Auth::user()], 200);
-        }               
+        } 
+        return response()->json(['msg'=>'Register failed'],400);               
     }    
 }

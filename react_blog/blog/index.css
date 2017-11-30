@@ -11,3 +11,6 @@ body {
 	background-color:aqua; 
 	color:blue !important;
 }
+.dropdown-menu li{
+	text-align:center;
+}

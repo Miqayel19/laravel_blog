@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './index.css';
 import {Link} from 'react-router-dom';
-class Menu2 extends Component{
+class LoggedMenu extends Component{
 	constructor(props){
 		super(props);
 		this.Logout = this.Logout.bind(this);
@@ -12,7 +13,7 @@ class Menu2 extends Component{
 		}).catch((error) => {console.log(error);})
 	}	
 	render(){
-	return( 
+		return( 
 			<div id="app">
 		        <nav className="navbar navbar-default navbar-static-top">
 		            <div className="container">
@@ -30,14 +31,14 @@ class Menu2 extends Component{
 		                    </ul>
 		                    <ul className="nav navbar-nav navbar-right">
 		                        <li className="dropdown">
-		                                <Link to = '' className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-		                                    {this.props.name} <span className="caret"></span>
-		                                </Link>
-		                                <ul className="dropdown-menu" role="menu" id='drop_home'>
-		                                    <li style={{textAlign:'center'}}><Link to='/me/categories'>My Categories</Link></li>
-		                                    <li style={{textAlign:'center'}}><Link to = '/me/posts'>My Posts</Link></li>
-		                                    <li style={{textAlign:'center'}}><Link to="/logout" onClick={this.Logout}>Logout</Link></li>                              
-		                                </ul>
+	                                <Link to = '' className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+	                                    {this.props.name} <span className="caret"></span>
+	                                </Link>
+	                                <ul className="dropdown-menu" role="menu">
+	                                    <li><Link to='/me/categories'>My Categories</Link></li>
+	                                    <li><Link to = '/me/posts'>My Posts</Link></li>
+	                                    <li><Link to="/logout" onClick={this.Logout}>Logout</Link></li>                              
+	                                </ul>
 		                        </li>
 		                    </ul>
 		                </div>
@@ -48,4 +49,4 @@ class Menu2 extends Component{
 	}
 }
 
-export default Menu2		    
+export default LoggedMenu		    

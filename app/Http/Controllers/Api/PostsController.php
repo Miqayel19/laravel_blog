@@ -51,14 +51,14 @@ class PostsController extends Controller
         }
         $info['user_id'] = Auth::id();
         $my_posts = Post::create($info);
-        $posts = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get();
-        return response()->json(['myposts' => $posts], 200);
+        $result = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get();
+        return response()->json(['myposts' => $result], 200);
        
     }
     public function edit($id)
     {    
-        $posts=Post::where('id',$id)->first();
-        return response()->json(['myposts' => $posts], 200);
+        $result=Post::where('id',$id)->first();
+        return response()->json(['myposts' => $result], 200);
     }
     
     public function update($id,Request $request)

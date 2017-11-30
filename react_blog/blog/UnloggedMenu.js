@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Login from "./Login";
 import Register from "./Register";
 import {Link} from 'react-router-dom';
-class Menu1 extends Component{
+class UnloggedMenu extends Component{
 	render(){
 	return( 
 			<div id="app">
@@ -32,4 +32,4 @@ class Menu1 extends Component{
 	}
 }
 
-export default Menu1		    
+export default UnloggedMenu		    

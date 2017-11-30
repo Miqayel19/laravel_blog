@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import Login from './Login';
 import Register from './Register';
-import Menu1 from './Menu1';
+import UnloggedMenu from './UnloggedMenu';
 import MyCategories from './categories/MyCategories';
 import MyPosts from './posts/MyPosts';
 import EditCategory from './categories/EditCategory';
@@ -32,20 +32,20 @@ class Home extends Component{
 	render() {
 		return (
 			<div>
-      <Route exact path ='/' component={App}/>
-      <Route path ='/login' component={Login}/>
-      <Route path ='/register' component={Register}/>
-      <Route path ='/logout' component={Menu1}/>
-  	  <Route exact path='/me/categories' render={() => <MyCategories categories={this.state.categories}/>}/>
-      <Route path ='/me/categories/add' render={() => <AddCategory addCategory = {this.addCategory}/>}/>
-      <Route path ='/me/categories/:id/edit' component={EditCategory}/>
-      <Route path = '/me/categories/:id/deleted' component={MyCategories}/>
-      <Route exact path='/me/posts' render={() => <MyPosts posts={this.state.posts} />}/>
-      <Route path ='/me/posts/add' render={() => <AddPost addPost = {this.addPost} />}/>
-      <Route path ='/me/posts/:id/edit' component={EditPost}/>
-      <Route path = '/me/posts/:id/deleted' component={MyPosts}/>
-      		</div>
-		)
+	      		<Route exact path ='/' component={App}/>
+			    <Route path = '/login' component={Login}/>
+		      	<Route path = '/register' component={Register}/>
+		      	<Route path = '/logout' component={UnloggedMenu}/>
+		  	  	<Route exact path = '/me/categories' render={() => <MyCategories categories={this.state.categories}/>}/>
+		      	<Route path = '/me/categories/add' render={() => <AddCategory addCategory = {this.addCategory}/>}/>
+		      	<Route path = '/me/categories/:id/edit' component={EditCategory}/>
+		      	<Route path = '/me/categories/:id/deleted' component={MyCategories}/>
+		      	<Route exact path='/me/posts' render={() => <MyPosts posts={this.state.posts} />}/>
+		      	<Route path = '/me/posts/add' render={() => <AddPost addPost = {this.addPost} />}/>
+		      	<Route path = '/me/posts/:id/edit' component={EditPost}/>
+		      	<Route path = '/me/posts/:id/deleted' component={MyPosts}/>
+		    </div>
+		);
 	}
 } 
 ReactDOM.render(

@@ -28,12 +28,12 @@ class PostsController extends Controller
     {
         $posts = Post::where('user_id',Auth::id())->paginate(2);
         $categories = Category::get();
-        return view('posts.index',['categories'=>$categories, 'my_posts'=>$posts]);
+        return view('posts.index',['categories' => $categories, 'my_posts' => $posts]);
     }
     public function create()
     {
         $categories = Category::where('user_id',Auth::id())->get();
-        return view('posts.add',['my_categories'=>$categories]);
+        return view('posts.add',['my_categories' => $categories]);
     }
     public function store(PostRequest $request)
     {

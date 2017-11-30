@@ -49,14 +49,14 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         $result = Category::where('id',$id)->first();
-        return view('categories.edit',['categories'=>$result]);
+        return view('categories.edit',['categories' => $result]);
     }
     public function update($id, Request $request)
     {
         if(Category::where('id', $id)->update(['title' => $request->input('title')]))
         {
-            $categories = Category::where('user_id',Auth::id())->get();
-            return view('categories.index',['categories'=>$categories]);
+            $result = Category::where('user_id',Auth::id())->get();
+            return view('categories.index',['categories' => $result]);
         } else return redirect()->back()->with('msg','Category not updated,try again');
     }    
 }

@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import Categories from './categories/Categories';
-import Menu1 from './Menu1';
-import Menu2 from './Menu2';
+import UnloggedMenu from './UnloggedMenu';
+import LoggedMenu from './LoggedMenu';
 class App extends Component { 
  render() {
     if(sessionStorage.getItem('user_id')){
         return (
             <div>
-                <Menu2 name = {sessionStorage.getItem('name')} />
+                <LoggedMenu name = {sessionStorage.getItem('name')} />
                 <Categories />
             </div>  
             );
         } else{
             return (
             <div>
-                <Menu1 />
+                <UnloggedMenu />
             </div>
                 );
         }

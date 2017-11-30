@@ -17,11 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/login','LoginController@login');
-Route::post('/register/','RegisterController@register');
-Route::get('/logout/','LoginController@logout');
+Route::post('/register','RegisterController@register');
+Route::get('/logout','LoginController@logout');
 
 
-Route::get('/categories/','CategoriesController@index');
+Route::get('/categories','CategoriesController@index');
 Route::get('/me/categories','CategoriesController@mycategories');
 Route::post('/me/categories','CategoriesController@add');
 Route::get('/me/categories/{id}','CategoriesController@edit');
