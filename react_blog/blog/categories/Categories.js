@@ -29,7 +29,7 @@ class Categories extends Component {
               		    <div className="row_cat">
                   		    <h1>Categories</h1> 
                             <p>Number of Categories:{this.state.categories.length}</p> 
-                            {this.state.categories.map((value, index) => {
+                            {this.state.categories.map((value,index) => {
                                 return <li  className="list-group-item li-cat" key = {value.id}>{value.title}</li>
                             })}
               		    </div>

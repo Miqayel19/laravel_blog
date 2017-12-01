@@ -57,5 +57,12 @@ class CategoriesController extends Controller
         $categories = Category::where('user_id',Auth::id())->get();
         return response()->json(['mycategories' => $categories], 200);
     }
+    public function show($id)
+    {
+        $my_categories = Category::where('user_id',Auth::id())->get();
+        $current_category = Category::find($id);
+        $current_category_posts = Post::where('cat_id',$id)->orderby('id','desc')->Paginate('3'); 
+        return response()->json(['posts' => $current_category_posts],200);           
+    }
     
 }    

@@ -27,7 +27,7 @@ Route::post('/me/categories','CategoriesController@add');
 Route::get('/me/categories/{id}','CategoriesController@edit');
 Route::put('/me/categories/{id}','CategoriesController@update');
 Route::delete('/me/categories/{id}','CategoriesController@destroy');
-
+Route::get('/me/categories/{id}','CategoriesController@show');
 
 
 Route::get('/posts','PostsController@index');
