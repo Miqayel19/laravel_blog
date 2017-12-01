@@ -38,8 +38,8 @@ class PostsController extends Controller
     }
     public function add(PostRequest $request)
     { 
-        $posts = $request->postStore();
-        $added_posts = Post::create($posts);
+        $post = $request->postStore();
+        $added_post = Post::create($post);
         $result = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get();
         return response()->json(['myposts' => $result], 200);
     }
@@ -51,10 +51,10 @@ class PostsController extends Controller
     
     public function update($id,PostRequest $request,Post $post)
     {
-        $posts = Post::where('id', $id)->first();
-        $old_image = $posts->image;
+        $post = Post::where('id', $id)->first();
+        $old_image = $post->image;
         $info = $request->postUpdate();
-        $updated_posts = $posts->update($info);
+        $updated_post = $post->update($info);
         $result = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get(); 
         if($info['image'] != 'no-image.png'){
             unlink(public_path('/image/').$old_image);

@@ -28,17 +28,15 @@ class CategoryRequest extends FormRequest
             'title' => 'max:255',
         ];
     }
-    public function categoryReactStore()
+    public function categoryStore()
     {
-        $info = $this->all();
-        $added_category = Category::create(['title' => $info['title'],'user_id' => Auth::id()]);
+        $added_category = Category::create(['title' => $this->input('title'),'user_id' => Auth::id()]);
         $result = Category::where('user_id',Auth::id())->get();
         return $result;
     }
-    public function categoryReactUpdate($id)
+    public function categoryUpdate($id)
     {
-        $info = $this->all();
-        $updated_categories = Category::where('id', $id)->update(['title' => $info['name']]); 
+        $updated_category = Category::where('id', $id)->update(['title' => $this->input('title')]); 
         $result = Category::where('user_id',Auth::id())->get();
         return $result;
     }

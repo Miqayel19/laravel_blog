@@ -57,16 +57,16 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu" id='drop_home'>
-                                    <li style='text-align:center'><a href='{{url("/categories/")}}'>My Categories</a></li>
-                                    <li style='text-align: center'><a href='{{url("/posts/")}}'>My Posts</a></li>
-                                    <li style="text-align: center">
+                                    <li><a href='{{url("/categories/")}}'>My Categories</a></li>
+                                    <li><a href='{{url("/posts/")}}'>My Posts</a></li>
+                                    <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                    document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>

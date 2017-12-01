@@ -6,6 +6,7 @@ import Login from './Login';
 import Register from './Register';
 import UnloggedMenu from './UnloggedMenu';
 import MyCategories from './categories/MyCategories';
+//import ShowCategoriesPosts from './categories/ShowCategoriesPosts';
 import MyPosts from './posts/MyPosts';
 import EditCategory from './categories/EditCategory';
 import EditPost from './posts/EditPost';
@@ -44,6 +45,7 @@ class Home extends Component{
 		      	<Route path = '/me/posts/add' render={() => <AddPost addPost = {this.addPost} />}/>
 		      	<Route path = '/me/posts/:id/edit' component={EditPost}/>
 		      	<Route path = '/me/posts/:id/deleted' component={MyPosts}/>
+		      	{/*<Route path = '/me/categories/:id/show' component={ShowCategoriesPosts}/>*/}
 		    </div>
 		);
 	}

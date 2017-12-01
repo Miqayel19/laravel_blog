@@ -38,8 +38,8 @@ class PostsController extends Controller
     public function store(PostRequest $request)
     {
         $result = $request->postStore(); 
-        $added_posts = Post::create($result);
-        if($added_posts)
+        $added_post = Post::create($result);
+        if($added_post)
         {
             return redirect('/posts')->with('message','Post added successfully');
         } 
@@ -65,8 +65,8 @@ class PostsController extends Controller
     }    
     public function destroy($id)
     {   
-        $deleted_posts = Post::where('id', $id)->delete();         
-        if($deleted_posts)
+        $deleted_post = Post::where('id', $id)->delete();         
+        if($deleted_post)
         {
             return redirect('/posts')->with('msg','Post deleted successfully');
         } 
