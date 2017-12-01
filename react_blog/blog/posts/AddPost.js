@@ -5,21 +5,21 @@ import {Link} from "react-router-dom";
 import './MyPosts.css';
 import LoggedMenu from '../LoggedMenu';
 class AddPost extends Component {
-  	constructor(props){
-  	 	super(props);
-  	 	this.state = {
-  			text:"",
+    constructor(props){
+        super(props);
+        this.state = {
+            text:"",
             title:"",
             cat_id:"",
             image:"",
             mycategories:[]
-  	 	}	
+        }   
         this.getName = this.getName.bind(this);
         this.getTitle = this.getTitle.bind(this);
         this.onChangeFile = this.onChangeFile.bind(this);
         this.onChangeSelect = this.onChangeSelect.bind(this);
         this.addPost = this.addPost.bind(this);
-    }		       
+    }              
     componentDidMount(){
         axios.get('/api/me/categories').then((response)=>{
             this.setState({mycategories:response.data.mycategories});     
@@ -90,7 +90,7 @@ class AddPost extends Component {
                 </button>
             </div>    
         );   
-    }	
+    }   
 }
 
 export default AddPost

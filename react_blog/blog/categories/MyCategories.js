@@ -5,17 +5,17 @@ import {Link} from "react-router-dom";
 import './MyCategories.css';
 import LoggedMenu from '../LoggedMenu';
 class MyCategories extends Component {
- 	constructor(props){
- 	 	super(props);
- 	 	this.state = {
- 			mycategories:[],
+    constructor(props){
+        super(props);
+        this.state = {
+            mycategories:[],
             id:"",
             name:"",
             deleted: null
         } 
         this.deleteCat = this.deleteCat.bind(this);
         this.getId = this.getId.bind(this);
-    }		
+    }       
     getId(value){
         this.setState({deleted: value})
     }

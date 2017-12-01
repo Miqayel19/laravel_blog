@@ -678,123 +678,123 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var LoggedMenu = function (_Component) {
-	_inherits(LoggedMenu, _Component);
+    _inherits(LoggedMenu, _Component);
 
-	function LoggedMenu(props) {
-		_classCallCheck(this, LoggedMenu);
+    function LoggedMenu(props) {
+        _classCallCheck(this, LoggedMenu);
 
-		var _this = _possibleConstructorReturn(this, (LoggedMenu.__proto__ || Object.getPrototypeOf(LoggedMenu)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (LoggedMenu.__proto__ || Object.getPrototypeOf(LoggedMenu)).call(this, props));
 
-		_this.Logout = _this.Logout.bind(_this);
-		return _this;
-	}
+        _this.Logout = _this.Logout.bind(_this);
+        return _this;
+    }
 
-	_createClass(LoggedMenu, [{
-		key: 'Logout',
-		value: function Logout() {
-			sessionStorage.clear();
-			__WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/logout').then(function (response) {}).catch(function (error) {
-				console.log(error);
-			});
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				'div',
-				{ id: 'app' },
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					'nav',
-					{ className: 'navbar navbar-default navbar-static-top' },
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						'div',
-						{ className: 'container' },
-						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-							'div',
-							{ className: 'navbar-header' },
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'button',
-								{ type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#app-navbar-collapse' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									'span',
-									{ className: 'sr-only' },
-									'Toggle Navigation'
-								),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon-bar' }),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon-bar' }),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon-bar' })
-							)
-						),
-						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-							'div',
-							{ className: 'collapse navbar-collapse', id: 'app-navbar-collapse' },
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'ul',
-								{ className: 'nav navbar-nav navbar-left' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									'li',
-									null,
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
-										{ to: '/' },
-										'React'
-									)
-								)
-							),
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'ul',
-								{ className: 'nav navbar-nav navbar-right' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									'li',
-									{ className: 'dropdown' },
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
-										{ to: '', className: 'dropdown-toggle', 'data-toggle': 'dropdown', role: 'button', 'aria-expanded': 'false' },
-										this.props.name,
-										' ',
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'caret' })
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'ul',
-										{ className: 'dropdown-menu', role: 'menu' },
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-											'li',
-											null,
-											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-												__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
-												{ to: '/me/categories' },
-												'My Categories'
-											)
-										),
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-											'li',
-											null,
-											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-												__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
-												{ to: '/me/posts' },
-												'My Posts'
-											)
-										),
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-											'li',
-											null,
-											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-												__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
-												{ to: '/logout', onClick: this.Logout },
-												'Logout'
-											)
-										)
-									)
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	}]);
+    _createClass(LoggedMenu, [{
+        key: 'Logout',
+        value: function Logout() {
+            sessionStorage.clear();
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/logout').then(function (response) {}).catch(function (error) {
+                console.log(error);
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { id: 'app' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'nav',
+                    { className: 'navbar navbar-default navbar-static-top' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'container' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'navbar-header' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'button',
+                                { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#app-navbar-collapse' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'span',
+                                    { className: 'sr-only' },
+                                    'Toggle Navigation'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon-bar' }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon-bar' }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon-bar' })
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'collapse navbar-collapse', id: 'app-navbar-collapse' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'ul',
+                                { className: 'nav navbar-nav navbar-left' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'li',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
+                                        { to: '/' },
+                                        'React'
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'ul',
+                                { className: 'nav navbar-nav navbar-right' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'li',
+                                    { className: 'dropdown' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
+                                        { to: '', className: 'dropdown-toggle', 'data-toggle': 'dropdown', role: 'button', 'aria-expanded': 'false' },
+                                        this.props.name,
+                                        ' ',
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'caret' })
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'ul',
+                                        { className: 'dropdown-menu', role: 'menu' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'li',
+                                            null,
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
+                                                { to: '/me/categories' },
+                                                'My Categories'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'li',
+                                            null,
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
+                                                { to: '/me/posts' },
+                                                'My Posts'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'li',
+                                            null,
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
+                                                { to: '/logout', onClick: this.Logout },
+                                                'Logout'
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
 
-	return LoggedMenu;
+    return LoggedMenu;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (LoggedMenu);
@@ -4001,183 +4001,183 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var Login = function (_Component) {
-	_inherits(Login, _Component);
+    _inherits(Login, _Component);
 
-	function Login(props) {
-		_classCallCheck(this, Login);
+    function Login(props) {
+        _classCallCheck(this, Login);
 
-		var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
 
-		_this.state = {
-			email: "",
-			password: "",
-			error: "",
-			name: "",
-			id: null
-		};
-		_this.isLogged = _this.isLogged.bind(_this);
-		_this.getEmail = _this.getEmail.bind(_this);
-		_this.getPass = _this.getPass.bind(_this);
-		return _this;
-	}
+        _this.state = {
+            email: "",
+            password: "",
+            error: "",
+            name: "",
+            id: null
+        };
+        _this.isLogged = _this.isLogged.bind(_this);
+        _this.getEmail = _this.getEmail.bind(_this);
+        _this.getPass = _this.getPass.bind(_this);
+        return _this;
+    }
 
-	_createClass(Login, [{
-		key: 'isLogged',
-		value: function isLogged(event) {
-			var _this2 = this;
+    _createClass(Login, [{
+        key: 'isLogged',
+        value: function isLogged(event) {
+            var _this2 = this;
 
-			event.preventDefault();
-			if (this.state.email == '') {
-				this.setState({ error: 'Email field is required' });
-				return false;
-			} else if (this.state.password == '') {
-				this.setState({ error: 'Password field is required' });
-				return false;
-			}
-			var info = {
-				email: this.state.email,
-				password: this.state.password
-			};
-			__WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/api/login', info).then(function (response) {
-				sessionStorage.setItem('name', response.data.user.name);
-				sessionStorage.setItem('user_id', response.data.user.id);
-				_this2.setState({ id: response.data.user.id, error: "" });
-			}).catch(function (error) {
-				_this2.setState({ error: "Incorrect login or password" });
-			});
-			return false;
-		}
-	}, {
-		key: 'getEmail',
-		value: function getEmail(e) {
-			this.setState({ email: e.target.value });
-		}
-	}, {
-		key: 'getPass',
-		value: function getPass(e) {
-			this.setState({ password: e.target.value });
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var back_to_home = void 0;
-			if (this.state.id) {
-				back_to_home = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router__["a" /* Redirect */], { to: '/' });
-			}
-			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				'div',
-				{ className: 'container' },
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					'div',
-					{ className: 'row' },
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						'div',
-						{ className: 'col-md-8 col-md-offset-2' },
-						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-							'div',
-							{ className: 'panel panel-default' },
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'div',
-								{ className: 'panel-body' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									'div',
-									{ className: 'form-group' },
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'label',
-										{ htmlFor: 'email', className: 'col-md-4 control-label' },
-										'E-Mail Address'
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'div',
-										{ className: 'col-md-6' },
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-											type: 'email',
-											className: 'form-control',
-											name: 'email', value: this.state.email,
-											onChange: this.getEmail, required: true, autoFocus: true })
-									)
-								),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									'div',
-									{ className: 'form-group' },
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'label',
-										{ htmlFor: 'password', className: 'col-md-4 control-label' },
-										'Password'
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'div',
-										{ className: 'col-md-6' },
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { id: 'password',
-											type: 'password',
-											className: 'form-control',
-											name: 'password',
-											value: this.state.password,
-											onChange: this.getPass, required: true })
-									)
-								),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									'div',
-									{ className: 'form-group' },
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'div',
-										{ className: 'col-md-6 col-md-offset-4' },
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-											'div',
-											{ className: 'checkbox' },
-											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-												'label',
-												null,
-												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'checkbox', name: 'remember' }),
-												' Remember Me'
-											),
-											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-												__WEBPACK_IMPORTED_MODULE_4_react_router_dom__["b" /* Link */],
-												{ to: '', className: 'btn btn-link' },
-												'Forgot Your Password?'
-											)
-										)
-									)
-								),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									'div',
-									{ className: 'form-group' },
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'div',
-										{ className: 'col-md-8 col-md-offset-4' },
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-											'button',
-											{ type: 'submit', className: 'btn btn-primary', onClick: this.isLogged },
-											'Login',
-											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-												'div',
-												null,
-												back_to_home
-											)
-										),
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-											__WEBPACK_IMPORTED_MODULE_4_react_router_dom__["b" /* Link */],
-											{ to: '', className: 'btn btn-foursquare btn-social btn-facebook log', href: '/login/facebook' },
-											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'fa fa-facebook' }),
-											' Sign in with Facebook'
-										),
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-											__WEBPACK_IMPORTED_MODULE_4_react_router_dom__["b" /* Link */],
-											{ to: '', className: 'btn btn-foursquare btn-social btn-google reg', href: '/login/google' },
-											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'fa fa-facebook' }),
-											' Sign in with Google'
-										)
-									)
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	}]);
+            event.preventDefault();
+            if (this.state.email == '') {
+                this.setState({ error: 'Email field is required' });
+                return false;
+            } else if (this.state.password == '') {
+                this.setState({ error: 'Password field is required' });
+                return false;
+            }
+            var info = {
+                email: this.state.email,
+                password: this.state.password
+            };
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/api/login', info).then(function (response) {
+                sessionStorage.setItem('name', response.data.user.name);
+                sessionStorage.setItem('user_id', response.data.user.id);
+                _this2.setState({ id: response.data.user.id, error: "" });
+            }).catch(function (error) {
+                _this2.setState({ error: "Incorrect login or password" });
+            });
+            return false;
+        }
+    }, {
+        key: 'getEmail',
+        value: function getEmail(e) {
+            this.setState({ email: e.target.value });
+        }
+    }, {
+        key: 'getPass',
+        value: function getPass(e) {
+            this.setState({ password: e.target.value });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var back_to_home = void 0;
+            if (this.state.id) {
+                back_to_home = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router__["a" /* Redirect */], { to: '/' });
+            }
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'container' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'row' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'col-md-8 col-md-offset-2' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'panel panel-default' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'panel-body' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'label',
+                                        { htmlFor: 'email', className: 'col-md-4 control-label' },
+                                        'E-Mail Address'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-6' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            type: 'email',
+                                            className: 'form-control',
+                                            name: 'email', value: this.state.email,
+                                            onChange: this.getEmail, required: true, autoFocus: true })
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'label',
+                                        { htmlFor: 'password', className: 'col-md-4 control-label' },
+                                        'Password'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-6' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { id: 'password',
+                                            type: 'password',
+                                            className: 'form-control',
+                                            name: 'password',
+                                            value: this.state.password,
+                                            onChange: this.getPass, required: true })
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-6 col-md-offset-4' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'div',
+                                            { className: 'checkbox' },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'label',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'checkbox', name: 'remember' }),
+                                                ' Remember Me'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                __WEBPACK_IMPORTED_MODULE_4_react_router_dom__["b" /* Link */],
+                                                { to: '', className: 'btn btn-link' },
+                                                'Forgot Your Password?'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-8 col-md-offset-4' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'button',
+                                            { type: 'submit', className: 'btn btn-primary', onClick: this.isLogged },
+                                            'Login',
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'div',
+                                                null,
+                                                back_to_home
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            __WEBPACK_IMPORTED_MODULE_4_react_router_dom__["b" /* Link */],
+                                            { to: '', className: 'btn btn-foursquare btn-social btn-facebook log', href: '/login/facebook' },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'fa fa-facebook' }),
+                                            ' Sign in with Facebook'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            __WEBPACK_IMPORTED_MODULE_4_react_router_dom__["b" /* Link */],
+                                            { to: '', className: 'btn btn-foursquare btn-social btn-google reg', href: '/login/google' },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'fa fa-facebook' }),
+                                            ' Sign in with Google'
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
 
-	return Login;
+    return Login;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Login);
@@ -4205,195 +4205,195 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var Register = function (_Component) {
-	_inherits(Register, _Component);
+    _inherits(Register, _Component);
 
-	function Register(props) {
-		_classCallCheck(this, Register);
+    function Register(props) {
+        _classCallCheck(this, Register);
 
-		var _this = _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).call(this, props));
 
-		_this.state = {
-			name: "",
-			email: "",
-			password: "",
-			confirm_password: "",
-			reg_user: null
-		};
-		_this.isRegistered = _this.isRegistered.bind(_this);
-		_this.getName = _this.getName.bind(_this);
-		_this.getEmail = _this.getEmail.bind(_this);
-		_this.getPassword = _this.getPassword.bind(_this);
-		_this.getConfPass = _this.getConfPass.bind(_this);
-		return _this;
-	}
+        _this.state = {
+            name: "",
+            email: "",
+            password: "",
+            confirm_password: "",
+            reg_user: null
+        };
+        _this.isRegistered = _this.isRegistered.bind(_this);
+        _this.getName = _this.getName.bind(_this);
+        _this.getEmail = _this.getEmail.bind(_this);
+        _this.getPassword = _this.getPassword.bind(_this);
+        _this.getConfPass = _this.getConfPass.bind(_this);
+        return _this;
+    }
 
-	_createClass(Register, [{
-		key: 'isRegistered',
-		value: function isRegistered() {
-			var _this2 = this;
+    _createClass(Register, [{
+        key: 'isRegistered',
+        value: function isRegistered() {
+            var _this2 = this;
 
-			var info = {
-				name: this.state.name,
-				email: this.state.email,
-				password: this.state.password,
-				conf_pass: this.state.conf_pass
-			};
-			__WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/register', info).then(function (response) {
-				sessionStorage.setItem('name', response.data.user.name);
-				sessionStorage.setItem('user_id', response.data.user.id);
-				_this2.setState({ reg_user: response.data.user.id, error: "" });
-			}).catch(function (err) {
-				console.log(err);
-			});
-		}
-	}, {
-		key: 'getName',
-		value: function getName(e) {
-			this.setState({ name: e.target.value });
-		}
-	}, {
-		key: 'getEmail',
-		value: function getEmail(e) {
-			this.setState({ email: e.target.value });
-		}
-	}, {
-		key: 'getPassword',
-		value: function getPassword(e) {
-			this.setState({ password: e.target.value });
-		}
-	}, {
-		key: 'getConfPass',
-		value: function getConfPass(e) {
-			this.setState({ conf_pass: e.target.value });
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var redirect_to_home = void 0;
-			if (this.state.reg_user) {
-				redirect_to_home = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router__["a" /* Redirect */], { to: '/' });
-			}
-			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				'div',
-				{ className: 'container' },
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					'div',
-					{ className: 'row' },
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						'div',
-						{ className: 'col-md-8 col-md-offset-2' },
-						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-							'div',
-							{ className: 'panel panel-default' },
-							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'div',
-								{ className: 'panel-body' },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									'div',
-									{ className: 'form-group' },
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'label',
-										{ htmlFor: 'name', className: 'col-md-4 control-label' },
-										'Name'
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'div',
-										{ className: 'col-md-6' },
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-											id: 'name',
-											type: 'text',
-											className: 'form-control',
-											name: 'name', value: this.state.name,
-											onChange: this.getName, required: true, autoFocus: true })
-									)
-								),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									'div',
-									{ className: 'form-group' },
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'label',
-										{ htmlFor: 'email', className: 'col-md-4 control-label' },
-										'E-Mail Address'
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'div',
-										{ className: 'col-md-6' },
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-											id: 'email',
-											type: 'email',
-											className: 'form-control',
-											name: 'email',
-											value: this.state.email,
-											onChange: this.getEmail, required: true })
-									)
-								),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									'div',
-									{ className: 'form-group' },
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'label',
-										{ htmlFor: 'password', className: 'col-md-4 control-label' },
-										'Password'
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'div',
-										{ className: 'col-md-6' },
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-											id: 'password',
-											type: 'password',
-											className: 'form-control',
-											name: 'password',
-											value: this.state.password,
-											onChange: this.getPassword, required: true })
-									)
-								),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									'div',
-									{ className: 'form-group' },
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'label',
-										{ htmlFor: 'password-confirm', className: 'col-md-4 control-label' },
-										'Confirm Password'
-									),
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'div',
-										{ className: 'col-md-6' },
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-											id: 'password-confirm',
-											type: 'password',
-											className: 'form-control',
-											name: 'conf_pass',
-											value: this.state.conf_pass,
-											onChange: this.getConfPass, required: true })
-									)
-								),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									'div',
-									{ className: 'form-group' },
-									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										'div',
-										{ className: 'col-md-6 col-md-offset-4' },
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-											'button',
-											{ type: 'submit', className: 'btn btn-primary', onClick: this.isRegistered },
-											'Register',
-											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-												'div',
-												null,
-												redirect_to_home
-											)
-										)
-									)
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	}]);
+            var info = {
+                name: this.state.name,
+                email: this.state.email,
+                password: this.state.password,
+                conf_pass: this.state.conf_pass
+            };
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/register', info).then(function (response) {
+                sessionStorage.setItem('name', response.data.user.name);
+                sessionStorage.setItem('user_id', response.data.user.id);
+                _this2.setState({ reg_user: response.data.user.id, error: "" });
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }
+    }, {
+        key: 'getName',
+        value: function getName(e) {
+            this.setState({ name: e.target.value });
+        }
+    }, {
+        key: 'getEmail',
+        value: function getEmail(e) {
+            this.setState({ email: e.target.value });
+        }
+    }, {
+        key: 'getPassword',
+        value: function getPassword(e) {
+            this.setState({ password: e.target.value });
+        }
+    }, {
+        key: 'getConfPass',
+        value: function getConfPass(e) {
+            this.setState({ conf_pass: e.target.value });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var redirect_to_home = void 0;
+            if (this.state.reg_user) {
+                redirect_to_home = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router__["a" /* Redirect */], { to: '/' });
+            }
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'container' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'row' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'col-md-8 col-md-offset-2' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'panel panel-default' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'panel-body' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'label',
+                                        { htmlFor: 'name', className: 'col-md-4 control-label' },
+                                        'Name'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-6' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            id: 'name',
+                                            type: 'text',
+                                            className: 'form-control',
+                                            name: 'name', value: this.state.name,
+                                            onChange: this.getName, required: true, autoFocus: true })
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'label',
+                                        { htmlFor: 'email', className: 'col-md-4 control-label' },
+                                        'E-Mail Address'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-6' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            id: 'email',
+                                            type: 'email',
+                                            className: 'form-control',
+                                            name: 'email',
+                                            value: this.state.email,
+                                            onChange: this.getEmail, required: true })
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'label',
+                                        { htmlFor: 'password', className: 'col-md-4 control-label' },
+                                        'Password'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-6' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            id: 'password',
+                                            type: 'password',
+                                            className: 'form-control',
+                                            name: 'password',
+                                            value: this.state.password,
+                                            onChange: this.getPassword, required: true })
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'label',
+                                        { htmlFor: 'password-confirm', className: 'col-md-4 control-label' },
+                                        'Confirm Password'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-6' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            id: 'password-confirm',
+                                            type: 'password',
+                                            className: 'form-control',
+                                            name: 'conf_pass',
+                                            value: this.state.conf_pass,
+                                            onChange: this.getConfPass, required: true })
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-6 col-md-offset-4' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'button',
+                                            { type: 'submit', className: 'btn btn-primary', onClick: this.isRegistered },
+                                            'Register',
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'div',
+                                                null,
+                                                redirect_to_home
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
 
-	return Register;
+    return Register;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Register);
@@ -4445,7 +4445,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-//import ShowCategoriesPosts from './categories/ShowCategoriesPosts';
 
 
 
@@ -4455,71 +4454,71 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var Home = function (_Component) {
-	_inherits(Home, _Component);
+    _inherits(Home, _Component);
 
-	function Home(props) {
-		_classCallCheck(this, Home);
+    function Home(props) {
+        _classCallCheck(this, Home);
 
-		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
-		_this.state = {
-			posts: [],
-			categories: []
-		};
-		_this.addPost = _this.addPost.bind(_this);
-		_this.addCategory = _this.addCategory.bind(_this);
-		return _this;
-	}
+        _this.state = {
+            posts: [],
+            categories: []
+        };
+        _this.addPost = _this.addPost.bind(_this);
+        _this.addCategory = _this.addCategory.bind(_this);
+        return _this;
+    }
 
-	_createClass(Home, [{
-		key: 'addPost',
-		value: function addPost(posts) {
-			this.setState({ posts: posts });
-		}
-	}, {
-		key: 'addCategory',
-		value: function addCategory(categories) {
-			this.setState({ categories: categories });
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var _this2 = this;
+    _createClass(Home, [{
+        key: 'addPost',
+        value: function addPost(posts) {
+            this.setState({ posts: posts });
+        }
+    }, {
+        key: 'addCategory',
+        value: function addCategory(categories) {
+            this.setState({ categories: categories });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
 
-			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				'div',
-				null,
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_3__App__["a" /* default */] }),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/login', component: __WEBPACK_IMPORTED_MODULE_4__Login__["a" /* default */] }),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_5__Register__["a" /* default */] }),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/logout', component: __WEBPACK_IMPORTED_MODULE_6__UnloggedMenu__["a" /* default */] }),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { exact: true, path: '/me/categories', render: function render() {
-						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__categories_MyCategories__["a" /* default */], { categories: _this2.state.categories });
-					} }),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/me/categories/add', render: function render() {
-						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__categories_AddCategory__["a" /* default */], { addCategory: _this2.addCategory });
-					} }),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/me/categories/:id/edit', component: __WEBPACK_IMPORTED_MODULE_9__categories_EditCategory__["a" /* default */] }),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/me/categories/:id/deleted', component: __WEBPACK_IMPORTED_MODULE_7__categories_MyCategories__["a" /* default */] }),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { exact: true, path: '/me/posts', render: function render() {
-						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__posts_MyPosts__["a" /* default */], { posts: _this2.state.posts });
-					} }),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/me/posts/add', render: function render() {
-						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_12__posts_AddPost__["a" /* default */], { addPost: _this2.addPost });
-					} }),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/me/posts/:id/edit', component: __WEBPACK_IMPORTED_MODULE_10__posts_EditPost__["a" /* default */] }),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/me/posts/:id/deleted', component: __WEBPACK_IMPORTED_MODULE_8__posts_MyPosts__["a" /* default */] })
-			);
-		}
-	}]);
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                null,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_3__App__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/login', component: __WEBPACK_IMPORTED_MODULE_4__Login__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_5__Register__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/logout', component: __WEBPACK_IMPORTED_MODULE_6__UnloggedMenu__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { exact: true, path: '/me/categories', render: function render() {
+                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__categories_MyCategories__["a" /* default */], { categories: _this2.state.categories });
+                    } }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/me/categories/add', render: function render() {
+                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__categories_AddCategory__["a" /* default */], { addCategory: _this2.addCategory });
+                    } }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/me/categories/:id/edit', component: __WEBPACK_IMPORTED_MODULE_9__categories_EditCategory__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/me/categories/:id/deleted', component: __WEBPACK_IMPORTED_MODULE_7__categories_MyCategories__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { exact: true, path: '/me/posts', render: function render() {
+                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__posts_MyPosts__["a" /* default */], { posts: _this2.state.posts });
+                    } }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/me/posts/add', render: function render() {
+                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_12__posts_AddPost__["a" /* default */], { addPost: _this2.addPost });
+                    } }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/me/posts/:id/edit', component: __WEBPACK_IMPORTED_MODULE_10__posts_EditPost__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["c" /* Route */], { path: '/me/posts/:id/deleted', component: __WEBPACK_IMPORTED_MODULE_8__posts_MyPosts__["a" /* default */] })
+            );
+        }
+    }]);
 
-	return Home;
+    return Home;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-	__WEBPACK_IMPORTED_MODULE_13_react_router_dom__["a" /* HashRouter */],
-	null,
-	__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Home, null)
+    __WEBPACK_IMPORTED_MODULE_13_react_router_dom__["a" /* HashRouter */],
+    null,
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Home, null)
 ), document.getElementById('root'));
 Object(__WEBPACK_IMPORTED_MODULE_14__registerServiceWorker__["a" /* default */])();
 

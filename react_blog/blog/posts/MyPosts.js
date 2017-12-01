@@ -5,17 +5,17 @@ import {Link} from "react-router-dom";
 import './MyPosts.css';
 import LoggedMenu from '../LoggedMenu';
 class MyPosts extends Component {
- 	constructor(props){
- 	super(props);
- 	this.state = {
+    constructor(props){
+    super(props);
+    this.state = {
         id:"",
         name:"",
         deleted:null,
- 		myposts:[]
- 	}	
+        myposts:[]
+    }   
     this.deletePost = this.deletePost.bind(this);
     this.getId = this.getId.bind(this);
-    }		
+    }       
     getId(value){
         this.setState({deleted: value})
     }
@@ -106,7 +106,7 @@ class MyPosts extends Component {
                 </div>
             </div>
         );
-    }	
+    }   
 }
 
 export default MyPosts

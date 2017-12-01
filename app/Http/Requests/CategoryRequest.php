@@ -31,14 +31,12 @@ class CategoryRequest extends FormRequest
     public function categoryStore()
     {
         $added_category = Category::create(['title' => $this->input('title'),'user_id' => Auth::id()]);
-        $result = Category::where('user_id',Auth::id())->get();
-        return $result;
+        return $added_category;
     }
     public function categoryUpdate($id)
     {
         $updated_category = Category::where('id', $id)->update(['title' => $this->input('title')]); 
-        $result = Category::where('user_id',Auth::id())->get();
-        return $result;
+        return $updated_category;
     }
 
 }

@@ -56,6 +56,7 @@ class PostsController extends Controller
         $post = Post::where('id', $id)->first();
         $old_image = $post->image;
         $inputs = $request->postUpdate();
+        $inputs['user_id'] = Auth::id();
         $post->update($inputs);
         if($inputs['image'] != 'no-image.png'){
             unlink(public_path('/image/').$old_image);

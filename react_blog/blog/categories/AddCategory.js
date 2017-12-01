@@ -5,15 +5,15 @@ import {Link} from "react-router-dom";
 import './MyCategories.css';
 import LoggedMenu from '../LoggedMenu';
 class AddCategory extends Component {
-  	constructor(props){
-  	 	super(props);
-  	 	this.state = {
-  			name:"",
+    constructor(props){
+        super(props);
+        this.state = {
+            name:"",
             mycategories:[]
-  	 	}	
+        }   
         this.addCategory = this.addCategory.bind(this);
         this.getName = this.getName.bind(this);
-    }		
+    }       
     addCategory(){
         axios.post('/api/me/categories',{'title':this.state.name}).then((response) => {
             this.props.addCategory(response.data.mycategories);
@@ -44,7 +44,7 @@ class AddCategory extends Component {
                 </button>
             </div>    
         );
-    }	
+    }   
 }
 
 export default AddCategory

@@ -5,15 +5,15 @@ import {Link} from "react-router-dom";
 import './MyPosts.css';
 import LoggedMenu from '../LoggedMenu';
 class EditPost extends Component {
- 	constructor(props){
- 	super(props);
- 	this.state = {
- 	    text:"",
+    constructor(props){
+    super(props);
+    this.state = {
+        text:"",
         title:"",
         image:"",
         id:"",
         myposts:[]
- 	}	
+    }   
     this.getText = this.getText.bind(this);
     this.getTitle = this.getTitle.bind(this);
     this.onChangeFile = this.onChangeFile.bind(this);
@@ -81,7 +81,7 @@ updatePost(){
                 </button>
             </div>    
         ); 
-    }	
+    }   
 }
 
 export default EditPost

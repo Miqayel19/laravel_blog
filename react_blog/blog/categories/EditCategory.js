@@ -5,12 +5,12 @@ import {Link} from "react-router-dom";
 import './MyCategories.css';
 import LoggedMenu from '../LoggedMenu';
 class EditCategory extends Component {
- 	constructor(props){
- 	 	super(props);
- 	 	this.state = {
- 			name:"",
+    constructor(props){
+        super(props);
+        this.state = {
+            name:"",
             id:""
- 	 	}	
+        }   
         this.getName = this.getName.bind(this);
         this.updateCat= this.updateCat.bind(this);
     }
@@ -28,7 +28,7 @@ class EditCategory extends Component {
         axios.put('/api/me/categories/'+this.props.match.params.id,info).then((response)=>{   
         }).catch((err)=>{console.log(err);})
     }
-	getName(e){
+    getName(e){
         this.setState({name:e.target.value})
     }
     render() {  
@@ -50,7 +50,7 @@ class EditCategory extends Component {
                 </button>
             </div>    
         ); 
-    }	
+    }   
 }
 
 export default EditCategory
