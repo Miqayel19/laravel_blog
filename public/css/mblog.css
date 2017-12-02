@@ -160,3 +160,11 @@
 .dropdown-menu form{
 	display: none;
 }
+.fb{
+	background-color:blue !important;
+	color:white !important;
+}
+.google{
+	background-color:aqua !important;
+	color:blue !important;
+}
