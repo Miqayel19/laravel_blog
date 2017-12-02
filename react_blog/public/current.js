@@ -22062,12 +22062,10 @@ exports.push([module.i, "html, body {\n                background-color: #fff;\n
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Categories_css__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Categories_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__Categories_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Categories_css__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Categories_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Categories_css__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22075,8 +22073,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
 
 
 
@@ -22102,12 +22098,12 @@ var Categories = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/categories').then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/categories').then(function (response) {
                 _this2.setState({ categories: response.data.categories });
             }).catch(function (error) {
                 console.log(error);
             });
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/posts').then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/posts').then(function (response) {
                 _this2.setState({ posts: response.data.posts });
             }).catch(function (error) {
                 console.log(error);
@@ -26537,13 +26533,12 @@ exports.push([module.i, "#add-cat{\n\tposition:absolute;\n\tleft:325px;\n\ttop:1
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MyPosts_css__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MyPosts_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__MyPosts_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__LoggedMenu__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MyPosts_css__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MyPosts_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__MyPosts_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__LoggedMenu__ = __webpack_require__(8);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26551,7 +26546,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -26588,7 +26582,7 @@ var MyPosts = function (_Component) {
         value: function deletePost() {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.delete('/api/me/posts/' + this.state.deleted).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.delete('/api/me/posts/' + this.state.deleted).then(function (response) {
                 _this2.setState({ myposts: response.data.myposts });
             }).catch(function (error) {
                 console.log(error);
@@ -26599,7 +26593,7 @@ var MyPosts = function (_Component) {
         value: function componentDidMount() {
             var _this3 = this;
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/me/posts').then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/me/posts').then(function (response) {
                 _this3.setState({ myposts: response.data.myposts });
             }).catch(function (error) {
                 console.log(error);
@@ -26620,7 +26614,7 @@ var MyPosts = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'container' },
@@ -26639,7 +26633,7 @@ var MyPosts = function (_Component) {
                                 'button',
                                 { className: 'btn add-post' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
+                                    __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                                     { to: '/me/posts/add' },
                                     'Add Post'
                                 )
@@ -26696,7 +26690,7 @@ var MyPosts = function (_Component) {
                                                 {
                                                     className: 'btn  btn-info post-edit' },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                    __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
+                                                    __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                                                     { to: '/me/posts/' + value.id + '/edit' },
                                                     'Edit'
                                                 )
@@ -26791,13 +26785,12 @@ exports.push([module.i, ".add-post{\n\tposition:absolute;\n\tleft:265px;\n\ttop:
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MyCategories_css__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MyCategories_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__MyCategories_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__LoggedMenu__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MyCategories_css__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MyCategories_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__MyCategories_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__LoggedMenu__ = __webpack_require__(8);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26805,7 +26798,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -26835,7 +26827,7 @@ var EditCategory = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/me/categories/' + this.props.match.params.id).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/me/categories/' + this.props.match.params.id).then(function (response) {
                 _this2.setState({ name: response.data.mycategories.title });
             }).catch(function (error) {
                 console.log(error);
@@ -26848,7 +26840,7 @@ var EditCategory = function (_Component) {
                 name: this.state.name,
                 id: this.props.match.params.id
             };
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.put('/api/me/categories/' + this.props.match.params.id, info).then(function (response) {}).catch(function (error) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.put('/api/me/categories/' + this.props.match.params.id, info).then(function (response) {}).catch(function (error) {
                 console.log(error);
             });
         }
@@ -26863,7 +26855,7 @@ var EditCategory = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text',
                     className: 'form-control add-input',
                     name: 'name',
@@ -26876,7 +26868,7 @@ var EditCategory = function (_Component) {
                         className: 'btn btn-danger upd',
                         onClick: this.updateCat },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
+                        __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                         { to: '/me/categories' },
                         'Update'
                     )
@@ -26897,13 +26889,12 @@ var EditCategory = function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MyPosts_css__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MyPosts_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__MyPosts_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__LoggedMenu__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MyPosts_css__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MyPosts_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__MyPosts_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__LoggedMenu__ = __webpack_require__(8);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26911,7 +26902,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -26946,7 +26936,7 @@ var EditPost = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/me/posts/' + this.props.match.params.id).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/me/posts/' + this.props.match.params.id).then(function (response) {
                 _this2.setState({ text: response.data.myposts.text });
                 _this2.setState({ title: response.data.myposts.title });
                 _this2.setState({ image: response.data.myposts.image });
@@ -26965,7 +26955,7 @@ var EditPost = function (_Component) {
             info.append('image', this.state.image);
             info.append('id', this.props.match.params.id);
             info.append('_method', 'PUT');
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/me/posts/' + this.props.match.params.id, info).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/api/me/posts/' + this.props.match.params.id, info).then(function (response) {
                 _this3.setState({ myposts: response.data.myposts });
             }).catch(function (error) {
                 console.log(error);
@@ -26992,7 +26982,7 @@ var EditPost = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                     type: 'text',
                     className: 'form-control add-post-title',
@@ -27022,7 +27012,7 @@ var EditPost = function (_Component) {
                         className: 'btn btn-danger update-post',
                         onClick: this.updatePost },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
+                        __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                         { to: '/me/posts' },
                         'Update'
                     )
@@ -27043,13 +27033,12 @@ var EditPost = function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MyCategories_css__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MyCategories_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__MyCategories_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__LoggedMenu__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MyCategories_css__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MyCategories_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__MyCategories_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__LoggedMenu__ = __webpack_require__(8);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27057,7 +27046,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -27087,7 +27075,7 @@ var AddCategory = function (_Component) {
         value: function addCategory() {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/me/categories', { 'title': this.state.name }).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/api/me/categories', { 'title': this.state.name }).then(function (response) {
                 _this2.props.addCategory(response.data.mycategories);
                 _this2.setState({ mycategories: response.data.mycategories });
             }).catch(function (error) {
@@ -27105,7 +27093,7 @@ var AddCategory = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                     type: 'text',
                     className: 'form-control add-input',
@@ -27120,7 +27108,7 @@ var AddCategory = function (_Component) {
                         onClick: this.addCategory,
                         className: 'btn add-button' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
+                        __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                         { to: '/me/categories' },
                         'Add'
                     )
@@ -27141,13 +27129,12 @@ var AddCategory = function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MyPosts_css__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MyPosts_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__MyPosts_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__LoggedMenu__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MyPosts_css__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MyPosts_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__MyPosts_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__LoggedMenu__ = __webpack_require__(8);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27155,7 +27142,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -27191,7 +27177,7 @@ var AddPost = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/me/categories').then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/me/categories').then(function (response) {
                 _this2.setState({ mycategories: response.data.mycategories });
             }).catch(function (error) {
                 console.log(error);
@@ -27227,7 +27213,7 @@ var AddPost = function (_Component) {
             info.append('title', this.state.title);
             info.append('image', this.state.image);
             info.append('cat_id', this.state.cat_id);
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/me/posts', info).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/api/me/posts', info).then(function (response) {
                 _this3.props.addPost(response.data.myposts);
                 _this3.setState({ myposts: response.data.myposts });
             }).catch(function (error) {
@@ -27240,7 +27226,7 @@ var AddPost = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__LoggedMenu__["a" /* default */], { name: sessionStorage.getItem('name') }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                     type: 'text',
                     className: 'form-control add-in',
@@ -27284,7 +27270,7 @@ var AddPost = function (_Component) {
                         className: 'btn add-button',
                         onClick: this.addPost },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Link */],
+                        __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                         { to: '/me/posts' },
                         'Add'
                     )

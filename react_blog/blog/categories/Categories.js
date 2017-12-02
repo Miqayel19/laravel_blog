@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {Redirect} from "react-router";
 import axios from 'axios';
-import {Link} from "react-router-dom";
 import  './Categories.css' 
 class Categories extends Component {
     constructor(props){
