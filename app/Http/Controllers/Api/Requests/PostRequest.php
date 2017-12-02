@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Auth;
-use App\Category;
+
 class PostRequest extends FormRequest
 {
     /**
