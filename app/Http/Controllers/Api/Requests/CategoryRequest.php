@@ -37,5 +37,4 @@ class CategoryRequest extends FormRequest
         $info = $this->all();
         return $info;
     }
-
 }

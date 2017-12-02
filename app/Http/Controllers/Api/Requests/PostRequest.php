@@ -38,7 +38,6 @@ class PostRequest extends FormRequest
             'image.required'=>'An image is Required',
         ];
     }
-   
     public function postUpdate()
     {
         $info = $this->all();

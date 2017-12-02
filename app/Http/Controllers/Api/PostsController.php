@@ -9,6 +9,7 @@ use App\Category;
 use App\Post;
 use App\User; 
 use Auth;
+
 class PostsController extends Controller
 {
     /*
@@ -59,7 +60,6 @@ class PostsController extends Controller
         $result = Post::where('id',$id)->first();
         return response()->json(['myposts' => $result], 200);
     }
-    
     public function update($id,PostRequest $request,Post $post)
     {
         $post = Post::where('id', $id)->first();

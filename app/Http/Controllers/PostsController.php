@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
 use Auth;
+
 class PostsController extends Controller
 {
     /**
@@ -87,4 +88,5 @@ class PostsController extends Controller
         } 
         return redirect()->back()->with('msg','Something is wrong,post is not deleted');
     }    
-}        
+}
+        

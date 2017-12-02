@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\Requests\CategoryRequest;
 use App\Category;
 use App\User; 
 use Auth;
+
 class CategoriesController extends Controller
 {
     /*
@@ -25,13 +26,13 @@ class CategoriesController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-    }    
-     public function index()
+    }
+    public function index()
     {      
         $categories = Category::get();
         return response()->json(['categories' => $categories], 200);  
     }
-     public function mycategories()
+    public function mycategories()
     {      
         $categories = Category::where('user_id',Auth::id())->get();
         return response()->json(['mycategories' => $categories], 200);  

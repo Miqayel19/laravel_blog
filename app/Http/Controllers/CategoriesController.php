@@ -76,4 +76,5 @@ class CategoriesController extends Controller
         $current_category_posts = Post::where('cat_id',$id)->orderby('id','desc')->paginate('3'); 
         return view('categories.show',['posts' => $current_category_posts]);           
     }
-}    
+}
+    
