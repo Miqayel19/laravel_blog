@@ -53,7 +53,7 @@ class PostsController extends Controller
         {   
             return response()->json(['myposts' => $result], 200);
         }
-        return response()->json(['error' => 'Post not added!']);
+        return response()->json(['error' => 'Post not added!'],400);
     }    
     public function edit($id)
     {    
@@ -78,7 +78,7 @@ class PostsController extends Controller
             unlink(public_path('/image/').$old_image);
             return response()->json(['myposts' => $result], 200);
         }
-        return response()->json(['error' => 'Post not updated!']);
+        return response()->json(['error' => 'Post not updated!'],400);
     } 
     public function destroy($id)
     {   
@@ -88,6 +88,6 @@ class PostsController extends Controller
         {
             return response()->json(['myposts' => $result], 200);
         }
-        return response()->json(['error' => 'Post not deleted!']);
+        return response()->json(['error' => 'Post not deleted!'],400);
     }
 }        

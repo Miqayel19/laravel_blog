@@ -29,7 +29,7 @@ class Register extends Component {
             sessionStorage.setItem('name',response.data.user.name);
             sessionStorage.setItem('user_id',response.data.user.id);
             this.setState({reg_user:response.data.user.id,error:""});
-        }).catch((err)=>{console.log(err);})        
+        }).catch((error)=>{console.log(error);})        
     }
     getName(e) {
         this.setState({name:e.target.value})

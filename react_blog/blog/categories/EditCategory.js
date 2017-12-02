@@ -18,7 +18,7 @@ class EditCategory extends Component {
         axios.get('/api/me/categories/'+this.props.match.params.id)
         .then((response)=>{
             this.setState({name:response.data.mycategories.title});  
-        }).catch((err)=>{console.log(err);})
+        }).catch((error)=>{console.log(error);})
     }
     updateCat(){
         let info = {
@@ -26,7 +26,7 @@ class EditCategory extends Component {
             id:this.props.match.params.id
         }
         axios.put('/api/me/categories/'+this.props.match.params.id,info).then((response)=>{   
-        }).catch((err)=>{console.log(err);})
+        }).catch((error)=>{console.log(error);})
     }
     getName(e){
         this.setState({name:e.target.value})

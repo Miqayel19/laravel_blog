@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\User; 
 use Auth;
+
 class LoginController extends Controller
 {
     /*
@@ -47,6 +48,5 @@ class LoginController extends Controller
     public function logout(){
         Auth::logout();
         return response()->json(['message' => "403"], 200);
-    }
-    
+    }  
 }    

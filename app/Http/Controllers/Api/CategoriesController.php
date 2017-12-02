@@ -42,7 +42,11 @@ class CategoriesController extends Controller
         $info = $request->categoryStore();
         $added_category = Category::create(['title' => $info['title'],'user_id' => Auth::id()]);
         $result = Category::where('user_id',Auth::id())->get();
-        return response()->json(['mycategories' => $result], 200);
+        if($result)
+        {
+            return response()->json(['mycategories' => $result], 200);
+        } 
+        return response()->json(['error' => 'Category not added!'],400);
     }
     public function edit($id)
     {    
@@ -54,12 +58,20 @@ class CategoriesController extends Controller
         $info = $request->categoryUpdate();
         $updated_category = Category::where('id', $id)->update(['title' => $info['name']]); 
         $result = Category::where('user_id',Auth::id())->get();
-        return response()->json(['mycategories' => $result], 200);
+        if($result)
+        {
+            return response()->json(['mycategories' => $result], 200);
+        } 
+        return response()->json(['error' => 'Category not updated!'],400);
     }
     public function destroy($id)
     {   
-        $result = Category::where('id', $id)->delete();
-        $categories = Category::where('user_id',Auth::id())->get();
-        return response()->json(['mycategories' => $categories], 200);
+        $deleted_category = Category::where('id', $id)->delete();
+        $result = Category::where('user_id',Auth::id())->get();
+        if($result)
+        {
+            return response()->json(['mycategories' => $result], 200);
+        } 
+        return response()->json(['error' => 'Category not deleted!'],400);
     }  
 }    

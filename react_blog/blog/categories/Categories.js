@@ -14,11 +14,11 @@ class Categories extends Component {
     componentDidMount(){
         axios.get('/api/categories').then((response) => {          
             this.setState({ categories: response.data.categories});
-            }).catch((err)=>{console.log(err);           
+            }).catch((error)=>{console.log(error);           
         })
         axios.get('/api/posts').then((response) => {
             this.setState({ posts: response.data.posts});
-            }).catch((err)=>{console.log(err);           
+            }).catch((error)=>{console.log(error);           
         })
     }   
     render() {  

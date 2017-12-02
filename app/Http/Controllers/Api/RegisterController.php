@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\User;
 use Auth;
+
 class RegisterController extends Controller
 {
     /**
@@ -46,6 +47,6 @@ class RegisterController extends Controller
             Auth::login($user);
             return response()->json(['user' => Auth::user()], 200);
         } 
-        return response()->json(['msg'=>'Register failed'],400);               
+        return response()->json(['msg'=>'Register failed']);               
     }    
 }

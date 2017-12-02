@@ -4242,8 +4242,8 @@ var Register = function (_Component) {
                 sessionStorage.setItem('name', response.data.user.name);
                 sessionStorage.setItem('user_id', response.data.user.id);
                 _this2.setState({ reg_user: response.data.user.id, error: "" });
-            }).catch(function (err) {
-                console.log(err);
+            }).catch(function (error) {
+                console.log(error);
             });
         }
     }, {
@@ -22104,13 +22104,13 @@ var Categories = function (_Component) {
 
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/categories').then(function (response) {
                 _this2.setState({ categories: response.data.categories });
-            }).catch(function (err) {
-                console.log(err);
+            }).catch(function (error) {
+                console.log(error);
             });
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/posts').then(function (response) {
                 _this2.setState({ posts: response.data.posts });
-            }).catch(function (err) {
-                console.log(err);
+            }).catch(function (error) {
+                console.log(error);
             });
         }
     }, {
@@ -26837,8 +26837,8 @@ var EditCategory = function (_Component) {
 
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/me/categories/' + this.props.match.params.id).then(function (response) {
                 _this2.setState({ name: response.data.mycategories.title });
-            }).catch(function (err) {
-                console.log(err);
+            }).catch(function (error) {
+                console.log(error);
             });
         }
     }, {
@@ -26848,8 +26848,8 @@ var EditCategory = function (_Component) {
                 name: this.state.name,
                 id: this.props.match.params.id
             };
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.put('/api/me/categories/' + this.props.match.params.id, info).then(function (response) {}).catch(function (err) {
-                console.log(err);
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.put('/api/me/categories/' + this.props.match.params.id, info).then(function (response) {}).catch(function (error) {
+                console.log(error);
             });
         }
     }, {
@@ -27090,8 +27090,8 @@ var AddCategory = function (_Component) {
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/me/categories', { 'title': this.state.name }).then(function (response) {
                 _this2.props.addCategory(response.data.mycategories);
                 _this2.setState({ mycategories: response.data.mycategories });
-            }).catch(function (err) {
-                console.log(err);
+            }).catch(function (error) {
+                console.log(error);
             });
         }
     }, {
