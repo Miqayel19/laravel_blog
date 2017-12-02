@@ -6,7 +6,7 @@ import './MyPosts.css';
 import LoggedMenu from '../LoggedMenu';
 class MyPosts extends Component {
     constructor(props){
-    super(props);
+        super(props);
         this.state = {
             id:"",
             name:"",
