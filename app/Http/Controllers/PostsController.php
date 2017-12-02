@@ -72,7 +72,7 @@ class PostsController extends Controller
             $inputs['image']='no-image.png';
         }
         $updated_post = $post->update($inputs);
-        if($inputs['image'] != 'no-image.png'){
+        if($inputs['image'] != 'no-image.png' && $updated_post) {
             unlink(public_path('/image/').$old_image);
             return redirect('/posts')->with('msg','Post updated successfully');
         } 
