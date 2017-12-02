@@ -74,7 +74,7 @@ class PostsController extends Controller
         }
         $updated_post = $post->update($info);
         $result = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get(); 
-        if($info['image'] != 'no-image.png'){
+        if($info['image'] != 'no-image.png' && $updated_post){
             unlink(public_path('/image/').$old_image);
             return response()->json(['myposts' => $result], 200);
         }
