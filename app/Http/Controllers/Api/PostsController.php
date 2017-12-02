@@ -38,11 +38,22 @@ class PostsController extends Controller
     }
     public function add(PostRequest $request)
     { 
-        $post = $request->postStore();
-        $added_post = Post::create($post);
+        $info = $request->postStore();
+        if($request->hasFile('image')) {    
+            $image = $request->file('image');
+            $info['image'] = time().'.'.$image->getClientOriginalName();
+            $image->move(public_path('/image'), $info['image']);
+        } else {    
+            $info['image']='no-image.png';
+        }
+        $added_post = Post::create($info);
         $result = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get();
-        return response()->json(['myposts' => $result], 200);
-    }
+        if($result)
+        {   
+            return response()->json(['myposts' => $result], 200);
+        }
+        return response()->json(['error' => 'Post not added!']);
+    }    
     public function edit($id)
     {    
         $result = Post::where('id',$id)->first();
@@ -54,17 +65,29 @@ class PostsController extends Controller
         $post = Post::where('id', $id)->first();
         $old_image = $post->image;
         $info = $request->postUpdate();
+        if($request->hasFile('image')) {    
+            $image = $request->file('image');
+            $info['image'] = time().'.'.$image->getClientOriginalName();
+            $image->move(public_path('/image'), $info['image']);
+        } else {    
+            $info['image']='no-image.png';
+        }
         $updated_post = $post->update($info);
         $result = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get(); 
         if($info['image'] != 'no-image.png'){
             unlink(public_path('/image/').$old_image);
             return response()->json(['myposts' => $result], 200);
         }
+        return response()->json(['error' => 'Post not updated!']);
     } 
     public function destroy($id)
     {   
         Post::where('id', $id)->delete();
         $result = Post::where('user_id',Auth::id())->with('category')->get();
-        return response()->json(['myposts' => $result], 200);
+        if($result)
+        {
+            return response()->json(['myposts' => $result], 200);
+        }
+        return response()->json(['error' => 'Post not deleted!']);
     }
-}    
+}        

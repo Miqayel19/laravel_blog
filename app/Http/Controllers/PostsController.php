@@ -37,9 +37,17 @@ class PostsController extends Controller
     }
     public function store(PostRequest $request)
     {
-        $result = $request->postStore(); 
-        $added_post = Post::create($result);
-        if($added_post)
+        $inputs = $request->postStore();
+        if($request->hasFile('image')) {    
+            $image = $request->file('image');
+            $inputs['image'] = time().'.'.$image->getClientOriginalName();
+            $image->move(public_path('/image'), $inputs['image']);
+        } else {    
+            $inputs['image']='no-image.png';
+        }
+        $added_post = Post::create($inputs);
+        $result = Post::where('user_id',Auth::id())->get(); 
+        if($result)
         {
             return redirect('/posts')->with('message','Post added successfully');
         } 
@@ -56,7 +64,13 @@ class PostsController extends Controller
         $post = Post::where('id', $id)->first();
         $old_image = $post->image;
         $inputs = $request->postUpdate();
-        $inputs['user_id'] = Auth::id();
+        if($request->hasFile('image')) {    
+            $image = $request->file('image');
+            $inputs['image'] = time().'.'.$image->getClientOriginalName();
+            $image->move(public_path('/image'), $inputs['image']);
+        } else {    
+            $inputs['image']='no-image.png';
+        }
         $post->update($inputs);
         if($inputs['image'] != 'no-image.png'){
             unlink(public_path('/image/').$old_image);

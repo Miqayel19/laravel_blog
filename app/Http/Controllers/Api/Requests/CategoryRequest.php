@@ -31,16 +31,12 @@ class CategoryRequest extends FormRequest
     public function categoryStore()
     {
         $info = $this->all();
-        $added_category = Category::create(['title' => $info['title'],'user_id' => Auth::id()]);
-        $result = Category::where('user_id',Auth::id())->get();
-        return $result;
+        return $info;
     }
-    public function categoryUpdate($id)
+    public function categoryUpdate()
     {
         $info = $this->all();
-        $updated_categories = Category::where('id', $id)->update(['title' => $info['name']]); 
-        $result = Category::where('user_id',Auth::id())->get();
-        return $result;
+        return $info;
     }
 
 }

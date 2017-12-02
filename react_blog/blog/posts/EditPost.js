@@ -25,7 +25,7 @@ componentDidMount(){
        this.setState({text:response.data.myposts.text});
        this.setState({title:response.data.myposts.title});
        this.setState({image:response.data.myposts.image}); 
-   }).catch((err)=>{console.log(err);})
+   }).catch((error)=>{console.log(error);})
 }
 updatePost(){
     let info = new FormData()
@@ -36,7 +36,7 @@ updatePost(){
     info.append('_method', 'PUT');
     axios.post('/api/me/posts/'+this.props.match.params.id,info).then((response) => {
         this.setState({ myposts: response.data.myposts});
-        }).catch((err)=>{ console.log(err) }) 
+        }).catch((error)=>{ console.log(error) }) 
     }
     getText(e) {
         this.setState({text:e.target.value})

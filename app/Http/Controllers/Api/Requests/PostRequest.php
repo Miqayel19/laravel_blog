@@ -44,13 +44,6 @@ class PostRequest extends FormRequest
         $info = $this->all();
         $info = $this->except(['_token']);
         $info = $this->except(['_method']);
-        if($this->hasFile('image')) {    
-            $image = $this->file('image');
-            $info['image'] = time().'.'.$image->getClientOriginalName();
-            $image->move(public_path('/image'), $info['image']);
-        } else {    
-            $info['image']='no-image.png';
-        }
         $info['user_id'] = Auth::id();
         return $info;
     }
@@ -58,13 +51,6 @@ class PostRequest extends FormRequest
     {
         $info = $this->all();
         $info = $this->except(['_token']);
-        if($this->hasFile('image')) {    
-            $image = $this->file('image');
-            $info['image'] = time().'.'.$image->getClientOriginalName();
-            $image->move(public_path('/image'), $info['image']);
-        } else {    
-            $info['image']='no-image.png';
-        }
         $info['user_id'] = Auth::id();
         return $info;
     }

@@ -33,9 +33,9 @@ class CategoriesController extends Controller
     {
         return view('categories.add');
     }
-    public function store(CategoryRequest $request)
+    public function store(Request $request)
     {
-        $added_category = $request->categoryStore();
+        $added_category = Category::create(['title' => $request->input('title'),'user_id' => Auth::id()]);
         $result = Category::where('user_id',Auth::id())->get(); 
         if($result)
         {
@@ -58,9 +58,9 @@ class CategoriesController extends Controller
         $result = Category::where('id',$id)->first();
         return view('categories.edit',['categories' => $result]);
     }
-    public function update($id,CategoryRequest $request)
+    public function update($id,Request $request)
     {
-        $updated_category = $request->categoryUpdate($id);
+        $updated_category = Category::where('id', $id)->update(['title' => $request->input('title')]); 
         $result = Category::where('user_id',Auth::id())->get();
         if($result)
         {   
@@ -73,7 +73,7 @@ class CategoriesController extends Controller
     {
         $my_categories = Category::where('user_id',Auth::id())->get();
         $current_category = Category::find($id);
-        $current_category_posts = Post::where('cat_id',$id)->orderby('id','desc')->Paginate('3'); 
-        return view('categories.show',['posts' => $current_category]);           
+        $current_category_posts = Post::where('cat_id',$id)->orderby('id','desc')->paginate('3'); 
+        return view('categories.show',['posts' => $current_category_posts]);           
     }
 }    

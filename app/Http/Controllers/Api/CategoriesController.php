@@ -38,8 +38,10 @@ class CategoriesController extends Controller
     }
     public function add(CategoryRequest $request)
     {    
-        $added_category = $request->categoryStore();
-        return response()->json(['mycategories' => $added_category], 200);
+        $info = $request->categoryStore();
+        $added_category = Category::create(['title' => $info['title'],'user_id' => Auth::id()]);
+        $result = Category::where('user_id',Auth::id())->get();
+        return response()->json(['mycategories' => $result], 200);
     }
     public function edit($id)
     {    
@@ -48,21 +50,15 @@ class CategoriesController extends Controller
     }
     public function update($id,CategoryRequest $request)
     {   
-        $updated_category = $request->categoryUpdate($id);
-        return response()->json(['mycategories' => $updated_category], 200);
+        $info = $request->categoryUpdate();
+        $updated_categories = Category::where('id', $id)->update(['title' => $info['name']]); 
+        $result = Category::where('user_id',Auth::id())->get();
+        return response()->json(['mycategories' => $result], 200);
     }
     public function destroy($id)
     {   
         $result = Category::where('id', $id)->delete();
         $categories = Category::where('user_id',Auth::id())->get();
         return response()->json(['mycategories' => $categories], 200);
-    }
-    public function show($id)
-    {
-        $my_categories = Category::where('user_id',Auth::id())->get();
-        $current_category = Category::find($id);
-        $current_category_posts = Post::where('cat_id',$id)->orderby('id','desc')->Paginate('3'); 
-        return response()->json(['posts' => $current_category_posts],200);           
-    }
-    
+    }  
 }    

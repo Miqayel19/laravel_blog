@@ -23,7 +23,7 @@ class AddPost extends Component {
     componentDidMount(){
         axios.get('/api/me/categories').then((response)=>{
             this.setState({mycategories:response.data.mycategories});     
-        }).catch((err)=>{console.log(err);})
+        }).catch((error)=>{console.log(error);})
     }
     getName(e) {
         this.setState({text:e.target.value});
@@ -46,7 +46,7 @@ class AddPost extends Component {
         axios.post('/api/me/posts',info).then((response) => {
             this.props.addPost(response.data.myposts);
             this.setState({ myposts: response.data.myposts});
-        }).catch((err)=>{ console.log(err) })      
+        }).catch((error)=>{console.log(error)})      
     }
     render() {  
         return (

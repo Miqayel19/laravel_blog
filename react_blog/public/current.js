@@ -26590,8 +26590,8 @@ var MyPosts = function (_Component) {
 
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.delete('/api/me/posts/' + this.state.deleted).then(function (response) {
                 _this2.setState({ myposts: response.data.myposts });
-            }).catch(function (err) {
-                console.log(err);
+            }).catch(function (error) {
+                console.log(error);
             });
         }
     }, {
@@ -26601,8 +26601,8 @@ var MyPosts = function (_Component) {
 
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/me/posts').then(function (response) {
                 _this3.setState({ myposts: response.data.myposts });
-            }).catch(function (err) {
-                console.log(err);
+            }).catch(function (error) {
+                console.log(error);
             });
         }
     }, {
@@ -26950,8 +26950,8 @@ var EditPost = function (_Component) {
                 _this2.setState({ text: response.data.myposts.text });
                 _this2.setState({ title: response.data.myposts.title });
                 _this2.setState({ image: response.data.myposts.image });
-            }).catch(function (err) {
-                console.log(err);
+            }).catch(function (error) {
+                console.log(error);
             });
         }
     }, {
@@ -26967,8 +26967,8 @@ var EditPost = function (_Component) {
             info.append('_method', 'PUT');
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/me/posts/' + this.props.match.params.id, info).then(function (response) {
                 _this3.setState({ myposts: response.data.myposts });
-            }).catch(function (err) {
-                console.log(err);
+            }).catch(function (error) {
+                console.log(error);
             });
         }
     }, {
@@ -27193,8 +27193,8 @@ var AddPost = function (_Component) {
 
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/me/categories').then(function (response) {
                 _this2.setState({ mycategories: response.data.mycategories });
-            }).catch(function (err) {
-                console.log(err);
+            }).catch(function (error) {
+                console.log(error);
             });
         }
     }, {
@@ -27230,8 +27230,8 @@ var AddPost = function (_Component) {
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/me/posts', info).then(function (response) {
                 _this3.props.addPost(response.data.myposts);
                 _this3.setState({ myposts: response.data.myposts });
-            }).catch(function (err) {
-                console.log(err);
+            }).catch(function (error) {
+                console.log(error);
             });
         }
     }, {
