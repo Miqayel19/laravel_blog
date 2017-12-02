@@ -6,37 +6,37 @@ import './MyPosts.css';
 import LoggedMenu from '../LoggedMenu';
 class EditPost extends Component {
     constructor(props){
-    super(props);
-    this.state = {
-        text:"",
-        title:"",
-        image:"",
-        id:"",
-        myposts:[]
-    }   
-    this.getText = this.getText.bind(this);
-    this.getTitle = this.getTitle.bind(this);
-    this.onChangeFile = this.onChangeFile.bind(this);
-    this.updatePost= this.updatePost.bind(this);
-}
-componentDidMount(){
-   axios.get('/api/me/posts/'+this.props.match.params.id)
-   .then((response)=>{
-       this.setState({text:response.data.myposts.text});
-       this.setState({title:response.data.myposts.title});
-       this.setState({image:response.data.myposts.image}); 
-   }).catch((error)=>{console.log(error);})
-}
-updatePost(){
-    let info = new FormData()
-    info.append('text',this.state.text);
-    info.append('title',this.state.title);
-    info.append('image',this.state.image);
-    info.append('id',this.props.match.params.id);
-    info.append('_method', 'PUT');
-    axios.post('/api/me/posts/'+this.props.match.params.id,info).then((response) => {
-        this.setState({ myposts: response.data.myposts});
-        }).catch((error)=>{ console.log(error) }) 
+        super(props);
+        this.state = {
+            text:"",
+            title:"",
+            image:"",
+            id:"",
+            myposts:[]
+        }   
+        this.getText = this.getText.bind(this);
+        this.getTitle = this.getTitle.bind(this);
+        this.onChangeFile = this.onChangeFile.bind(this);
+        this.updatePost= this.updatePost.bind(this);    
+    }
+    componentDidMount(){
+       axios.get('/api/me/posts/'+this.props.match.params.id)
+       .then((response)=>{
+           this.setState({text:response.data.myposts.text});
+           this.setState({title:response.data.myposts.title});
+           this.setState({image:response.data.myposts.image}); 
+       }).catch((error)=>{console.log(error);})
+    }
+    updatePost(){
+        let info = new FormData()
+        info.append('text',this.state.text);
+        info.append('title',this.state.title);
+        info.append('image',this.state.image);
+        info.append('id',this.props.match.params.id);
+        info.append('_method', 'PUT');
+        axios.post('/api/me/posts/'+this.props.match.params.id,info).then((response) => {
+            this.setState({ myposts: response.data.myposts});
+            }).catch((error)=>{ console.log(error) }) 
     }
     getText(e) {
         this.setState({text:e.target.value})

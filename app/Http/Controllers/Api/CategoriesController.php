@@ -51,7 +51,7 @@ class CategoriesController extends Controller
     public function update($id,CategoryRequest $request)
     {   
         $info = $request->categoryUpdate();
-        $updated_categories = Category::where('id', $id)->update(['title' => $info['name']]); 
+        $updated_category = Category::where('id', $id)->update(['title' => $info['name']]); 
         $result = Category::where('user_id',Auth::id())->get();
         return response()->json(['mycategories' => $result], 200);
     }

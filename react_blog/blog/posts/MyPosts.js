@@ -7,14 +7,14 @@ import LoggedMenu from '../LoggedMenu';
 class MyPosts extends Component {
     constructor(props){
     super(props);
-    this.state = {
-        id:"",
-        name:"",
-        deleted:null,
-        myposts:[]
-    }   
-    this.deletePost = this.deletePost.bind(this);
-    this.getId = this.getId.bind(this);
+        this.state = {
+            id:"",
+            name:"",
+            deleted:null,
+            myposts:[]
+        }   
+        this.deletePost = this.deletePost.bind(this);
+        this.getId = this.getId.bind(this);
     }       
     getId(value){
         this.setState({deleted: value})
