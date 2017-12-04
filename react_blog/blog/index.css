@@ -4,13 +4,13 @@ body {
   font-family: sans-serif;
 }
 .log{
-	background-color:blue; 
-	color:white !important;
+    background-color:blue; 
+    color:white !important;
 }
 .reg{
-	background-color:aqua; 
-	color:blue !important;
+    background-color:aqua; 
+    color:blue !important;
 }
 .dropdown-menu li{
-	text-align:center;
+    text-align:center;
 }

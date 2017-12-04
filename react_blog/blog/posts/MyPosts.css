@@ -1,81 +1,81 @@
 .add-post{
-	position:absolute;
-	left:265px;
-	top:15%;
-	background-color: pink;	
+    position:absolute;
+    left:265px;
+    top:15%;
+    background-color: pink; 
 }
 .row-second-part ul {
-	display:inline-block;
+    display:inline-block;
 }
 .post-h1{
-	margin-left:45px;
+    margin-left:45px;
 }
 .ul-cat{
-	list-style:none;
-	padding-left:5px;
+    list-style:none;
+    padding-left:5px;
 }
 .ul-cat li {
-	display:inline-block;
+    display:inline-block;
 }
 .add-in{
-	width:150px !important;
-	display: inline-block;
-	margin-left:10px;
+    width:150px !important;
+    display: inline-block;
+    margin-left:10px;
 }
 .post-t{
-	width:150px !important;
-	display: inline-block;
-	margin-left:10px;
+    width:150px !important;
+    display: inline-block;
+    margin-left:10px;
 }
 .add-button {
-	background-color:pink;
-	display: inline-block;
-	margin-left:10px !important;
+    background-color:pink;
+    display: inline-block;
+    margin-left:10px !important;
 }
 #yes{
-	background-color:pink;
+    background-color:pink;
 }
 .cat-id{
-	width:150px !important;
-	margin-left:10px;
+    width:150px !important;
+    margin-left:10px;
 }
 .image-div {
-	margin-left:10px !important;
+    margin-left:10px !important;
 }
 .del-post{
-	display:inline-block;
+    display:inline-block;
 }
 .post-edit{
-	display: inline-block;
+    display: inline-block;
 }
 .post-title{
-	width:250px;
+    width:250px;
 }
 .post-text{
-	width:250px;
+    width:250px;
 }
 .post_cat{
-	width:250px;	
+    width:250px;    
 }
 .post-li {
-	list-style: none;
+    list-style: none;
 }
 .post-li img{
-	width:250px;
-	height:200px;
+    width:250px;
+    height:200px;
 }
-.add-post-title{	
-	margin-left:10px;
-	width:150px !important;
+.add-post-title{    
+    margin-left:10px;
+    width:150px !important;
 }
-.add-post-text{	
-	margin-left:10px ;
-	width:150px !important;
+.add-post-text{ 
+    margin-left:10px ;
+    width:150px !important;
 }
 .update-post{
-	margin-left:10px;
-	color:yellow;
+    margin-left:10px;
+    color:yellow;
 }
 .modal-header h5{
-	text-align: center;
+    text-align: center;
 }

@@ -21421,7 +21421,7 @@ exports = module.exports = __webpack_require__(9)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n}\n.log{\n\tbackground-color:blue; \n\tcolor:white !important;\n}\n.reg{\n\tbackground-color:aqua; \n\tcolor:blue !important;\n}\n.dropdown-menu li{\n\ttext-align:center;\n}", ""]);
+exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n}\n.log{\n    background-color:blue; \n    color:white !important;\n}\n.reg{\n    background-color:aqua; \n    color:blue !important;\n}\n.dropdown-menu li{\n    text-align:center;\n}", ""]);
 
 // exports
 
@@ -26515,7 +26515,7 @@ exports = module.exports = __webpack_require__(9)(undefined);
 
 
 // module
-exports.push([module.i, "#add-cat{\n\tposition:absolute;\n\tleft:325px;\n\ttop:15%;\n\tbackground-color: pink;\t\n}\n.list-cat{\n\twidth:250px;\n}\n.row-second-part ul {\n\tdisplay:inline-block;\n}\n.ul-cat{\n\tlist-style:none;\n\tpadding-left:5px;\n}\n.ul-cat li {\n\tdisplay:inline-block;\n}\n.add-input{\n\twidth:250px !important;\n\tdisplay: inline-block !important;\n\tmargin-left:10px;\n}\n.add-button {\n\tbackground-color:pink;\n\tdisplay: inline-block;\n}\n#yes{\n\tbackground-color:pink;\n}\n.modal-header h5{\n\ttext-align: center;\n}\n.cat-h1{\n\tmargin-left:10px;\n}\n.upd{\n\tdisplay:inline-block;\n\tbackground-color: pink !important;\n\tborder-color: pink !important;\n}", ""]);
+exports.push([module.i, "#add-cat{\n    position:absolute;\n    left:325px;\n    top:15%;\n    background-color: pink; \n}\n.list-cat{\n    width:250px;\n}\n.row-second-part ul {\n    display:inline-block;\n}\n.ul-cat{\n    list-style:none;\n    padding-left:5px;\n}\n.ul-cat li {\n    display:inline-block;\n}\n.add-input{\n    width:250px !important;\n    display: inline-block !important;\n    margin-left:10px;\n}\n.add-button {\n    background-color:pink;\n    display: inline-block;\n}\n#yes{\n    background-color:pink;\n}\n.modal-header h5{\n    text-align: center;\n}\n.cat-h1{\n    margin-left:10px;\n}\n.upd{\n    display:inline-block;\n    background-color: pink !important;\n    border-color: pink !important;\n}", ""]);
 
 // exports
 
@@ -26767,7 +26767,7 @@ exports = module.exports = __webpack_require__(9)(undefined);
 
 
 // module
-exports.push([module.i, ".add-post{\n\tposition:absolute;\n\tleft:265px;\n\ttop:15%;\n\tbackground-color: pink;\t\n}\n.row-second-part ul {\n\tdisplay:inline-block;\n}\n.post-h1{\n\tmargin-left:45px;\n}\n.ul-cat{\n\tlist-style:none;\n\tpadding-left:5px;\n}\n.ul-cat li {\n\tdisplay:inline-block;\n}\n.add-in{\n\twidth:150px !important;\n\tdisplay: inline-block;\n\tmargin-left:10px;\n}\n.post-t{\n\twidth:150px !important;\n\tdisplay: inline-block;\n\tmargin-left:10px;\n}\n.add-button {\n\tbackground-color:pink;\n\tdisplay: inline-block;\n\tmargin-left:10px !important;\n}\n#yes{\n\tbackground-color:pink;\n}\n.cat-id{\n\twidth:150px !important;\n\tmargin-left:10px;\n}\n.image-div {\n\tmargin-left:10px !important;\n}\n.del-post{\n\tdisplay:inline-block;\n}\n.post-edit{\n\tdisplay: inline-block;\n}\n.post-title{\n\twidth:250px;\n}\n.post-text{\n\twidth:250px;\n}\n.post_cat{\n\twidth:250px;\t\n}\n.post-li {\n\tlist-style: none;\n}\n.post-li img{\n\twidth:250px;\n\theight:200px;\n}\n.add-post-title{\t\n\tmargin-left:10px;\n\twidth:150px !important;\n}\n.add-post-text{\t\n\tmargin-left:10px ;\n\twidth:150px !important;\n}\n.update-post{\n\tmargin-left:10px;\n\tcolor:yellow;\n}\n.modal-header h5{\n\ttext-align: center;\n}", ""]);
+exports.push([module.i, ".add-post{\n    position:absolute;\n    left:265px;\n    top:15%;\n    background-color: pink; \n}\n.row-second-part ul {\n    display:inline-block;\n}\n.post-h1{\n    margin-left:45px;\n}\n.ul-cat{\n    list-style:none;\n    padding-left:5px;\n}\n.ul-cat li {\n    display:inline-block;\n}\n.add-in{\n    width:150px !important;\n    display: inline-block;\n    margin-left:10px;\n}\n.post-t{\n    width:150px !important;\n    display: inline-block;\n    margin-left:10px;\n}\n.add-button {\n    background-color:pink;\n    display: inline-block;\n    margin-left:10px !important;\n}\n#yes{\n    background-color:pink;\n}\n.cat-id{\n    width:150px !important;\n    margin-left:10px;\n}\n.image-div {\n    margin-left:10px !important;\n}\n.del-post{\n    display:inline-block;\n}\n.post-edit{\n    display: inline-block;\n}\n.post-title{\n    width:250px;\n}\n.post-text{\n    width:250px;\n}\n.post_cat{\n    width:250px;    \n}\n.post-li {\n    list-style: none;\n}\n.post-li img{\n    width:250px;\n    height:200px;\n}\n.add-post-title{    \n    margin-left:10px;\n    width:150px !important;\n}\n.add-post-text{ \n    margin-left:10px ;\n    width:150px !important;\n}\n.update-post{\n    margin-left:10px;\n    color:yellow;\n}\n.modal-header h5{\n    text-align: center;\n}", ""]);
 
 // exports
 
