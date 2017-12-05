@@ -26101,7 +26101,7 @@ var Register = function (_Component) {
             name: "",
             email: "",
             password: "",
-            confirm_password: "",
+            conf_pass: "",
             reg_user: null
         };
         _this.isRegistered = _this.isRegistered.bind(_this);
@@ -26126,7 +26126,7 @@ var Register = function (_Component) {
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/register', info).then(function (response) {
                 sessionStorage.setItem('name', response.data.user.name);
                 sessionStorage.setItem('user_id', response.data.user.id);
-                _this2.setState({ reg_user: response.data.user.id, error: "" });
+                _this2.setState({ reg_user: response.data.user.id });
             }).catch(function (error) {
                 console.log(error);
             });

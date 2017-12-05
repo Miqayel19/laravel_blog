@@ -31,21 +31,21 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:6',
+            'conf_pass' => 'required|string|min:6|same:password',
             ]);
     }    
     public function register(Request $request,User $user)
     {
-        $this->validator($request->all());
         $inputs = $request->all();
+        $this->validator($inputs)->validate();
         User::create([
             'name' => $inputs['name'],
             'email' => $inputs['email'],
-            'password' => bcrypt($inputs['password']), 
+            'password' => bcrypt($inputs['password']),
+        ]);     
         $user = User::where('email',$request->get('email'))->first();
-        if(Auth::login($user)){
-            return response()->json(['user' => Auth::user()], 200);     
-        }
-        return response()->json(['msg'=>'Register failed']);                   
+        Auth::login($user);    
+        return response()->json(['user' => Auth::user()], 200);                  
     }
 }    

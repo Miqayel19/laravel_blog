@@ -39,8 +39,8 @@ class LoginController extends Controller
         $inputs = $request->all();
         if(Auth::attempt(['email'=>$inputs['email'],'password'=>$inputs['password']]))
         {
-             $user = User::where('email',$request->get('email'))->first();
-             Auth::login($user);  
+            $user = User::where('email',$request->get('email'))->first();
+            Auth::login($user);  
             return response()->json(['user' => Auth::user()],200);
         }
         return response()->json(['Message'=>"Incorrect Login or Password"],400);  

@@ -8,7 +8,7 @@ class Register extends Component {
             name:"",
             email:"",
             password:"",
-            confirm_password:"",
+            conf_pass:"",
             reg_user:null
         }
         this.isRegistered = this.isRegistered.bind(this);
@@ -28,7 +28,7 @@ class Register extends Component {
         .then((response) => {
             sessionStorage.setItem('name',response.data.user.name);
             sessionStorage.setItem('user_id',response.data.user.id);
-            this.setState({reg_user:response.data.user.id,error:""});
+            this.setState({reg_user:response.data.user.id});
         }).catch((error)=>{console.log(error);})        
     }
     getName(e) {
@@ -104,10 +104,10 @@ class Register extends Component {
                                 <div className="form-group">
                                     <div className="col-md-6 col-md-offset-4">
                                         <button type="submit" className="btn btn-primary" onClick = {this.isRegistered}>
-                                            Register
-                                            <div>    
+                                            Register  
+                                            <div>
                                                 {redirect_to_home}
-                                            </div>  
+                                            </div>    
                                         </button>
                                     </div>
                                 </div>
