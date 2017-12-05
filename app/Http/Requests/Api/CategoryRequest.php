@@ -29,12 +29,12 @@ class CategoryRequest extends FormRequest
     }
     public function storeInputs()
     {
-        $info = $this->all();
-        return $info;
+        $inputs = $this->all();
+        return $inputs;
     }
     public function updateInputs()
     {
-        $info = $this->all();
-        return $info;
+        $inputs = $this->all();
+        return $inputs;
     }
 }
