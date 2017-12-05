@@ -16,7 +16,7 @@ class EditCategory extends Component {
     componentDidMount(){
         axios.get('/api/me/categories/'+this.props.match.params.id)
         .then((response)=>{
-            this.setState({name:response.data.mycategories.title});  
+            this.setState({name:response.data.mycategory.title});  
         }).catch((error)=>{console.log(error);})
     }
     updateCat(){

@@ -26822,7 +26822,7 @@ var EditCategory = function (_Component) {
             var _this2 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/me/categories/' + this.props.match.params.id).then(function (response) {
-                _this2.setState({ name: response.data.mycategories.title });
+                _this2.setState({ name: response.data.mycategory.title });
             }).catch(function (error) {
                 console.log(error);
             });

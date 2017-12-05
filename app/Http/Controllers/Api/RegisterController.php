@@ -36,17 +36,16 @@ class RegisterController extends Controller
     }    
     public function register(Request $request,User $user)
     {
-        $info = $request->all();
-        if($info['password'] === $info['conf_pass']){
-            User::create([
-                'name' => $info['name'],
-                'email' => $info['email'],
-                'password' => bcrypt($info['password']),
-            ]); 
-            $user = User::where('email',$request->get('email'))->first();
-            Auth::login($user);
-            return response()->json(['user' => Auth::user()], 200);
-        } 
-        return response()->json(['msg'=>'Register failed']);               
-    }    
-}
+        $this->validator($request->all());
+        $inputs = $request->all();
+        User::create([
+            'name' => $inputs['name'],
+            'email' => $inputs['email'],
+            'password' => bcrypt($inputs['password']), 
+        $user = User::where('email',$request->get('email'))->first();
+        if(Auth::login($user)){
+            return response()->json(['user' => Auth::user()], 200);     
+        }
+        return response()->json(['msg'=>'Register failed']);                   
+    }
+}    

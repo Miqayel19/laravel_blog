@@ -36,8 +36,8 @@ class LoginController extends Controller
     }
     public function login(Request $request,User $user)
     {
-        $logged_user = $request->all();
-        if(Auth::attempt(['email'=>$logged_user['email'],'password'=>$logged_user['password']]))
+        $inputs = $request->all();
+        if(Auth::attempt(['email'=>$inputs['email'],'password'=>$inputs['password']]))
         {
              $user = User::where('email',$request->get('email'))->first();
              Auth::login($user);  
@@ -47,6 +47,6 @@ class LoginController extends Controller
     }
     public function logout(){
         Auth::logout();
-        return response()->json(['message' => "403"], 200);
+        return response()->json(['message' => "You have successfully logout"], 200);
     }  
 }    

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Api\Requests\CategoryRequest;
+use App\Http\Requests\Api\CategoryRequest;
 use App\Category;
 use App\User; 
 use Auth;
@@ -39,8 +39,8 @@ class CategoriesController extends Controller
     }
     public function add(CategoryRequest $request)
     {    
-        $info = $request->categoryStore();
-        $added_category = Category::create(['title' => $info['title'],'user_id' => Auth::id()]);
+        $inputs = $request->storeInputs();
+        $added_category = Category::create(['title' => $inputs['title'],'user_id' => Auth::id()]);
         $result = Category::where('user_id',Auth::id())->get();
         if($result)
         {
@@ -50,13 +50,13 @@ class CategoriesController extends Controller
     }
     public function edit($id)
     {    
-        $categories = Category::where('id',$id)->first();
-        return response()->json(['mycategories' => $categories], 200);
+        $category = Category::where('id',$id)->first();
+        return response()->json(['mycategory' => $category], 200);
     }
     public function update($id,CategoryRequest $request)
     {   
-        $info = $request->categoryUpdate();
-        $updated_category = Category::where('id', $id)->update(['title' => $info['name']]); 
+        $inputs = $request->updateInputs();
+        $updated_category = Category::where('id', $id)->update(['title' => $inputs['name']]); 
         $result = Category::where('user_id',Auth::id())->get();
         if($result)
         {

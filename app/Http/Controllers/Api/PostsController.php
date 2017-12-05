@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Api\Requests\PostRequest;
+use App\Http\Requests\Api\PostRequest;
 use App\Category;
 use App\Post;
 use App\User; 
@@ -39,15 +39,15 @@ class PostsController extends Controller
     }
     public function add(PostRequest $request)
     { 
-        $info = $request->postStore();
+        $inputs = $request->postStore();
         if($request->hasFile('image')) {    
             $image = $request->file('image');
-            $info['image'] = time().'.'.$image->getClientOriginalName();
-            $image->move(public_path('/image'), $info['image']);
+            $inputs['image'] = time().'.'.$image->getClientOriginalName();
+            $image->move(public_path('/image'), $inputs['image']);
         } else {    
-            $info['image']='no-image.png';
+            $inputs['image']='no-image.png';
         }
-        $added_post = Post::create($info);
+        $added_post = Post::create($inputs);
         $result = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get();
         if($result)
         {   
@@ -64,17 +64,17 @@ class PostsController extends Controller
     {
         $post = Post::where('id', $id)->first();
         $old_image = $post->image;
-        $info = $request->postUpdate();
+        $inputs = $request->postUpdate();
         if($request->hasFile('image')) {    
             $image = $request->file('image');
-            $info['image'] = time().'.'.$image->getClientOriginalName();
-            $image->move(public_path('/image'), $info['image']);
+            $inputs['image'] = time().'.'.$image->getClientOriginalName();
+            $image->move(public_path('/image'), $inputs['image']);
         } else {    
-            $info['image']='no-image.png';
+            $inputs['image']='no-image.png';
         }
-        $updated_post = $post->update($info);
+        $updated_post = $post->update($inputs);
         $result = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get(); 
-        if($info['image'] != 'no-image.png' && $updated_post){
+        if($inputs['image'] != 'no-image.png' && $updated_post){
             unlink(public_path('/image/').$old_image);
             return response()->json(['myposts' => $result], 200);
         }
