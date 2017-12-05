@@ -26101,14 +26101,14 @@ var Register = function (_Component) {
             name: "",
             email: "",
             password: "",
-            conf_pass: "",
+            password_confirmation: "",
             reg_user: null
         };
         _this.isRegistered = _this.isRegistered.bind(_this);
         _this.getName = _this.getName.bind(_this);
         _this.getEmail = _this.getEmail.bind(_this);
         _this.getPassword = _this.getPassword.bind(_this);
-        _this.getConfPass = _this.getConfPass.bind(_this);
+        _this.getConfirmPassword = _this.getConfirmPassword.bind(_this);
         return _this;
     }
 
@@ -26121,7 +26121,7 @@ var Register = function (_Component) {
                 name: this.state.name,
                 email: this.state.email,
                 password: this.state.password,
-                conf_pass: this.state.conf_pass
+                password_confirmation: this.state.password_confirmation
             };
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/register', info).then(function (response) {
                 sessionStorage.setItem('name', response.data.user.name);
@@ -26147,9 +26147,9 @@ var Register = function (_Component) {
             this.setState({ password: e.target.value });
         }
     }, {
-        key: 'getConfPass',
-        value: function getConfPass(e) {
-            this.setState({ conf_pass: e.target.value });
+        key: 'getConfirmPassword',
+        value: function getConfirmPassword(e) {
+            this.setState({ password_confirmation: e.target.value });
         }
     }, {
         key: 'render',
@@ -26247,9 +26247,9 @@ var Register = function (_Component) {
                                             id: 'password-confirm',
                                             type: 'password',
                                             className: 'form-control',
-                                            name: 'conf_pass',
-                                            value: this.state.conf_pass,
-                                            onChange: this.getConfPass, required: true })
+                                            name: 'password_confirmation',
+                                            value: this.state.password_confirmation,
+                                            onChange: this.getConfirmPassword, required: true })
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

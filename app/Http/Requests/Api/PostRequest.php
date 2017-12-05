@@ -40,17 +40,17 @@ class PostRequest extends FormRequest
     }
     public function postUpdate()
     {
-        $info = $this->all();
-        $info = $this->except(['_token']);
-        $info = $this->except(['_method']);
-        $info['user_id'] = Auth::id();
-        return $info;
+        $inputs = $this->all();
+        $inputs = $this->except(['_token']);
+        $inputs = $this->except(['_method']);
+        $inputs['user_id'] = Auth::id();
+        return $inputs;
     }
     public function postStore()
     {
-        $info = $this->all();
-        $info = $this->except(['_token']);
-        $info['user_id'] = Auth::id();
-        return $info;
+        $inputs = $this->all();
+        $inputs = $this->except(['_token']);
+        $inputs['user_id'] = Auth::id();
+        return $inputs;
     }
 }

@@ -8,21 +8,21 @@ class Register extends Component {
             name:"",
             email:"",
             password:"",
-            conf_pass:"",
+            password_confirmation:"",
             reg_user:null
         }
         this.isRegistered = this.isRegistered.bind(this);
         this.getName = this.getName.bind(this);
         this.getEmail = this.getEmail.bind(this);
         this.getPassword = this.getPassword.bind(this);
-        this.getConfPass = this.getConfPass.bind(this);
+        this.getConfirmPassword = this.getConfirmPassword.bind(this);
     }
     isRegistered(){
         let info = {
             name: this.state.name,
             email: this.state.email, 
             password: this.state.password, 
-            conf_pass:this.state.conf_pass
+            password_confirmation:this.state.password_confirmation
         }
         axios.post('/api/register',info)
         .then((response) => {
@@ -40,8 +40,8 @@ class Register extends Component {
     getPassword(e){
         this.setState({password:e.target.value})
     }
-    getConfPass(e){
-        this.setState({conf_pass:e.target.value})
+    getConfirmPassword(e){
+        this.setState({password_confirmation:e.target.value})
     }
     render() {
         let redirect_to_home;
@@ -96,9 +96,9 @@ class Register extends Component {
                                             id="password-confirm" 
                                             type="password" 
                                             className="form-control" 
-                                            name="conf_pass" 
-                                            value = {this.state.conf_pass} 
-                                            onChange={this.getConfPass} required/>
+                                            name="password_confirmation" 
+                                            value = {this.state.password_confirmation} 
+                                            onChange={this.getConfirmPassword} required/>
                                     </div>
                                 </div>
                                 <div className="form-group">
