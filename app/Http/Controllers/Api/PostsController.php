@@ -39,7 +39,7 @@ class PostsController extends Controller
     }
     public function add(PostRequest $request)
     { 
-        $inputs = $request->postStore();
+        $inputs = $request->storeInputs();
         if($request->hasFile('image')) {    
             $image = $request->file('image');
             $inputs['image'] = time().'.'.$image->getClientOriginalName();
@@ -64,7 +64,7 @@ class PostsController extends Controller
     {
         $post = Post::where('id', $id)->first();
         $old_image = $post->image;
-        $inputs = $request->postUpdate();
+        $inputs = $request->updateInputs();
         if($request->hasFile('image')) {    
             $image = $request->file('image');
             $inputs['image'] = time().'.'.$image->getClientOriginalName();

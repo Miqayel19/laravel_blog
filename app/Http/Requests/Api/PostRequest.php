@@ -38,7 +38,7 @@ class PostRequest extends FormRequest
             'image.required'=>'An image is Required',
         ];
     }
-    public function postUpdate()
+    public function updateInputs()
     {
         $inputs = $this->all();
         $inputs = $this->except(['_token']);
@@ -46,7 +46,7 @@ class PostRequest extends FormRequest
         $inputs['user_id'] = Auth::id();
         return $inputs;
     }
-    public function postStore()
+    public function storeInputs()
     {
         $inputs = $this->all();
         $inputs = $this->except(['_token']);
