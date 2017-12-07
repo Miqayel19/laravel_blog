@@ -30,8 +30,7 @@ class Login extends Component {
             email:this.state.email,
             password:this.state.password            
         }
-        axios.post('/api/login',info).then((response)=>  
-        {           
+        axios.post('/api/login',info).then((response) => {           
             sessionStorage.setItem('name',response.data.resource.name);
             sessionStorage.setItem('user_id',response.data.resource.id);
             this.setState({id:response.data.resource.id, error:""});

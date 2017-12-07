@@ -14,8 +14,7 @@ class EditCategory extends Component {
         this.updateCat= this.updateCat.bind(this);
     }
     componentDidMount(){
-        axios.get('/api/me/categories/'+this.props.match.params.id)
-        .then((response)=>{
+        axios.get('/api/me/categories/'+this.props.match.params.id).then((response) => {
             this.setState({name:response.data.resource.title});  
         }).catch((error)=>{console.log(error);})
     }
@@ -24,7 +23,7 @@ class EditCategory extends Component {
             title:this.state.name,
             id:this.props.match.params.id
         }
-        axios.put('/api/me/categories/'+this.props.match.params.id,info).then((response)=>{
+        axios.put('/api/me/categories/'+this.props.match.params.id,info).then((response) => {
         }).catch((error)=>{console.log(error);})
     }
     getName(e){

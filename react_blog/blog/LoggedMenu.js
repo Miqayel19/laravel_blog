@@ -9,7 +9,7 @@ class LoggedMenu extends Component{
     }
     Logout(){
         sessionStorage.clear();
-        axios.get('/api/logout').then((response)=>{             
+        axios.get('/api/logout').then((response) => {             
         }).catch((error) => {console.log(error);})
     }   
     render(){

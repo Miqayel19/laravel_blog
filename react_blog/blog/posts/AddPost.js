@@ -20,7 +20,7 @@ class AddPost extends Component {
         this.addPost = this.addPost.bind(this);
     }              
     componentDidMount(){
-        axios.get('/api/me/categories').then((response)=>{
+        axios.get('/api/me/categories').then((response) => {
             this.setState({mycategories:response.data.resource});     
         }).catch((error)=>{console.log(error);})
     }

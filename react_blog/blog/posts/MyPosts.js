@@ -19,8 +19,8 @@ class MyPosts extends Component {
         this.setState({deleted: value})
     }
     deletePost(){
-        axios.delete('/api/me/posts/'+this.state.deleted).then((response)=>
-            {this.setState({myposts:response.data.resource});
+        axios.delete('/api/me/posts/'+this.state.deleted).then((response) => {
+            this.setState({myposts:response.data.resource});
         }).catch((error)=>{console.log(error);})    
     }
     componentDidMount(){

@@ -20,7 +20,7 @@ class EditPost extends Component {
     }
     componentDidMount(){
        axios.get('/api/me/posts/'+this.props.match.params.id)
-       .then((response)=>{
+       .then((response) => {
            this.setState({text:response.data.resource.text});
            this.setState({title:response.data.resource.title});
            this.setState({image:response.data.resource.image}); 
