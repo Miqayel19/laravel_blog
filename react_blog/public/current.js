@@ -26596,8 +26596,8 @@ var MyPosts = function (_Component) {
     }, {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
-            if (nextProps.resource !== this.props.resource) {
-                this.setState({ myposts: nextProps.resource });
+            if (nextProps.posts !== this.props.posts) {
+                this.setState({ myposts: nextProps.posts });
             }
         }
     }, {

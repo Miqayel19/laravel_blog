@@ -36,7 +36,7 @@ class CategoriesController extends Controller
     public function mycategories(CategoryServiceInterface $categoryService)
     {      
         $categories = $categoryService->getCategoryByUser(Auth::id());
-        return response()->json(['status' => 'success','message' => 'Getting my categories','resource' => $categories], 200);  
+        return response()->json(['status' => 'success','message' => 'Getting My categories','resource' => $categories], 200);  
     }
     public function store(CategoryServiceInterface $categoryService,CategoryRequest $request)
     {    

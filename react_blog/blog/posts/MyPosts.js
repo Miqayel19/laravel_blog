@@ -29,8 +29,8 @@ class MyPosts extends Component {
         }).catch((error)=>{console.log(error);})
     }
     componentWillReceiveProps(nextProps){            
-        if(nextProps.resource !== this.props.resource){
-            this.setState({ myposts : nextProps.resource});
+        if(nextProps.posts !== this.props.posts){
+            this.setState({ myposts : nextProps.posts});
         }
     }            
     render() {  
