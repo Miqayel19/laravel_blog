@@ -56,7 +56,7 @@ class PostsController extends Controller
     }    
     public function edit($id,CategoryServiceInterface $categoryService,PostServiceInterface $postService)
     {
-        $categories = $categoryService->getCategoryByUser(Auth::user()->id);
+        $categories = $categoryService->getCategoryByUser(Auth::id());
         $posts = $postService->editPost($id);
         return view('posts.edit',['posts' => $posts,'my_categories' => $categories]);
     }
