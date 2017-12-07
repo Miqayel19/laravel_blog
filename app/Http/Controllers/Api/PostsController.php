@@ -32,12 +32,12 @@ class PostsController extends Controller
     public function index()
     { 
         $posts = Post::get();
-        return response()->json(['status' => 'success','message' => 'Get All posts','resource' => $posts], 200);
+        return response()->json(['status' => 'success','message' => 'Get all posts','resource' => $posts], 200);
     }
     public function myposts()
     {      
         $posts = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get();
-        return response()->json(['status' => 'success','message' => 'Get My posts','resource' => $posts], 200);  
+        return response()->json(['status' => 'success','message' => 'Get my posts','resource' => $posts], 200);  
     }
     public function store(PostServiceInterface $postService,PostRequest $request)
     { 
@@ -54,7 +54,7 @@ class PostsController extends Controller
         if($result){   
             return response()->json(['status' => 'success','message' => 'Post Added','resource' => $post], 200);
         }
-        return response()->json(['status' => 'failed','message' => 'Post not added!'],400);
+        return response()->json(['status' => 'error','message' => 'Post not added!'],400);
     }    
     public function edit($id,PostServiceInterface $postService)
     {    
@@ -79,7 +79,7 @@ class PostsController extends Controller
             unlink(public_path('/image/').$old_image);
             return response()->json(['status' => 'success','message' => 'Post updated','resource' => $result], 200);
         }
-        return response()->json(['status' => 'failed','message' => 'Post not updated!'],400);
+        return response()->json(['status' => 'error','message' => 'Post not updated!'],400);
     } 
     public function destroy($id,PostServiceInterface $postService)
     {   
@@ -88,6 +88,6 @@ class PostsController extends Controller
         if($result){
             return response()->json(['status' => 'success','message' => 'Post deleted','resource' => $post], 200);
         }
-        return response()->json(['status' => 'failed','message' => 'Post not deleted!'],400);
+        return response()->json(['status' => 'error','message' => 'Post not deleted!'],400);
     }
 }        

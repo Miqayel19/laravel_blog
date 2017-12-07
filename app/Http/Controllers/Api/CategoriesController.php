@@ -31,12 +31,12 @@ class CategoriesController extends Controller
     public function index()
     {      
         $categories = Category::get();
-        return response()->json(['resource' => $categories], 200);  
+        return response()->json(['status' => 'success','message' => 'Get all categories','resource' => $categories], 200);  
     }
     public function mycategories(CategoryServiceInterface $categoryService)
     {      
         $categories = $categoryService->getCategoryByUser(Auth::id());
-        return response()->json(['status' => 'success','message' => 'Getting Mycategories','resource' => $categories], 200);  
+        return response()->json(['status' => 'success','message' => 'Getting my categories','resource' => $categories], 200);  
     }
     public function store(CategoryServiceInterface $categoryService,CategoryRequest $request)
     {    
@@ -46,7 +46,7 @@ class CategoriesController extends Controller
         if($category){
             return response()->json(['status' => 'success','message' => 'Successfully added','resource' => $result], 200);
         } 
-        return response()->json(['status' => 'failed','message' => 'Category not added'],400);
+        return response()->json(['status' => 'error','message' => 'Category not added'],400);
     }
     public function edit($id,CategoryServiceInterface $categoryService)
     {    
@@ -70,6 +70,6 @@ class CategoriesController extends Controller
         if($category){
             return response()->json(['status' => 'success','message' => 'Category deleted!','resource' => $result], 200);
         } 
-        return response()->json(['status' => 'failed','message' => 'Category not deleted!'],400);
+        return response()->json(['status' => 'error','message' => 'Category not deleted!'],400);
     }  
 }    
