@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
+use App\Contracts\PostServiceInterface;
+use App\Contracts\CategoryServiceInterface;
 use App\Category;
 use App\Post;
 use Auth;
@@ -31,12 +33,12 @@ class PostsController extends Controller
         $categories = Category::get();
         return view('posts.index',['categories' => $categories, 'my_posts' => $posts]);
     }
-    public function create()
+    public function create(CategoryServiceInterface $categoryService)
     {
-        $categories = Category::where('user_id',Auth::id())->get();
-        return view('posts.add',['my_categories' => $categories]);
+        $categories = $categoryService->getCategoryByUser(Auth::id());
+        return view('posts.create',['my_categories' => $categories]);
     }
-    public function store(PostRequest $request)
+    public function store(PostServiceInterface $postService,PostRequest $request)
     {
         $inputs = $request->storeInputs();
         if($request->hasFile('image')) {    
@@ -46,23 +48,21 @@ class PostsController extends Controller
         } else {    
             $inputs['image']='no-image.png';
         }
-        $added_post = Post::create($inputs);
-        $result = Post::where('user_id',Auth::id())->get(); 
-        if($result)
-        {
+        $result = $postService->addPost($inputs);
+        if($result){
             return redirect('/posts')->with('message','Post added successfully');
         } 
-        return redirect()->back()->with('msg','Post is not added,try again');
+        return redirect()->back()->with('error','Post is not added,try again');
     }    
-    public function edit($id)
+    public function edit($id,CategoryServiceInterface $categoryService,PostServiceInterface $postService)
     {
-        $categories = Category::where('user_id',Auth::id())->get();
-        $posts = Post::where('id',$id)->first();
+        $categories = $categoryService->getCategoryByUser(Auth::user()->id);
+        $posts = $postService->editPost($id);
         return view('posts.edit',['posts' => $posts,'my_categories' => $categories]);
     }
-    public function update($id,PostRequest $request)
+    public function update($id,PostServiceInterface $postService,PostRequest $request)
     {
-        $post = Post::where('id', $id)->first();
+        $post = $postService->editPost($id);
         $old_image = $post->image;
         $inputs = $request->updateInputs();
         if($request->hasFile('image')) {    
@@ -72,21 +72,20 @@ class PostsController extends Controller
         } else {    
             $inputs['image']='no-image.png';
         }
-        $updated_post = $post->update($inputs);
-        if($inputs['image'] != 'no-image.png' && $updated_post) {
+        $result = $post->update($inputs);
+        if($inputs['image'] != 'no-image.png' && $result) {
             unlink(public_path('/image/').$old_image);
-            return redirect('/posts')->with('msg','Post updated successfully');
+            return redirect('/posts')->with('message','Post updated successfully');
         } 
         return redirect()->back()->with('error', 'Post is not updated,something is wrong');
     }    
-    public function destroy($id)
+    public function destroy($id,PostServiceInterface $postService)
     {   
-        $deleted_post = Post::where('id', $id)->delete();         
-        if($deleted_post)
-        {
-            return redirect('/posts')->with('msg','Post deleted successfully');
+        $result = $postService->deletePost($id);         
+        if($result){
+            return redirect('/posts')->with('message','Post deleted successfully');
         } 
-        return redirect()->back()->with('msg','Something is wrong,post is not deleted');
+        return redirect()->back()->with('error','Something is wrong,post is not deleted');
     }    
 }
         

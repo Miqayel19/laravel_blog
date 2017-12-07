@@ -15,8 +15,8 @@ class AddCategory extends Component {
     }       
     addCategory(){
         axios.post('/api/me/categories',{'title':this.state.name}).then((response) => {
-            this.props.addCategory(response.data.mycategories);
-            this.setState({ mycategories: response.data.mycategories});
+            this.props.addCategory(response.data.resource);
+            this.setState({ mycategories: response.data.resource});
         }).catch((error)=>{console.log(error);}) 
     }
     getName(e) {

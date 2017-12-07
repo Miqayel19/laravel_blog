@@ -16,15 +16,15 @@ class EditCategory extends Component {
     componentDidMount(){
         axios.get('/api/me/categories/'+this.props.match.params.id)
         .then((response)=>{
-            this.setState({name:response.data.mycategory.title});  
+            this.setState({name:response.data.resource.title});  
         }).catch((error)=>{console.log(error);})
     }
     updateCat(){
         let info = {
-            name:this.state.name,
+            title:this.state.name,
             id:this.props.match.params.id
         }
-        axios.put('/api/me/categories/'+this.props.match.params.id,info).then((response)=>{   
+        axios.put('/api/me/categories/'+this.props.match.params.id,info).then((response)=>{
         }).catch((error)=>{console.log(error);})
     }
     getName(e){

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\CategoryRequest;
+use App\Contracts\CategoryServiceInterface;
 use App\Category;
 use App\User; 
 use Auth;
@@ -30,48 +31,45 @@ class CategoriesController extends Controller
     public function index()
     {      
         $categories = Category::get();
-        return response()->json(['categories' => $categories], 200);  
+        return response()->json(['resource' => $categories], 200);  
     }
-    public function mycategories()
+    public function mycategories(CategoryServiceInterface $categoryService)
     {      
-        $categories = Category::where('user_id',Auth::id())->get();
-        return response()->json(['mycategories' => $categories], 200);  
+        $categories = $categoryService->getCategoryByUser(Auth::id());
+        return response()->json(['status' => 'success','message' => 'Getting Mycategories','resource' => $categories], 200);  
     }
-    public function add(CategoryRequest $request)
+    public function store(CategoryServiceInterface $categoryService,CategoryRequest $request)
     {    
         $inputs = $request->storeInputs();
-        $added_category = Category::create(['title' => $inputs['title'],'user_id' => Auth::id()]);
-        $result = Category::where('user_id',Auth::id())->get();
-        if($result)
-        {
-            return response()->json(['mycategories' => $result], 200);
+        $category = $categoryService->addCategory($inputs);
+        $result = $categoryService->getCategoryByUser(Auth::id());
+        if($category){
+            return response()->json(['status' => 'success','message' => 'Successfully added','resource' => $result], 200);
         } 
-        return response()->json(['error' => 'Category not added!'],400);
+        return response()->json(['status' => 'failed','message' => 'Category not added'],400);
     }
-    public function edit($id)
+    public function edit($id,CategoryServiceInterface $categoryService)
     {    
-        $category = Category::where('id',$id)->first();
-        return response()->json(['mycategory' => $category], 200);
+        $category = $categoryService->editCategory($id);
+        return response()->json(['status' => 'success','message' => 'Edited successfully','resource' => $category], 200);
     }
-    public function update($id,CategoryRequest $request)
+    public function update($id,CategoryServiceInterface $categoryService,CategoryRequest $request)
     {   
         $inputs = $request->updateInputs();
-        $updated_category = Category::where('id', $id)->update(['title' => $inputs['name']]); 
-        $result = Category::where('user_id',Auth::id())->get();
-        if($result)
-        {
-            return response()->json(['mycategories' => $result], 200);
+        $category = $categoryService->updateCategory($inputs, $id);
+        $result = $categoryService->getCategoryByUser(Auth::id());
+        if($category){
+            return response()->json(['status' => 'success','message' => 'Category  updated!','resource' => $result], 200);
         } 
-        return response()->json(['error' => 'Category not updated!'],400);
+        return response()->json(['status' => 'success','message' => 'Category not updated!'],400);
     }
-    public function destroy($id)
+    public function destroy($id,CategoryServiceInterface $categoryService)
     {   
-        $deleted_category = Category::where('id', $id)->delete();
-        $result = Category::where('user_id',Auth::id())->get();
-        if($result)
-        {
-            return response()->json(['mycategories' => $result], 200);
+        $category = $categoryService->deleteCategory($id);
+        $result = $categoryService->getCategoryByUser(Auth::id());
+        if($category){
+            return response()->json(['status' => 'success','message' => 'Category deleted!','resource' => $result], 200);
         } 
-        return response()->json(['error' => 'Category not deleted!'],400);
+        return response()->json(['status' => 'failed','message' => 'Category not deleted!'],400);
     }  
 }    

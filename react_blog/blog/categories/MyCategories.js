@@ -19,13 +19,13 @@ class MyCategories extends Component {
         this.setState({deleted: value})
     }
     deleteCat(){
-        axios.delete('/api/me/categories/'+this.state.deleted).then((response)=>
-            {this.setState({mycategories:response.data.mycategories});
+        axios.delete('/api/me/categories/'+this.state.deleted).then((response)=>{
+            this.setState({mycategories:response.data.resource});
             }).catch((err)=>{console.log(err);})   
     }
     componentDidMount(){
         axios.get('/api/me/categories').then((response) => {
-            this.setState({ mycategories: response.data.mycategories});
+            this.setState({mycategories: response.data.resource});
         }).catch((err)=>{console.log(err);}) 
     }
     componentWillReceiveProps(nextProps){            

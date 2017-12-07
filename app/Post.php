@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-	protected $fillable = [
-		 'title','text','cat_id','image','user_id'
-	];
+    protected $fillable = [
+        'title','text','cat_id','image','user_id'
+    ];
 
-	protected $hidden = [];
+    protected $hidden = [];
 
-	public function category(){
-		return $this->belongsTo('App\Category', 'cat_id');
-	}
+    public function category()
+    {
+        return $this->belongsTo('App\Category','cat_id');
+    }
 }

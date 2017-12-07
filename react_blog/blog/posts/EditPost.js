@@ -21,9 +21,9 @@ class EditPost extends Component {
     componentDidMount(){
        axios.get('/api/me/posts/'+this.props.match.params.id)
        .then((response)=>{
-           this.setState({text:response.data.myposts.text});
-           this.setState({title:response.data.myposts.title});
-           this.setState({image:response.data.myposts.image}); 
+           this.setState({text:response.data.resource.text});
+           this.setState({title:response.data.resource.title});
+           this.setState({image:response.data.resource.image}); 
        }).catch((error)=>{console.log(error);})
     }
     updatePost(){
@@ -34,7 +34,7 @@ class EditPost extends Component {
         info.append('id',this.props.match.params.id);
         info.append('_method', 'PUT');
         axios.post('/api/me/posts/'+this.props.match.params.id,info).then((response) => {
-            this.setState({ myposts: response.data.myposts});
+            this.setState({ myposts: response.data.resource});
             }).catch((error)=>{ console.log(error) }) 
     }
     getText(e) {

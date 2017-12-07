@@ -32,7 +32,7 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',            
-            ]);
+        ]);
     }    
     public function register(Request $request,User $user)
     {

@@ -21670,7 +21670,7 @@ var Categories = function (_Component) {
             var _this2 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/categories').then(function (response) {
-                _this2.setState({ categories: response.data.categories });
+                _this2.setState({ categories: response.data.resource });
             }).catch(function (error) {
                 console.log(error);
             });
@@ -26340,7 +26340,7 @@ var MyCategories = function (_Component) {
             var _this2 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.delete('/api/me/categories/' + this.state.deleted).then(function (response) {
-                _this2.setState({ mycategories: response.data.mycategories });
+                _this2.setState({ mycategories: response.data.resource });
             }).catch(function (err) {
                 console.log(err);
             });
@@ -26351,7 +26351,7 @@ var MyCategories = function (_Component) {
             var _this3 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/me/categories').then(function (response) {
-                _this3.setState({ mycategories: response.data.mycategories });
+                _this3.setState({ mycategories: response.data.resource });
             }).catch(function (err) {
                 console.log(err);
             });
@@ -26577,7 +26577,7 @@ var MyPosts = function (_Component) {
             var _this2 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.delete('/api/me/posts/' + this.state.deleted).then(function (response) {
-                _this2.setState({ myposts: response.data.myposts });
+                _this2.setState({ myposts: response.data.resource });
             }).catch(function (error) {
                 console.log(error);
             });
@@ -26588,7 +26588,7 @@ var MyPosts = function (_Component) {
             var _this3 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/me/posts').then(function (response) {
-                _this3.setState({ myposts: response.data.myposts });
+                _this3.setState({ myposts: response.data.resource });
             }).catch(function (error) {
                 console.log(error);
             });
@@ -26596,8 +26596,8 @@ var MyPosts = function (_Component) {
     }, {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
-            if (nextProps.posts !== this.props.posts) {
-                this.setState({ myposts: nextProps.posts });
+            if (nextProps.resource !== this.props.resource) {
+                this.setState({ myposts: nextProps.resource });
             }
         }
     }, {
@@ -26822,7 +26822,7 @@ var EditCategory = function (_Component) {
             var _this2 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/me/categories/' + this.props.match.params.id).then(function (response) {
-                _this2.setState({ name: response.data.mycategory.title });
+                _this2.setState({ name: response.data.resource.title });
             }).catch(function (error) {
                 console.log(error);
             });
@@ -26831,7 +26831,7 @@ var EditCategory = function (_Component) {
         key: 'updateCat',
         value: function updateCat() {
             var info = {
-                name: this.state.name,
+                title: this.state.name,
                 id: this.props.match.params.id
             };
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.put('/api/me/categories/' + this.props.match.params.id, info).then(function (response) {}).catch(function (error) {
@@ -26931,9 +26931,9 @@ var EditPost = function (_Component) {
             var _this2 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/me/posts/' + this.props.match.params.id).then(function (response) {
-                _this2.setState({ text: response.data.myposts.text });
-                _this2.setState({ title: response.data.myposts.title });
-                _this2.setState({ image: response.data.myposts.image });
+                _this2.setState({ text: response.data.resource.text });
+                _this2.setState({ title: response.data.resource.title });
+                _this2.setState({ image: response.data.resource.image });
             }).catch(function (error) {
                 console.log(error);
             });
@@ -26950,7 +26950,7 @@ var EditPost = function (_Component) {
             info.append('id', this.props.match.params.id);
             info.append('_method', 'PUT');
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/api/me/posts/' + this.props.match.params.id, info).then(function (response) {
-                _this3.setState({ myposts: response.data.myposts });
+                _this3.setState({ myposts: response.data.resource });
             }).catch(function (error) {
                 console.log(error);
             });
@@ -27070,8 +27070,8 @@ var AddCategory = function (_Component) {
             var _this2 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/api/me/categories', { 'title': this.state.name }).then(function (response) {
-                _this2.props.addCategory(response.data.mycategories);
-                _this2.setState({ mycategories: response.data.mycategories });
+                _this2.props.addCategory(response.data.resource);
+                _this2.setState({ mycategories: response.data.resource });
             }).catch(function (error) {
                 console.log(error);
             });
@@ -27172,7 +27172,7 @@ var AddPost = function (_Component) {
             var _this2 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/me/categories').then(function (response) {
-                _this2.setState({ mycategories: response.data.mycategories });
+                _this2.setState({ mycategories: response.data.resource });
             }).catch(function (error) {
                 console.log(error);
             });
@@ -27208,8 +27208,8 @@ var AddPost = function (_Component) {
             info.append('image', this.state.image);
             info.append('cat_id', this.state.cat_id);
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/api/me/posts', info).then(function (response) {
-                _this3.props.addPost(response.data.myposts);
-                _this3.setState({ myposts: response.data.myposts });
+                _this3.props.addPost(response.data.resource);
+                _this3.setState({ myposts: response.data.resource });
             }).catch(function (error) {
                 console.log(error);
             });

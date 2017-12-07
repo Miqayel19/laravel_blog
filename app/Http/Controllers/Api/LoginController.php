@@ -31,22 +31,24 @@ class LoginController extends Controller
     {
         return Validator::make($data, [
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:6',
         ]);
     }
     public function login(Request $request,User $user)
     {
         $inputs = $request->all();
+        $this->validator($inputs)->validate();
         if(Auth::attempt(['email'=>$inputs['email'],'password'=>$inputs['password']]))
         {
             $user = User::where('email',$request->get('email'))->first();
             Auth::login($user);  
-            return response()->json(['user' => Auth::user()],200);
+            return response()->json(['user' => Auth::user()],201);
         }
         return response()->json(['Message'=>"Incorrect Login or Password"],400);  
     }
-    public function logout(){
+    public function logout()
+    {
         Auth::logout();
-        return response()->json(['message' => "You have successfully logout"], 200);
+        return response()->json(['Message' => "You have successfully logout"], 201);
     }  
 }    

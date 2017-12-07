@@ -21,7 +21,7 @@ class AddPost extends Component {
     }              
     componentDidMount(){
         axios.get('/api/me/categories').then((response)=>{
-            this.setState({mycategories:response.data.mycategories});     
+            this.setState({mycategories:response.data.resource});     
         }).catch((error)=>{console.log(error);})
     }
     getName(e) {
@@ -43,8 +43,8 @@ class AddPost extends Component {
         info.append('image',this.state.image);
         info.append('cat_id',this.state.cat_id);
         axios.post('/api/me/posts',info).then((response) => {
-            this.props.addPost(response.data.myposts);
-            this.setState({ myposts: response.data.myposts});
+            this.props.addPost(response.data.resource);
+            this.setState({ myposts: response.data.resource});
         }).catch((error)=>{console.log(error)})      
     }
     render() {  

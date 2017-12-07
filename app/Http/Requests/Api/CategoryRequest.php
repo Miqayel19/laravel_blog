@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Api;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Auth;
 
 class CategoryRequest extends FormRequest
 {
@@ -30,10 +31,11 @@ class CategoryRequest extends FormRequest
     public function storeInputs()
     {
         $inputs = $this->all();
+        $inputs['user_id'] = Auth::id();
         return $inputs;
     }
     public function updateInputs()
-    {
+    {   
         $inputs = $this->all();
         return $inputs;
     }

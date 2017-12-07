@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\PostRequest;
+use App\Contracts\PostServiceInterface;
+use App\Contracts\CategoryServiceInterface;
 use App\Category;
 use App\Post;
 use App\User; 
@@ -30,14 +32,14 @@ class PostsController extends Controller
     public function index()
     { 
         $posts = Post::get();
-        return response()->json(['posts' => $posts], 200);
+        return response()->json(['status' => 'success','message' => 'Get All posts','resource' => $posts], 200);
     }
     public function myposts()
     {      
         $posts = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get();
-        return response()->json(['myposts' => $posts], 200);  
+        return response()->json(['status' => 'success','message' => 'Get My posts','resource' => $posts], 200);  
     }
-    public function add(PostRequest $request)
+    public function store(PostServiceInterface $postService,PostRequest $request)
     { 
         $inputs = $request->storeInputs();
         if($request->hasFile('image')) {    
@@ -45,24 +47,23 @@ class PostsController extends Controller
             $inputs['image'] = time().'.'.$image->getClientOriginalName();
             $image->move(public_path('/image'), $inputs['image']);
         } else {    
-            $inputs['image']='no-image.png';
+            $inputs['image'] = 'no-image.png';
         }
-        $added_post = Post::create($inputs);
-        $result = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get();
-        if($result)
-        {   
-            return response()->json(['myposts' => $result], 200);
+        $result = $postService->addPost($inputs);
+        $post = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get();
+        if($result){   
+            return response()->json(['status' => 'success','message' => 'Post Added','resource' => $post], 200);
         }
-        return response()->json(['error' => 'Post not added!'],400);
+        return response()->json(['status' => 'failed','message' => 'Post not added!'],400);
     }    
-    public function edit($id)
+    public function edit($id,PostServiceInterface $postService)
     {    
-        $result = Post::where('id',$id)->first();
-        return response()->json(['myposts' => $result], 200);
+        $result = $postService->editPost($id);
+        return response()->json(['status' => 'success','resource' => $result], 200);
     }
-    public function update($id,PostRequest $request,Post $post)
+    public function update($id,PostRequest $request,PostServiceInterface $postService)
     {
-        $post = Post::where('id', $id)->first();
+        $post = $postService->editPost($id);
         $old_image = $post->image;
         $inputs = $request->updateInputs();
         if($request->hasFile('image')) {    
@@ -76,18 +77,17 @@ class PostsController extends Controller
         $result = Post::where('user_id',Auth::id())->with('category')->orderby('id','desc')->get(); 
         if($inputs['image'] != 'no-image.png' && $updated_post){
             unlink(public_path('/image/').$old_image);
-            return response()->json(['myposts' => $result], 200);
+            return response()->json(['status' => 'success','message' => 'Post updated','resource' => $result], 200);
         }
-        return response()->json(['error' => 'Post not updated!'],400);
+        return response()->json(['status' => 'failed','message' => 'Post not updated!'],400);
     } 
-    public function destroy($id)
+    public function destroy($id,PostServiceInterface $postService)
     {   
-        Post::where('id', $id)->delete();
-        $result = Post::where('user_id',Auth::id())->with('category')->get();
-        if($result)
-        {
-            return response()->json(['myposts' => $result], 200);
+        $result = $postService->deletePost($id);
+        $post = Post::where('user_id',Auth::id())->with('category')->get();
+        if($result){
+            return response()->json(['status' => 'success','message' => 'Post deleted','resource' => $post], 200);
         }
-        return response()->json(['error' => 'Post not deleted!'],400);
+        return response()->json(['status' => 'failed','message' => 'Post not deleted!'],400);
     }
 }        

@@ -11,7 +11,7 @@ class Categories extends Component {
     }       
     componentDidMount(){
         axios.get('/api/categories').then((response) => {          
-            this.setState({ categories: response.data.categories});
+            this.setState({ categories: response.data.resource});
             }).catch((error)=>{console.log(error);           
         })
         axios.get('/api/posts').then((response) => {

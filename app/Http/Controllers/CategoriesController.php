@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
+use App\Contracts\CategoryServiceInterface;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
@@ -31,48 +32,41 @@ class CategoriesController extends Controller
     }
     public function create()
     {
-        return view('categories.add');
+        return view('categories.create');
     }
-    public function store(Request $request)
+    public function store(CategoryServiceInterface $categoryService,Request $request)
     {
-        $added_category = Category::create(['title' => $request->input('title'),'user_id' => Auth::id()]);
-        $result = Category::where('user_id',Auth::id())->get(); 
-        if($result)
-        {
-            return redirect('/categories')->with('msg','Category added successfully');
+        $inputs = ['title' => $request->input('title'),'user_id' => Auth::id()];
+        $category = $categoryService->addCategory($inputs);
+        if($category){
+            return redirect('/categories')->with('message','Category added successfully');
         } 
-        return redirect()->back()->with('msg','Category not added,try again');
+        return redirect()->back()->with('error','Category not added,try again');
     }  
-    public function destroy($id)
+    public function destroy($id,CategoryServiceInterface $categoryService)
     {   
-        $deleted_category = Category::where('id', $id)->delete();
-        if($deleted_category)
-        {
-            return redirect('/categories')->with('msg','Category deleted successfully');
+        $category = $categoryService->deleteCategory($id);
+        if($category){
+            return redirect('/categories')->with('message','Category deleted successfully');
         }  
-        return redirect()->back()->with('msg','Category not deleted,try again');
-        
+        return redirect()->back()->with('error','Category not deleted,try again');
     }    
-    public function edit($id)
+    public function edit($id,CategoryServiceInterface $categoryService)
     {
-        $result = Category::where('id',$id)->first();
-        return view('categories.edit',['categories' => $result]);
+        $result = $categoryService->editCategory($id);
+        return view('categories.edit',['category' => $result]);
     }
-    public function update($id,Request $request)
+    public function update($id,CategoryServiceInterface $categoryService,Request $request)
     {
-        $updated_category = Category::where('id', $id)->update(['title' => $request->input('title')]); 
-        $result = Category::where('user_id',Auth::id())->get();
-        if($result)
-        {   
-            return redirect('/categories')->with('msg','Category updated successfully');
+        $inputs = ['title' => $request->input('title')];
+        $category = $categoryService->updateCategory($inputs,$id);
+        if($category){   
+            return redirect('/categories')->with('message','Category updated successfully');
         } 
-        return redirect()->back()->with('msg','Category not updated,try again');
-           
+        return redirect()->back()->with('message','Category not updated,try again');
     }
     public function show($id)
     {
-        $my_categories = Category::where('user_id',Auth::id())->get();
-        $current_category = Category::find($id);
         $current_category_posts = Post::where('cat_id',$id)->orderby('id','desc')->paginate('3'); 
         return view('categories.show',['posts' => $current_category_posts]);           
     }

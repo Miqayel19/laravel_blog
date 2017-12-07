@@ -20,17 +20,17 @@ class MyPosts extends Component {
     }
     deletePost(){
         axios.delete('/api/me/posts/'+this.state.deleted).then((response)=>
-            {this.setState({myposts:response.data.myposts});
+            {this.setState({myposts:response.data.resource});
         }).catch((error)=>{console.log(error);})    
     }
     componentDidMount(){
         axios.get('/api/me/posts').then((response) => {
-            this.setState({ myposts: response.data.myposts});
+            this.setState({ myposts: response.data.resource});
         }).catch((error)=>{console.log(error);})
     }
     componentWillReceiveProps(nextProps){            
-        if(nextProps.posts !== this.props.posts){
-            this.setState({ myposts : nextProps.posts});
+        if(nextProps.resource !== this.props.resource){
+            this.setState({ myposts : nextProps.resource});
         }
     }            
     render() {  

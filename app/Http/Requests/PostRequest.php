@@ -30,25 +30,14 @@ class PostRequest extends FormRequest
             'image'=>'required',
         ];
     }
-    public function messages()
-    {
-        return [
-            'title.required' => 'A title is Required',
-            'text.required' => 'A text is Required',
-            'image.required'=>'An image is Required',
-        ];
-    }
     public function updateInputs()
     {
-        $inputs = $this->all();
-        $inputs = $this->except(['_token']);
-        $inputs = $this->except(['_method']);
+        $inputs = $this->except(['_method','_token']);
         $inputs['user_id'] = Auth::id();
         return $inputs;
     }
     public function storeInputs()
     {
-        $inputs = $this->all();
         $inputs = $this->except(['_token']);
         $inputs['user_id'] = Auth::id();
         return $inputs;
