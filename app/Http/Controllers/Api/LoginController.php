@@ -48,6 +48,6 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return response()->json(['status' => 'success','message' => "You have successfully logout"], 201);
+        return response()->json(['status' => 'success','message' => "Successfully logout"], 201);
     }  
 }    
