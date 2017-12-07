@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::get();
-        $posts =Post::get();
+        $posts = Post::get();
         return view('home',['categories'=>$categories,'posts'=>$posts]);        
     }
 }
