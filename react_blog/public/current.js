@@ -21675,7 +21675,7 @@ var Categories = function (_Component) {
                 console.log(error);
             });
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/posts').then(function (response) {
-                _this2.setState({ posts: response.data.posts });
+                _this2.setState({ posts: response.data.resource });
             }).catch(function (error) {
                 console.log(error);
             });
