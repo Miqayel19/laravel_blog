@@ -30,7 +30,7 @@ class LoginController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255',
             'password' => 'required|string|min:6',
         ]);
     }
@@ -43,7 +43,7 @@ class LoginController extends Controller
             Auth::login($user);  
             return response()->json(['status' => 'success','message' => 'Logged successfully','resource' => Auth::user()],201);
         }
-        return response()->json(['status' => 'failed','message'=>"Incorrect Login or Password"],400);  
+        return response()->json(['status' => 'error','message'=>"Incorrect Login or Password"],400);  
     }
     public function logout()
     {
