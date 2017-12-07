@@ -38,8 +38,7 @@ class LoginController extends Controller
     {
         $inputs = $request->all();
         $this->validator($inputs)->validate();
-        if(Auth::attempt(['email'=>$inputs['email'],'password'=>$inputs['password']]))
-        {
+        if(Auth::attempt(['email'=>$inputs['email'],'password'=>$inputs['password']])){
             $user = User::where('email',$request->get('email'))->first();
             Auth::login($user);  
             return response()->json(['user' => Auth::user()],201);
