@@ -26,6 +26,6 @@ class HomeController extends Controller
     {
         $categories = Category::get();
         $posts = Post::get();
-        return view('home',['categories'=>$categories,'posts'=>$posts]);        
+        return view('home',['categories' => $categories,'posts' => $posts]);        
     }
 }
