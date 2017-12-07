@@ -39,6 +39,5 @@ class User extends Authenticatable
     public function SocialProviders()
     {
         return $this->hasMany(SocialProvider::class);
-
     }
 }
