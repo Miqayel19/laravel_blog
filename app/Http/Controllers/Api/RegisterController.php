@@ -45,6 +45,6 @@ class RegisterController extends Controller
         ]);     
         $user = User::where('email',$request->get('email'))->first();
         Auth::login($user);    
-        return response()->json(['user' => Auth::user()], 200);                  
+        return response()->json(['status' => 'success','message' => 'Register successfully','resource' => Auth::user()], 200);                      
     }
 }    

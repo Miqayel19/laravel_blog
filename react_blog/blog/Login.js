@@ -32,9 +32,9 @@ class Login extends Component {
         }
         axios.post('/api/login',info).then((response)=>  
         {           
-            sessionStorage.setItem('name',response.data.user.name);
-            sessionStorage.setItem('user_id',response.data.user.id);
-            this.setState({id:response.data.user.id, error:""});
+            sessionStorage.setItem('name',response.data.resource.name);
+            sessionStorage.setItem('user_id',response.data.resource.id);
+            this.setState({id:response.data.resource.id, error:""});
         }).catch((error) => {
             this.setState({error:"Incorrect login or password"});
         });

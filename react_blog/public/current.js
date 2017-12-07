@@ -25924,9 +25924,9 @@ var Login = function (_Component) {
                 password: this.state.password
             };
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/api/login', info).then(function (response) {
-                sessionStorage.setItem('name', response.data.user.name);
-                sessionStorage.setItem('user_id', response.data.user.id);
-                _this2.setState({ id: response.data.user.id, error: "" });
+                sessionStorage.setItem('name', response.data.resource.name);
+                sessionStorage.setItem('user_id', response.data.resource.id);
+                _this2.setState({ id: response.data.resource.id, error: "" });
             }).catch(function (error) {
                 _this2.setState({ error: "Incorrect login or password" });
             });
@@ -26124,9 +26124,9 @@ var Register = function (_Component) {
                 password_confirmation: this.state.password_confirmation
             };
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/register', info).then(function (response) {
-                sessionStorage.setItem('name', response.data.user.name);
-                sessionStorage.setItem('user_id', response.data.user.id);
-                _this2.setState({ reg_user: response.data.user.id });
+                sessionStorage.setItem('name', response.data.reource.name);
+                sessionStorage.setItem('user_id', response.data.resource.id);
+                _this2.setState({ reg_user: response.data.resource.id });
             }).catch(function (error) {
                 console.log(error);
             });

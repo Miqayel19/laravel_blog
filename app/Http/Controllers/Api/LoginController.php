@@ -41,13 +41,13 @@ class LoginController extends Controller
         if(Auth::attempt(['email'=>$inputs['email'],'password'=>$inputs['password']])){
             $user = User::where('email',$request->get('email'))->first();
             Auth::login($user);  
-            return response()->json(['user' => Auth::user()],201);
+            return response()->json(['status' => 'success','message' => 'Logged successfully','resource' => Auth::user()],201);
         }
-        return response()->json(['Message'=>"Incorrect Login or Password"],400);  
+        return response()->json(['status' => 'failed','message'=>"Incorrect Login or Password"],400);  
     }
     public function logout()
     {
         Auth::logout();
-        return response()->json(['Message' => "You have successfully logout"], 201);
+        return response()->json(['status' => 'success','message' => "You have successfully logout"], 201);
     }  
 }    
