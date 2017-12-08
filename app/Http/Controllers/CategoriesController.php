@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
 use App\Contracts\CategoryServiceInterface;
+use App\Contracts\PostServiceInterface;
 use Illuminate\Http\Request;
 use App\Post;
 use Auth;
@@ -66,8 +67,8 @@ class CategoriesController extends Controller
     }
     public function show($id)
     {
-        $current_category_posts = Post::where('cat_id',$id)->orderby('id','desc')->paginate('3');
-        return view('categories.show',['posts' => $current_category_posts]);           
+        $current_category_posts = Post::where('cat_id',$id)->orderby('id','desc')->get();
+        return view('categories.show',['posts' => $current_category_posts]);          
     }
 }
     
