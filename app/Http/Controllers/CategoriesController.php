@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
 use App\Contracts\CategoryServiceInterface;
-use App\Contracts\PostServiceInterface;
 use Illuminate\Http\Request;
 use App\Post;
 use Auth;
