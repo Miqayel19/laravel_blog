@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CategoryRequest;
 use App\Contracts\CategoryServiceInterface;
 use Illuminate\Http\Request;
-use App\Category;
 use App\Post;
 use Auth;
 
@@ -37,7 +36,7 @@ class CategoriesController extends Controller
     public function store(CategoryServiceInterface $categoryService,Request $request)
     {
         $inputs = ['title' => $request->input('title'),'user_id' => Auth::id()];
-        $category = $categoryService->addCategory($inputs);
+        $category = $categoryService->create($inputs);
         if($category){
             return redirect('/categories')->with('message','Category added successfully');
         } 
@@ -45,7 +44,7 @@ class CategoriesController extends Controller
     }  
     public function destroy($id,CategoryServiceInterface $categoryService)
     {   
-        $category = $categoryService->deleteCategory($id);
+        $category = $categoryService->delete($id);
         if($category){
             return redirect('/categories')->with('message','Category deleted successfully');
         }  
@@ -53,13 +52,13 @@ class CategoriesController extends Controller
     }    
     public function edit($id,CategoryServiceInterface $categoryService)
     {
-        $result = $categoryService->editCategory($id);
+        $result = $categoryService->getById($id);
         return view('categories.edit',['category' => $result]);
     }
     public function update($id,CategoryServiceInterface $categoryService,Request $request)
     {
         $inputs = ['title' => $request->input('title')];
-        $category = $categoryService->updateCategory($inputs,$id);
+        $category = $categoryService->update($inputs,$id);
         if($category){   
             return redirect('/categories')->with('message','Category updated successfully');
         } 
@@ -67,7 +66,7 @@ class CategoriesController extends Controller
     }
     public function show($id)
     {
-        $current_category_posts = Post::where('cat_id',$id)->orderby('id','desc')->paginate('3'); 
+        $current_category_posts = Post::where('cat_id',$id)->orderby('id','desc')->paginate('3');
         return view('categories.show',['posts' => $current_category_posts]);           
     }
 }

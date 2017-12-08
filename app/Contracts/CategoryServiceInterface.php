@@ -2,9 +2,10 @@
 namespace App\Contracts;
 
 interface CategoryServiceInterface {
-    public function addCategory($inputs);
-    public function updateCategory($inputs, $id);
-    public function deleteCategory($id);
-    public function editCategory($id);
-    public function getCategoryByUser($id);
+    public function all();
+    public function create($inputs);
+    public function update($inputs, $id);
+    public function delete($id);
+    public function getById($id);
+    public function getByAuthorId($id);
 }

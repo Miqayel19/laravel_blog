@@ -10,25 +10,29 @@ class PostServices implements PostServiceInterface
     {
        $this->post = $post;
     }
-    public function addPost($inputs)
+    public function create($inputs)
     {
         return $this->post->create($inputs);
     }
-    public function updatePost($inputs, $id)
+    public function update($inputs, $id)
     {
         return $this->post->where('id', $id)->update($inputs);
     }
-    public function editPost($id)
+    public function getById($id)
     {
         return $this->post->find($id);
     }
-    public function deletePost($id)
+    public function delete($id)
     {
         return $this->post->where('id', $id)->delete();
     }
-    public function getpostByCategory($id)
+    public function getByAuthorId($id)
     {
         return $this->post->where('user_id', $id)->get();
+    }
+    public function getByCategoryId($id)
+    {
+        return $this->post->where('user_id', $id)->with('category')->get();
     }
 }   
 ?>

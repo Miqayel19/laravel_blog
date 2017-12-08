@@ -6,8 +6,6 @@ use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 use App\Contracts\PostServiceInterface;
 use App\Contracts\CategoryServiceInterface;
-use App\Category;
-use App\Post;
 use Auth;
 
 class PostsController extends Controller
@@ -27,15 +25,15 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PostServiceInterface $postService,CategoryServiceInterface $categoryService)
     {
-        $posts = Post::where('user_id',Auth::id())->paginate(2);
-        $categories = Category::get();
+        $posts = $postService->getByCategoryId(Auth::id());
+        $categories = $categoryService->all();
         return view('posts.index',['categories' => $categories, 'my_posts' => $posts]);
     }
     public function create(CategoryServiceInterface $categoryService)
     {
-        $categories = $categoryService->getCategoryByUser(Auth::id());
+        $categories = $categoryService->getByAuthorId(Auth::id());
         return view('posts.create',['my_categories' => $categories]);
     }
     public function store(PostServiceInterface $postService,PostRequest $request)
@@ -48,7 +46,7 @@ class PostsController extends Controller
         } else {    
             $inputs['image']='no-image.png';
         }
-        $result = $postService->addPost($inputs);
+        $result = $postService->create($inputs);
         if($result){
             return redirect('/posts')->with('message','Post added successfully');
         } 
@@ -56,13 +54,13 @@ class PostsController extends Controller
     }    
     public function edit($id,CategoryServiceInterface $categoryService,PostServiceInterface $postService)
     {
-        $categories = $categoryService->getCategoryByUser(Auth::id());
-        $posts = $postService->editPost($id);
+        $categories = $categoryService->getByAuthorId(Auth::id());
+        $posts = $postService->getById($id);
         return view('posts.edit',['posts' => $posts,'my_categories' => $categories]);
     }
     public function update($id,PostServiceInterface $postService,PostRequest $request)
     {
-        $post = $postService->editPost($id);
+        $post = $postService->getById($id);
         $old_image = $post->image;
         $inputs = $request->updateInputs();
         if($request->hasFile('image')) {    
@@ -81,7 +79,7 @@ class PostsController extends Controller
     }    
     public function destroy($id,PostServiceInterface $postService)
     {   
-        $result = $postService->deletePost($id);         
+        $result = $postService->delete($id);         
         if($result){
             return redirect('/posts')->with('message','Post deleted successfully');
         } 

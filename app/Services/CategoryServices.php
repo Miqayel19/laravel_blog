@@ -10,23 +10,27 @@ class CategoryServices implements CategoryServiceInterface
     {
        $this->category = $category;
     }
-    public function addCategory($inputs)
+    public function all()
+    {   
+        return $this->category->get();
+    }
+    public function create($inputs)
     {   
         return $this->category->create($inputs);
     }
-    public function updateCategory($inputs, $id)
+    public function update($inputs, $id)
     {
         return $this->category->where('id', $id)->update($inputs);
     }
-    public function editCategory($id)
+    public function getById($id)
     {
         return $this->category->find($id);
     }
-    public function deleteCategory($id)
+    public function delete($id)
     {
         return $this->category->where('id', $id)->delete();
     }
-    public function getCategoryByUser($id)
+    public function getByAuthorId($id)
     {
         return $this->category->where('user_id', $id)->get();
     }

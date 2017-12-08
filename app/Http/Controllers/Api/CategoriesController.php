@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\CategoryRequest;
 use App\Contracts\CategoryServiceInterface;
-use App\Category;
-use App\User; 
 use Auth;
 
 class CategoriesController extends Controller
@@ -28,21 +26,21 @@ class CategoriesController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+    public function index(CategoryServiceInterface $categoryService)
     {      
-        $categories = Category::get();
-        return response()->json(['status' => 'success','message' => 'Get all categories','resource' => $categories], 200);  
+        $categories = $categoryService->all();
+        return response()->json(['status' => 'success','message' => 'Gettting all categories','resource' => $categories], 200);  
     }
     public function mycategories(CategoryServiceInterface $categoryService)
     {      
-        $categories = $categoryService->getCategoryByUser(Auth::id());
+        $categories = $categoryService->getByAuthorId(Auth::id());
         return response()->json(['status' => 'success','message' => 'Getting My categories','resource' => $categories], 200);  
     }
     public function store(CategoryServiceInterface $categoryService,CategoryRequest $request)
     {    
         $inputs = $request->storeInputs();
-        $category = $categoryService->addCategory($inputs);
-        $result = $categoryService->getCategoryByUser(Auth::id());
+        $category = $categoryService->create($inputs);
+        $result = $categoryService->getByAuthorId(Auth::id());
         if($category){
             return response()->json(['status' => 'success','message' => 'Successfully added','resource' => $result], 200);
         } 
@@ -50,14 +48,14 @@ class CategoriesController extends Controller
     }
     public function edit($id,CategoryServiceInterface $categoryService)
     {    
-        $category = $categoryService->editCategory($id);
+        $category = $categoryService->getById($id);
         return response()->json(['status' => 'success','message' => 'Edited successfully','resource' => $category], 200);
     }
     public function update($id,CategoryServiceInterface $categoryService,CategoryRequest $request)
     {   
         $inputs = $request->updateInputs();
-        $category = $categoryService->updateCategory($inputs, $id);
-        $result = $categoryService->getCategoryByUser(Auth::id());
+        $category = $categoryService->update($inputs, $id);
+        $result = $categoryService->getById(Auth::id());
         if($category){
             return response()->json(['status' => 'success','message' => 'Category  updated!','resource' => $result], 200);
         } 
@@ -65,8 +63,8 @@ class CategoriesController extends Controller
     }
     public function destroy($id,CategoryServiceInterface $categoryService)
     {   
-        $category = $categoryService->deleteCategory($id);
-        $result = $categoryService->getCategoryByUser(Auth::id());
+        $category = $categoryService->delete($id);
+        $result = $categoryService->getByAuthorId(Auth::id());
         if($category){
             return response()->json(['status' => 'success','message' => 'Category deleted!','resource' => $result], 200);
         } 

@@ -27070,6 +27070,7 @@ var AddCategory = function (_Component) {
             var _this2 = this;
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/api/me/categories', { 'title': this.state.name }).then(function (response) {
+                console.log(response.data.resource);
                 _this2.props.addCategory(response.data.resource);
                 _this2.setState({ mycategories: response.data.resource });
             }).catch(function (error) {

@@ -2,8 +2,10 @@
 namespace App\Contracts;
 
 interface PostServiceInterface {
-    public function addPost($inputs);
-    public function updatePost($inputs, $id);
-    public function deletePost($id);
-    public function editPost($id);
+    public function create($inputs);
+    public function update($inputs, $id);
+    public function delete($id);
+    public function getById($id);
+    public function getByAuthorId($id);
+    public function getByCategoryId($id);
 }
