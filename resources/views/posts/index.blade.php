@@ -9,17 +9,16 @@
                 @foreach($my_posts as $my_post)
                     <div class='row_second_part'>
                         <ul  class='post_li'>
-                            <li class="list-group-item" style='width:250px'>{{$my_post->category->title}}</li>
-                            <li class="list-group-item" style='width:250px'>{{$my_post->title}}</li>
-                            <li class="list-group-item" style='width:250px'>{{$my_post->text}}</li>
-                            <li>
-                            <img src='{{url("/image/$my_post->image")}}'></li>
-                            <li style='display: inline-block'>
+                            <li class="list-group-item">{{$my_post->category->title}}</li>
+                            <li class="list-group-item">{{$my_post->title}}</li>
+                            <li class="list-group-item">{{$my_post->text}}</li>
+                            <li><img src='{{url("/image/$my_post->image")}}'></li>
+                            <li class='fifth_li'>
                                 <button data-id="{{$my_post->id}}" type="button" class="btn btn-primary post_mod" data-toggle="modal" data-target="#exampleModal">
                                 Delete
                                 </button>
                             </li>
-                            <li class="btn  btn-info" style='display: inline-block'><a href="{{url('posts/'.$my_post->id.'/edit')}}" id='ed'>Edit</a></li>
+                            <li class="btn btn-info" id ='list'><a href="{{url('posts/'.$my_post->id.'/edit')}}" id='ed'>Edit</a></li>
                         </ul>
                     </div>  
                 @endforeach
@@ -31,21 +30,18 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style='text-align:center'>Are you sure you want to delete the post</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete the post</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-                                    
+            </div>                                    
             <div class="modal-footer">
                 <form method='POST' action='' id='post_form'>
                     <input type='hidden' name='_method' value='DELETE'>
                     {{csrf_field()}}
-                    <button type="submit" class="btn btn-secondary" id='yes' style='margin-right:50px'>Yes</button>
-                </form> 
-                                          
-                <button type="button" class="btn btn-default no" data-dismiss="modal">No</button>
-                                            
+                    <button type="submit" class="btn btn-secondary" id='yes'>Yes</button>
+                </form>                         
+                <button type="button" class="btn btn-default no" data-dismiss="modal">No</button>              
             </div>
         </div>
     </div>

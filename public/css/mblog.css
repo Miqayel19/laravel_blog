@@ -70,6 +70,7 @@
 }
 #yes{
     background-color: aqua;
+    margin-right:50px;
 }
 #fileselector {
     margin:10px; 
@@ -167,4 +168,16 @@
 .google{
     background-color:aqua !important;
     color:blue !important;
+}
+.post_li .list-group-item {
+    width:250px;
+}
+.fifth_li{
+    display:inline-block;
+}
+#list{
+    display:inline-block;
+}
+.modal_header h5{
+    text-align: center;
 }
