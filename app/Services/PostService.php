@@ -4,11 +4,15 @@ namespace App\Services;
 use App\Post;
 use App\Contracts\PostServiceInterface;
 
-class PostServices implements PostServiceInterface
+class PostService implements PostServiceInterface
 {
     public function __construct(Post $post)
     {
        $this->post = $post;
+    }
+    public function all()
+    {   
+        return $this->post->get();
     }
     public function create($inputs)
     {
@@ -27,10 +31,6 @@ class PostServices implements PostServiceInterface
         return $this->post->where('id', $id)->delete();
     }
     public function getByAuthorId($id)
-    {
-        return $this->post->where('user_id', $id)->get();
-    }
-    public function getByCategoryId($id)
     {
         return $this->post->where('user_id', $id)->with('category')->get();
     }

@@ -27,7 +27,7 @@ class PostsController extends Controller
      */
     public function index(PostServiceInterface $postService,CategoryServiceInterface $categoryService)
     {
-        $posts = $postService->getByCategoryId(Auth::id());
+        $posts = $postService->getByAuthorId(Auth::id());
         $categories = $categoryService->all();
         return view('posts.index',['categories' => $categories, 'my_posts' => $posts]);
     }

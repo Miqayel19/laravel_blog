@@ -1,26 +1,11 @@
 .row_cat{
 	display:inline-block;
 }
-.row_post{
-	display: inline-block;
-    position: absolute;
-    top: 72px;
-}
 .row_cat h1{
 	margin-left:50px;
 }
 .row_cat p{
 	margin-left:50px
-}
-.row_post h1{
-	margin-left:50px;
-}
-.row_post p{
-	margin-left:50px
-}
-.li-post{
-	width:200px;
-	margin-left:50px; 
 }
 .li-cat{
 	width:200px;

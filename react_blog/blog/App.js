@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Categories from './categories/Categories';
+import Posts from './posts/Posts';
 import UnloggedMenu from './UnloggedMenu';
 import LoggedMenu from './LoggedMenu';
 class App extends Component { 
@@ -10,6 +11,7 @@ class App extends Component {
             <div>
                 <LoggedMenu name = {sessionStorage.getItem('name')} />
                 <Categories />
+                <Posts />
             </div>  
             );
         } else{

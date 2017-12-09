@@ -64,10 +64,10 @@ class CategoriesController extends Controller
         } 
         return redirect()->back()->with('message','Category not updated,try again');
     }
-    public function show($id)
+    public function show($id,CategoryServiceInterface $categoryService)
     {
-        $current_category_posts = Post::where('cat_id',$id)->orderby('id','desc')->get();
-        return view('categories.show',['posts' => $current_category_posts]);          
+        $category = $categoryService->getById($id);
+        return view('categories.show',['category' => $category]);          
     }
 }
     

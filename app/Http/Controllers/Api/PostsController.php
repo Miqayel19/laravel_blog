@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\PostRequest;
 use App\Contracts\PostServiceInterface;
-use App\Post;
 use Auth;
 
 class PostsController extends Controller
@@ -28,12 +27,12 @@ class PostsController extends Controller
     }
     public function index(PostServiceInterface $postService)
     { 
-        $posts = $postService->getByAuthorId(Auth::id());
+        $posts = $postService->all();
         return response()->json(['status' => 'success','message' => 'Get all posts','resource' => $posts], 200);
     }
     public function myposts(PostServiceInterface $postService)
     {      
-        $posts = $postService->getByCategoryId(Auth::id());
+        $posts = $postService->getByAuthorId(Auth::id());
         return response()->json(['status' => 'success','message' => 'Get my posts','resource' => $posts], 200);  
     }
     public function store(PostServiceInterface $postService,PostRequest $request)
@@ -47,7 +46,7 @@ class PostsController extends Controller
             $inputs['image'] = 'no-image.png';
         }
         $result = $postService->create($inputs);
-        $post = $postService->getByCategoryId(Auth::id());
+        $post = $postService->getByAuthorId(Auth::id());
         if($result){   
             return response()->json(['status' => 'success','message' => 'Post Added','resource' => $post], 200);
         }
@@ -71,7 +70,7 @@ class PostsController extends Controller
             $inputs['image']='no-image.png';
         }
         $updated_post = $post->update($inputs);
-        $result = $postService->getByCategoryId(Auth::id()); 
+        $result = $postService->getByAuthorId(Auth::id()); 
         if($inputs['image'] != 'no-image.png' && $updated_post){
             unlink(public_path('/image/').$old_image);
             return response()->json(['status' => 'success','message' => 'Post updated','resource' => $result], 200);
@@ -81,7 +80,7 @@ class PostsController extends Controller
     public function destroy($id,PostServiceInterface $postService)
     {   
         $result = $postService->delete($id);
-        $post = $postService->getByCategoryId(Auth::id());
+        $post = $postService->getByAuthorId(Auth::id());
         if($result){
             return response()->json(['status' => 'success','message' => 'Post deleted','resource' => $post], 200);
         }

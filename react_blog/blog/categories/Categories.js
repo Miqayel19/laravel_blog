@@ -31,13 +31,6 @@ class Categories extends Component {
                                 return <li  className="list-group-item li-cat" key = {value.id}>{value.title}</li>
                             })}
                         </div>
-                        <div className="row_post">
-                            <h1>Posts</h1> 
-                            <p>Number of Posts:{this.state.posts.length}</p> 
-                            {this.state.posts.map((value, index) => {
-                                return <li className="list-group-item li-post" key = {value.id}>{value.title}</li>
-                            })}   
-                        </div>
                    </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ namespace App\Services;
 use App\Category;
 use App\Contracts\CategoryServiceInterface;
 
-class CategoryServices implements CategoryServiceInterface
+class CategoryService implements CategoryServiceInterface
 {
     public function __construct(Category $category)
     {
