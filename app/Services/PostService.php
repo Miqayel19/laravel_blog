@@ -32,7 +32,7 @@ class PostService implements PostServiceInterface
     }
     public function getByAuthorId($id)
     {
-        return $this->post->where('user_id', $id)->with('category')->get();
+        return $this->post->where('user_id', $id)->get();
     }
 }   
 ?>

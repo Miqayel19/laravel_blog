@@ -9,7 +9,7 @@
                 @foreach($my_posts as $my_post)
                     <div class='row_second_part'>
                         <ul  class='post_li'>
-                            <li class="list-group-item" style='width:250px'>{{$my_post->category['title']}}</li>
+                            <li class="list-group-item" style='width:250px'>{{$my_post->category->title}}</li>
                             <li class="list-group-item" style='width:250px'>{{$my_post->title}}</li>
                             <li class="list-group-item" style='width:250px'>{{$my_post->text}}</li>
                             <li>

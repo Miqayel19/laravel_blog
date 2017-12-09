@@ -42,11 +42,11 @@ $app->singleton(
 );
 $app->singleton(
     'App\Contracts\CategoryServiceInterface',
-    'App\Services\CategoryServices'
+    'App\Services\CategoryService'
 );
 $app->singleton(
     'App\Contracts\PostServiceInterface',
-    'App\Services\PostServices'
+    'App\Services\PostService'
 );
 /*
 |--------------------------------------------------------------------------
