@@ -46,7 +46,7 @@ class PostsController extends Controller
             $inputs['image'] = 'no-image.png';
         }
         $result = $postService->create($inputs);
-        $post = $postService->getByAuthorId(Auth::id());
+        $post = $postService->getByAuthorId(Auth::id(),'category');
         if($result){   
             return response()->json(['status' => 'success','message' => 'Post Added','resource' => $post], 200);
         }
@@ -70,7 +70,7 @@ class PostsController extends Controller
             $inputs['image']='no-image.png';
         }
         $updated_post = $post->update($inputs);
-        $result = $postService->getByAuthorId(Auth::id()); 
+        $result = $postService->getByAuthorId(Auth::id(),'category'); 
         if($inputs['image'] != 'no-image.png' && $updated_post){
             unlink(public_path('/image/').$old_image);
             return response()->json(['status' => 'success','message' => 'Post updated','resource' => $result], 200);
@@ -80,7 +80,7 @@ class PostsController extends Controller
     public function destroy($id,PostServiceInterface $postService)
     {   
         $result = $postService->delete($id);
-        $post = $postService->getByAuthorId(Auth::id());
+        $post = $postService->getByAuthorId(Auth::id(),'category');
         if($result){
             return response()->json(['status' => 'success','message' => 'Post deleted','resource' => $post], 200);
         }
