@@ -30,9 +30,13 @@ class PostService implements PostServiceInterface
     {
         return $this->post->where('id', $id)->delete();
     }
-    public function getByAuthorId($id,$relation = null)
+    public function getByAuthorId($id, $relations = [])
     {
-        return !is_null($relation) ? $this->post->where('user_id',$id)->with($relation)->get() : $this->post->where('user_id',$id)->get();
+        $query = Post::where('user_id',$id);
+        if(count($relations)>0){
+            return $query->with($relations)->get();
+        }
+        return $query->get();
     }
-}        
+}            
 ?>
