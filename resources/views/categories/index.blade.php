@@ -5,7 +5,7 @@
         <div class='row_second'>
             <h1>My Categories</h1>
             <button class="btn btn-success" id='add_cat'><a href='{{url("categories/create")}}'>Add Category</a></button>         
-            @foreach(Auth::user()->category as $category)
+            @foreach(Auth::user()->categories as $category)
                 <div class='row_second_part'>
                     <ul class='ul_cat'>
                         <li class="list-group-item" id='list_cat'>{{$category->title}}</li>
