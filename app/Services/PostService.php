@@ -30,9 +30,9 @@ class PostService implements PostServiceInterface
     {
         return $this->post->where('id', $id)->delete();
     }
-    public function getByAuthorId($id)
+    public function getByAuthorId($id,$relation)
     {
-        return $this->post->where('user_id', $id)->with('category')->get();
+        return $relation ? $this->post->where('user_id',$id)->with($relation)->get() : $this->post->where('user_id',$id)->get();
     }
-}   
+}        
 ?>

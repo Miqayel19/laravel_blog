@@ -32,7 +32,7 @@ class PostsController extends Controller
     }
     public function myposts(PostServiceInterface $postService)
     {      
-        $posts = $postService->getByAuthorId(Auth::id());
+        $posts = $postService->getByAuthorId(Auth::id(),'category');
         return response()->json(['status' => 'success','message' => 'Get my posts','resource' => $posts], 200);  
     }
     public function store(PostServiceInterface $postService,PostRequest $request)
