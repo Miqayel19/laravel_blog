@@ -6,14 +6,14 @@ var app = angular.module('app.controller',['ngRoute']);
                 return true
             }
             return false
-        }
+        },
         $scope.isNotLogin = function(){
             $scope.logged_user = localStorage.getItem('log_user');
             if(localStorage.getItem('log') == 0){
                 return true
             }
             return false
-        }
+        },
         $scope.login = function(){
             var data = {
                 email: $scope.mail,
@@ -23,10 +23,10 @@ var app = angular.module('app.controller',['ngRoute']);
                 localStorage.setItem('log_user', response.data.resource.name);
                 localStorage.setItem('log',1);
                 $location.path('/home');
-                }).catch((error)=> {
+            }).catch((error)=> {
                     console.log(error);
-                });
-        }    
+            });
+        },    
         $scope.logout = function(){
             localStorage.clear();
             localStorage.setItem('log',0);
@@ -34,8 +34,8 @@ var app = angular.module('app.controller',['ngRoute']);
                 $location.path('/'); 
             }).catch((error) => {
                 console.log(error);
-            })
-        }
+            });
+        };
     });    
     app.controller('RegisterController',function($scope,$http, $location){
         $scope.register = function(){
@@ -63,7 +63,7 @@ var app = angular.module('app.controller',['ngRoute']);
             $scope.posts = response.data.resource;
         }).catch((error)=> {
             console.log(error);           
-        })
+        });
     }); 
     app.controller('CategoriesController',function($scope,$http,$location,$routeParams){
             $http.get('/api/me/categories').then((response) => {
@@ -75,23 +75,23 @@ var app = angular.module('app.controller',['ngRoute']);
                 $location.path('/me/categories');
             }).catch((error)=> {
                 console.log(error);
-            }) 
-        }
+            }); 
+        },
         $scope.deleteCategory = function($id){
             $http.delete('/api/me/categories/'+$id,{title:$scope.name}).then((response) => {
                 $scope.myCategories = response.data.resource;
                 $location.path('/me/categories')
             }).catch((error)=> {
                 console.log(error);
-            }) 
-        }
+            }); 
+        },
         $scope.updateCategory = function(){
             var id = $routeParams.id;
             $http.put('/api/me/categories/'+id,{title:$scope.name}).then((response) => {
                 $location.path('/me/categories'); 
             }).catch((error)=>{
                 console.log(error);
-            })
+            });
         }
     });
     app.controller('PostsController',function($scope,$http,$location,$routeParams){
@@ -120,15 +120,15 @@ var app = angular.module('app.controller',['ngRoute']);
             .catch((error)=>{
                 console.log(error);
             });
-        }
+        },
         $scope.deletePost = function($id){
             $http.delete('/api/me/posts/'+$id,{title:$scope.name}).then((response) => {
                 $scope.myPosts = response.data.resource;
                 $location.path('/me/posts'); 
             }).catch((error)=> {
                 console.log(error);
-            })
-        }
+            });
+        },
         $scope.updatePost = function(){
             var id = $routeParams.id;
             var info = new FormData()
@@ -147,13 +147,4 @@ var app = angular.module('app.controller',['ngRoute']);
                 console.log(error);
             }); 
         }
-        // $scope.editPost = function($id){
-        //     $location.path('/me/posts/' + $id); 
-        //     $http.get('/api/me/posts/'+$id).then((response) => {
-        //         $scope.myPosts = response.data.resource;
-        //         $scope.text = response.data.resource.text;
-        //         $scope.title = response.data.resource.title;
-        //         $scope.myFile = response.data.resource.image;
-        //     }).catch((error) => {console.log(error);})
-
-    })      
+    })
