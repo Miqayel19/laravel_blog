@@ -1,0 +1,16 @@
+.row_post{
+	display: inline-block;
+    position: absolute;
+    top: 73px;
+    left:300px;
+}
+.row_post h1{
+	margin-left:50px;
+}
+.row_post p{
+	margin-left:50px
+}
+.li-post{
+	width:200px;
+	margin-left:10px; 
+}

@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="row_post">
+            <h1>Posts</h1> 
+            <p>Number of Posts:{{posts.length}}</p> 
+            <ul ng-init = "posts">
+                <li  ng-repeat = "post in posts" class="list-group-item li-post">{{post.title}}</li>
+            </ul>
+        </div>
+   </div>
+</div>

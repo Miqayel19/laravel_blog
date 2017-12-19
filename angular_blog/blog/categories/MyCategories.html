@@ -1,0 +1,36 @@
+    <div class="container">
+        <div class="row">
+            <div class='row-second'>
+                <h1 class = 'cat-h1'>My Categories</h1>
+                <button class="btn" id='add-cat'><a href ='#!me/categories/add'>Add Category</a></button>
+                <div class='row-second-part'>
+                    <ul class = 'ul-cat' ng-init = 'myCategories'>
+                        <div ng-repeat = 'mycategory in myCategories'>
+                            <li class="list-group-item list-cat">{{mycategory.title}}</li>
+                            <li>
+                                <button 
+                                    data-id='{{mycategory.id}}' 
+                                    type="button"  
+                                    class="btn btn-primary" 
+                                    data-toggle="modal" 
+                                    data-target="#exampleModal"
+                                    ng-click = 'deleteCategory(mycategory.id)' 
+                                    >
+                                    Delete
+                                </button> 
+                            </li>
+                            <li>
+                                <button 
+                                    data-id='{{mycategory.id}}' 
+                                    type="button"  
+                                    class="btn btn-info" >
+                                    <a href ="#!me/categories/{{mycategory.id}}">Edit</a>
+                                </button>
+                            </li>
+                        </div>
+                    </ul> 
+                </div>           
+            </div> 
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class='row-second'>
+            <h1 class= 'post-h1'>My Posts</h1>
+                <button class="btn add-post" ><a href ='#!me/posts/add'>Add Post</a></button>        
+                <div class='row-second-part'>
+                    <ul class='post-li' ng-init = 'myPosts'>
+                        <div ng-repeat = 'mypost in myPosts'>
+                            <li class="list-group-item post-title">{{mypost.title}}</li>
+                            <li class="list-group-item post-title">{{mypost.title}}</li>
+                            <li class="list-group-item post-text">{{mypost.text}}</li>
+                            <li><img src='/image/{{mypost.image}}'/></li>
+                            <li class='del-post'>
+                                <button 
+                                    data-id='{{mypost.id}}' 
+                                    type="button" 
+                                    ng-click ='deletePost(mypost.id)' 
+                                    class="btn btn-primary" 
+                                    data-toggle="modal" 
+                                    data-target="#exampleModal">
+                                    Delete
+                                </button>
+                            </li>
+                            <li class="btn  btn-info post-edit">
+                                <a href ="" ng-click = 'editPost(mypost.id)'>Edit</a>
+                            </li>
+                        </div>    
+                    </ul>
+                </div>           
+            </div> 
+        </div>
+    </div>
+</div>

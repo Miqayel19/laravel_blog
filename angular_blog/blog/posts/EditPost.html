@@ -1,0 +1,26 @@
+<form enctype="multipart/form-data">
+    <input 
+        type="text" 
+        class="form-control add-post-title" 
+        name='text' 
+        ng-model = "text" />
+    <input 
+        type="text" 
+        class="form-control add-post-text" 
+        name='title' 
+        ng-model = "title" />
+    <div class="form-group image-div">
+        <input 
+            type="file" 
+            class="filestyle" 
+            data-icon="false" 
+            name='image' 
+            file-model="myFile"/>
+    </div>
+    <button 
+        type="submit" 
+        class="btn btn-danger update-post" 
+        ng-click = 'updatePost()'>
+            Update
+    </button>
+</form>    

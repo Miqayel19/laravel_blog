@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="row_cat">
+            <h1>Categories</h1> 
+            <p>Number of Categories:{{categories.length}}</p> 
+            <ul ng-init = "categories">
+                <li  ng-repeat = 'category in categories' class="list-group-item li-cat">{{category.title}}</li>
+            </ul>    
+        </div>
+   </div>
+</div>
+
+
+
+

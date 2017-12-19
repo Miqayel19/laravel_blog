@@ -7,5 +7,5 @@ interface PostServiceInterface {
     public function update($inputs, $id);
     public function delete($id);
     public function getById($id);
-    public function getByAuthorId($id,$relations = []);
+    public function getByAuthorId($id, $relations = []);
 }

@@ -1,0 +1,31 @@
+    <form enctype="multipart/form-data">    
+        <input 
+            type="text" 
+            class="form-control add-in" 
+            placeholder="Add Title" 
+            name='name' 
+            ng-model = "text" />
+        <input 
+            type="text" 
+            class="form-control post-t" 
+            placeholder="Add Text" 
+            name='title' 
+            ng-model="title" />
+        <select name='cat_id' class='form-control cat-id' ng-model = 'mycategory.id'>
+            <option  ng-repeat = 'mycategory in myCategories' value = '{{mycategory.id}}'>{{mycategory.title}}</option>
+        </select>
+        <div class="form-group image-div">
+            <input 
+                type="file" 
+                class="filestyle" 
+                data-icon="false" 
+                name='image'
+                file-model="myFile" />
+        </div>
+        <button 
+            type="submit" 
+            class="btn add-button" 
+            ng-click = 'addPost()'>
+            Add        
+        </button>
+    </form>    

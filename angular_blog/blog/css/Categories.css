@@ -1,0 +1,13 @@
+.row_cat{
+	display:inline-block;
+}
+.row_cat h1{
+	margin-left:50px;
+}
+.row_cat p{
+	margin-left:50px
+}
+.li-cat{
+	width:200px;
+	margin-left:10px; 
+}

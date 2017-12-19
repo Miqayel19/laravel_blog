@@ -55,7 +55,7 @@ class CategoriesController extends Controller
     {   
         $inputs = $request->updateInputs();
         $category = $categoryService->update($inputs, $id);
-        $result = $categoryService->getById(Auth::id());
+        $result = $categoryService->getById($id);
         if($category){
             return response()->json(['status' => 'success','message' => 'Category  updated!','resource' => $result], 200);
         } 

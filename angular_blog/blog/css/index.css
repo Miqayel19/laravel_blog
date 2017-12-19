@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.log{
+    background-color:blue; 
+    color:white !important;
+}
+.reg{
+    background-color:aqua; 
+    color:blue !important;
+}
+.dropdown-menu li{
+    text-align:center;
+}
