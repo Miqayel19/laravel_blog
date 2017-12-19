@@ -87,7 +87,7 @@ var app = angular.module('app.controller',['ngRoute']);
         },
         $scope.updateCategory = function(){
             var id = $routeParams.id;
-            $http.put('/api/me/categories/'+id,{title:$scope.name}).then((response) => {
+            $http.put('/api/me/categories/'+id,{title:$scope.title}).then((response) => {
                 $location.path('/me/categories'); 
             }).catch((error)=>{
                 console.log(error);
