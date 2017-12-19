@@ -24,7 +24,7 @@ var app = angular.module('app.controller',['ngRoute']);
                 localStorage.setItem('log',1);
                 $location.path('/home');
             }).catch((error)=> {
-                    console.log(error);
+                console.log(error);
             });
         },    
         $scope.logout = function(){
@@ -48,7 +48,7 @@ var app = angular.module('app.controller',['ngRoute']);
             $http.post('/api/register',data).then(function(response){
                 localStorage.setItem('logged_user', response.data.resource.name);
                 $location.path('/home');
-            }).catch((error)=> {
+            }).catch((error) => {
                 console.log(error);
             });
         };
@@ -56,24 +56,26 @@ var app = angular.module('app.controller',['ngRoute']);
     app.controller('HomeController',function($scope,$http){
         $http.get('/api/categories').then((response) => {          
             $scope.categories = response.data.resource;
-        }).catch((error)=> {
+        }).catch((error) => {
             console.log(error);           
         })  
         $http.get('/api/posts').then((response) => {          
             $scope.posts = response.data.resource;
-        }).catch((error)=> {
+        }).catch((error) => {
             console.log(error);           
         });
     }); 
-    app.controller('CategoriesController',function($scope,$http,$location,$routeParams){
+    app.controller('CategoriesController',function($scope,$http,$location,$routeParams){   
             $http.get('/api/me/categories').then((response) => {
                 $scope.myCategories = response.data.resource;
-            }).catch((error) => {console.log(error);})            
+            }).catch((error) => {
+                console.log(error);
+            });                
         $scope.addCategory = function(){
             $http.post('/api/me/categories',{title:$scope.name}).then((response) => {
                 $scope.myCategories = response.data.resource;
                 $location.path('/me/categories');
-            }).catch((error)=> {
+            }).catch((error) => {
                 console.log(error);
             }); 
         },
@@ -81,7 +83,7 @@ var app = angular.module('app.controller',['ngRoute']);
             $http.delete('/api/me/categories/'+$id,{title:$scope.name}).then((response) => {
                 $scope.myCategories = response.data.resource;
                 $location.path('/me/categories')
-            }).catch((error)=> {
+            }).catch((error) => {
                 console.log(error);
             }); 
         },
@@ -89,7 +91,7 @@ var app = angular.module('app.controller',['ngRoute']);
             var id = $routeParams.id;
             $http.put('/api/me/categories/'+id,{title:$scope.title}).then((response) => {
                 $location.path('/me/categories'); 
-            }).catch((error)=>{
+            }).catch((error) => {
                 console.log(error);
             });
         }
@@ -97,7 +99,9 @@ var app = angular.module('app.controller',['ngRoute']);
     app.controller('PostsController',function($scope,$http,$location,$routeParams){
             $http.get('/api/me/posts').then((response) => {
                 $scope.myPosts = response.data.resource;
-            }).catch((error) => {console.log(error);})
+            }).catch((error) => {
+                console.log(error);
+            })
             $http.get('/api/me/categories').then((response) => {
                 $scope.myCategories = response.data.resource;
             }).catch((error) => {
@@ -113,11 +117,10 @@ var app = angular.module('app.controller',['ngRoute']);
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined}
             })
-            .then((response) =>{
+            .then((response) => {
                 $scope.myPosts = response.data.resource;
                 $location.path('/me/posts'); 
-            })
-            .catch((error)=>{
+            }).catch((error)=>{
                 console.log(error);
             });
         },
@@ -125,7 +128,7 @@ var app = angular.module('app.controller',['ngRoute']);
             $http.delete('/api/me/posts/'+$id,{title:$scope.name}).then((response) => {
                 $scope.myPosts = response.data.resource;
                 $location.path('/me/posts'); 
-            }).catch((error)=> {
+            }).catch((error) => {
                 console.log(error);
             });
         },
@@ -143,7 +146,7 @@ var app = angular.module('app.controller',['ngRoute']);
             }).then((response) => {
                 $scope.myPosts = response.data.resource;
                 $location.path('/me/posts'); 
-                }).catch((error)=> {
+            }).catch((error) => {
                 console.log(error);
             }); 
         }
