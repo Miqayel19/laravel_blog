@@ -26,7 +26,7 @@ class Register extends Component {
         }
         axios.post('/api/register',info)
         .then((response) => {
-            sessionStorage.setItem('name',response.data.reource.name);
+            sessionStorage.setItem('name',response.data.resource.name);
             sessionStorage.setItem('user_id',response.data.resource.id);
             this.setState({reg_user:response.data.resource.id});
         }).catch((error)=>{console.log(error);})        

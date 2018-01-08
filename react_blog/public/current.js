@@ -26243,7 +26243,7 @@ var Register = function (_Component) {
                 password_confirmation: this.state.password_confirmation
             };
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/register', info).then(function (response) {
-                sessionStorage.setItem('name', response.data.reource.name);
+                sessionStorage.setItem('name', response.data.resource.name);
                 sessionStorage.setItem('user_id', response.data.resource.id);
                 _this2.setState({ reg_user: response.data.resource.id });
             }).catch(function (error) {
